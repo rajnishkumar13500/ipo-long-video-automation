@@ -1,0 +1,679 @@
+{
+  "id": "moneyview",
+  "companyName": "Money View Technologies",
+  "ticker": "MONEYVIEW",
+  "industry": "Fintech & Digital Lending",
+  "domain": "moneyview.in",
+  "logoUrl": "https://www.google.com/s2/favicons?domain=moneyview.in&sz=256",
+  "logoInitials": "MV",
+  "logoBgColor": "#1D4ED8",
+  "exchange": "NSE • BSE",
+  "badgeSubtitle": "IPO Deep-Dive Breakdown",
+  "listingDate": "2026-10-22",
+  "issue": {
+    "totalFormatted": "₹1,200 Cr",
+    "freshFormatted": "₹800 Cr",
+    "freshPercent": "66.7%",
+    "ofsFormatted": "₹400 Cr",
+    "ofsPercent": "33.3%",
+    "priceBand": "₹120 – ₹128",
+    "lotSize": "115 shares",
+    "minInvestment": "₹14,720",
+    "retailQuota": "35%",
+    "qibQuota": "50%",
+    "niiQuota": "15%",
+    "biddingDates": "Oct 14 – Oct 16, 2026",
+    "allotmentDate": "Oct 19, 2026",
+    "listingDate": "Oct 22, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Augmenting capital base for future lending growth",
+        "amountFormatted": "₹520 Cr",
+        "percentage": "65%"
+      },
+      {
+        "purpose": "Technology infrastructure & AI risk underwriting models",
+        "amountFormatted": "₹160 Cr",
+        "percentage": "20%"
+      },
+      {
+        "purpose": "General corporate purposes & offer expenses",
+        "amountFormatted": "₹120 Cr",
+        "percentage": "15%"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Full-Stack Digital Lending & Financial Services Platform",
+    "description": "Money View operates an end-to-end proprietary mobile platform providing unsecured personal loans, credit products, and digital financial management tools to underserved Tier-2 and Tier-3 consumers.",
+    "segments": [
+      {
+        "name": "Personal Loans & Credit",
+        "sharePercent": 74,
+        "description": "Processing fees & net interest margins on short-to-medium term consumer credit",
+        "amountFormatted": "₹1,198 Cr"
+      },
+      {
+        "name": "Origination & Distribution Fees",
+        "sharePercent": 18,
+        "description": "Commissions from co-lending banking & NBFC partners",
+        "amountFormatted": "₹292 Cr"
+      },
+      {
+        "name": "Value-Added Financial Products",
+        "sharePercent": 8,
+        "description": "Credit score tracking, insurance distribution, and subscription tools",
+        "amountFormatted": "₹130 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "App Downloads",
+        "value": "50M+",
+        "subtext": "Strong organic acquisition"
+      },
+      {
+        "label": "Active Borrowers",
+        "value": "2.8 Million",
+        "subtext": "Pan-India presence"
+      },
+      {
+        "label": "AUM",
+        "value": "₹3,850 Cr",
+        "subtext": "Assets Under Management"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Indian Digital Lending & Consumer Credit",
+    "marketSizeFormatted": "$350 Billion by 2030",
+    "cagrText": "28.5% Industry CAGR",
+    "drivers": [
+      {
+        "title": "Smartphone & UPI Penetration",
+        "detail": "Over 700 million internet users driving digital credit adoption beyond Tier-1 metros."
+      },
+      {
+        "title": "Account Aggregator Ecosystem",
+        "detail": "Instant cash-flow underwriting replacing traditional paper-heavy collateral requirements."
+      },
+      {
+        "title": "Under-Penetrated Credit Landscape",
+        "detail": "Formal consumer credit penetration remains under 15% of GDP in India."
+      }
+    ],
+    "marketPosition": "Ranked among India's Top 3 independent digital lending ecosystems"
+  },
+  "financials": {
+    "years": [
+      "FY23",
+      "FY24",
+      "FY25"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹577 Cr",
+        "₹1,012 Cr",
+        "₹1,620 Cr"
+      ],
+      "rawCr": [
+        577,
+        1012,
+        1620
+      ],
+      "cagr": "67.5% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹68 Cr",
+        "₹162 Cr",
+        "₹295 Cr"
+      ],
+      "marginsPercent": [
+        "11.8%",
+        "16.0%",
+        "18.2%"
+      ],
+      "rawCr": [
+        68,
+        162,
+        295
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "-₹18 Cr",
+        "₹78 Cr",
+        "₹172 Cr"
+      ],
+      "marginsPercent": [
+        "-3.1%",
+        "7.7%",
+        "10.6%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "0.42x",
+      "cashFromOperations": "₹142 Cr",
+      "ronwFormatted": "19.8%",
+      "roceFormatted": "22.4%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "33.8x",
+    "commentary": "Priced at a reasonable discount to established listed peers Bajaj Finance and Poonawalla.",
+    "table": [
+      {
+        "name": "Money View (Target)",
+        "peRatio": "24.6x",
+        "pbRatio": "3.8x",
+        "evEbitda": "14.2x",
+        "revenueFormatted": "₹1,620 Cr",
+        "patFormatted": "₹172 Cr",
+        "ronwFormatted": "19.8%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "Bajaj Finance",
+        "peRatio": "31.2x",
+        "pbRatio": "5.6x",
+        "evEbitda": "18.4x",
+        "revenueFormatted": "₹54,980 Cr",
+        "patFormatted": "₹14,450 Cr",
+        "ronwFormatted": "21.5%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Poonawalla Fincorp",
+        "peRatio": "34.5x",
+        "pbRatio": "4.1x",
+        "evEbitda": "16.8x",
+        "revenueFormatted": "₹3,180 Cr",
+        "patFormatted": "₹1,027 Cr",
+        "ronwFormatted": "18.2%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "CreditAccess Grameen",
+        "peRatio": "18.9x",
+        "pbRatio": "3.1x",
+        "evEbitda": "11.2x",
+        "revenueFormatted": "₹5,140 Cr",
+        "patFormatted": "₹1,260 Cr",
+        "ronwFormatted": "22.8%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Credit Risk",
+        "title": "Unsecured Loan Exposure",
+        "detail": "Over 85% of loan book is unsecured personal loans, leaving it exposed to macro economic defaults."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Regulatory",
+        "title": "RBI Digital Lending Guidelines",
+        "detail": "Strict scrutiny around FLDG default guarantees and customer data handling could raise compliance costs."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Partner Reliance",
+        "title": "Co-Lending Capital Partnerships",
+        "detail": "Heavy reliance on banking partners for loan book funding if partner risk appetites contract."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "Asset quality remains controlled with Gross NPA under 1.9%, but unsecured nature demands ongoing vigilance."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹28 (21.9%)",
+      "estimatedListingPrice": "₹156",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.5,
+      "financialGrowth": 8.5,
+      "profitabilityQuality": 7.8,
+      "valuationFairness": 8,
+      "overallRating": "7.9 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Healthy retail subscription appetite, reasonable pricing below 25x P/E, and robust 20%+ GMP premium.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Proven profitability turnaround, 67% revenue CAGR, scalable tech architecture, and disciplined underwriting.",
+    "summaryTake": "Money View stands out as a rare profitable Indian fintech IPO with clean capital discipline. Suitable for both listing gains and long-term compounders."
+  },
+  "scripts": {
+    "chapter_1": "India's digital lending boom has produced its next major public contender. Money View Technologies is entering Dalal Street with a 1,200 crore initial public offering, comprising an 800 crore fresh issue and a 400 crore offer for sale. Priced between 120 and 128 rupees per share, retail investors can participate with an investment of under 15,000 rupees. But in a crowded fintech landscape where profitable growth is notoriously rare, does Money View justify your hard-earned capital, or should you stay away? In this complete analysis, we break down their business engine, three-year financial trajectory, peer valuations, and the ultimate apply or avoid verdict.",
+    "chapter_2": "To evaluate Money View, we must examine how they actually make money. Founded as a personal finance tracker, Money View has scaled into an end-to-end digital lending ecosystem serving over 2.8 million active borrowers across Tier-2 and Tier-3 India. Their revenue breaks into three key buckets. Personal loans and credit products form the core, contributing 74 percent of total revenue, or nearly 1,200 crore. Loan origination and co-lending distribution fees from partner banks add another 18 percent, while value-added digital products provide high-margin recurring income. With over 50 million app downloads and 3,850 crore in assets under management, their proprietary algorithm powers rapid customer acquisition at low operating costs.",
+    "chapter_3": "The macroeconomic backdrop offers strong structural tailwinds. India's digital consumer credit market is projected to expand from 70 billion dollars today to over 350 billion dollars by 2030, compounding at a remarkable 28 percent annually. Three structural drivers are accelerating this shift. First, widespread UPI adoption has habituated 700 million smartphone owners to paperless transactions. Second, the Reserve Bank of India's Account Aggregator framework provides friction-free bank statement analysis, replacing slow manual paperwork. And third, formal credit penetration in non-metro India remains under 15 percent of GDP. Money View sits comfortably among the top three independent digital lenders primed to absorb this demand.",
+    "chapter_4": "Let's turn to the hard numbers, because this is where Money View surprises skeptics. Over the last three financial years, revenue skyrocketed from 577 crore in financial year 23 to 1,012 crore in financial year 24, reaching 1,620 crore in financial year 25. That represents an exceptional 67 percent compound annual growth rate. Operating EBITDA expanded from 68 crore to 295 crore, driving EBITDA margins from 11.8 percent to an impressive 18.2 percent. Most crucially, bottom-line net profit swung from an 18 crore loss in financial year 23 into positive territory at 78 crore, surging to 172 crore in financial year 25. With a clean debt to equity ratio of 0.42 and positive operating cash flow of 142 crore, their financial foundation is robust.",
+    "chapter_5": "Next, let's dissect the issue structure and understand where your money is actually going. The issue opens on October 14 and closes October 16. Out of the total 1,200 crore raise, two-thirds, or 800 crore, is fresh growth capital, while 400 crore is an offer for sale by early venture investors. Examining the objects of the offer, 65 percent of fresh funds, or 520 crore, is earmarked to augment their tier-one capital adequacy for expanded loan disbursements. Another 20 percent is directed toward expanding artificial intelligence underwriting infrastructure and cloud servers, while the remaining 15 percent covers general corporate expenses. The substantial fresh issue ratio demonstrates clear dedication to business expansion rather than promoter exit.",
+    "chapter_6": "Valuation is where retail investors either win or lose. At the upper price band of 128 rupees, Money View commands a price to earnings multiple of 24.6 times financial year 25 earnings. When benchmarked against listed peers, Bajaj Finance trades at over 31 times earnings with a 5.6 times price to book, while Poonawalla Fincorp commands nearly 35 times earnings. Even CreditAccess Grameen trades around 19 times earnings in the microfinance segment. With a sector median of approximately 34 times, Money View enters the market at a tangible 15 to 20 percent discount. Their return on net worth of 19.8 percent places them neck-and-neck with Tier-1 NBFCs, offering an attractive margin of safety.",
+    "chapter_7": "However, no investment is without risk, and Money View carries three critical red flags you must weigh. First and foremost is asset quality risk: over 85 percent of their loan portfolio consists of unsecured personal loans. In the event of an economic downturn, unsecured defaults rise exponentially. Second is regulatory scrutiny: the Reserve Bank of India has tightened capital requirements for consumer credit and strict guidelines on first-loss default guarantees. Third is partner bank dependency: while Money View originates loans, a significant portion is financed alongside partner balance sheets. If banking partners tighten liquidity, origination volumes could contract. Fortunately, gross NPA is currently contained at 1.9 percent, but credit vigilance is mandatory.",
+    "chapter_8": "So, what is the final decision on the Money View IPO? In the grey market, the premium is trending strongly at 28 rupees, signaling a potential 22 percent listing gain. On our fundamental scorecard, Money View scores an impressive 7.9 out of 10, propelled by rapid 67 percent top-line compounding, a proven profit turnaround, and sensible valuation pricing. Our verdict: for short-term retail investors, this is a clear Apply for listing gains. For long-term investors, the scalable tech platform and disciplined unit economics warrant a Subscribe for long-term compounding. If you found this data-driven analysis valuable, hit the subscribe button, drop your thoughts in the comments, and share this breakdown with fellow investors."
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  },
+  "timeline": {
+    "totalFrames": 10067,
+    "fps": 30,
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "chapters": [
+      {
+        "index": 0,
+        "id": "chapter_1",
+        "title": "Overview & Issue Highlights",
+        "shortTitle": "Overview",
+        "from": 0,
+        "durationInFrames": 1237,
+        "audioDurationSec": 39.758367346938776
+      },
+      {
+        "index": 1,
+        "id": "chapter_2",
+        "title": "Business Model & Monetization",
+        "shortTitle": "Business",
+        "from": 1237,
+        "durationInFrames": 1515,
+        "audioDurationSec": 49.031836734693876
+      },
+      {
+        "index": 2,
+        "id": "chapter_3",
+        "title": "Industry Backdrop & Market TAM",
+        "shortTitle": "Industry",
+        "from": 2752,
+        "durationInFrames": 1159,
+        "audioDurationSec": 37.14612244897959
+      },
+      {
+        "index": 3,
+        "id": "chapter_4",
+        "title": "3-Year Financial Statements",
+        "shortTitle": "Financials",
+        "from": 3911,
+        "durationInFrames": 1662,
+        "audioDurationSec": 53.57714285714286
+      },
+      {
+        "index": 4,
+        "id": "chapter_5",
+        "title": "Issue Details & Fresh Capital",
+        "shortTitle": "Issue",
+        "from": 5573,
+        "durationInFrames": 1309,
+        "audioDurationSec": 42.16163265306122
+      },
+      {
+        "index": 5,
+        "id": "chapter_6",
+        "title": "Valuation & Peer Benchmarking",
+        "shortTitle": "Valuation",
+        "from": 6882,
+        "durationInFrames": 949,
+        "audioDurationSec": 30.484897959183673
+      },
+      {
+        "index": 6,
+        "id": "chapter_7",
+        "title": "Structural Red Flags & Risks",
+        "shortTitle": "Risks",
+        "from": 7831,
+        "durationInFrames": 801,
+        "audioDurationSec": 24.03265306122449
+      },
+      {
+        "index": 7,
+        "id": "chapter_8",
+        "title": "Final Decision & Analyst Scorecard",
+        "shortTitle": "Verdict",
+        "from": 8632,
+        "durationInFrames": 1435,
+        "audioDurationSec": 46.7330612244898
+      }
+    ],
+    "scenes": [
+      {
+        "id": "cold_open",
+        "chapterIndex": 0,
+        "title": "Cold Open Hook",
+        "from": 0,
+        "durationInFrames": 237,
+        "audioDurationSec": 7.549387755102041,
+        "audioFile": "audio/moneyview/scenes/scene_cold_open.mp3",
+        "scriptText": "Is India's upcoming fintech giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply."
+      },
+      {
+        "id": "logo_reveal",
+        "chapterIndex": 0,
+        "title": "Dalal Street Entrance",
+        "from": 237,
+        "durationInFrames": 216,
+        "audioDurationSec": 6.817959183673469,
+        "audioFile": "audio/moneyview/scenes/scene_logo_reveal.mp3",
+        "scriptText": "Money View Technologies is hitting Dalal Street with a landmark digital lending IPO on the N S E and B S E."
+      },
+      {
+        "id": "issue_numbers",
+        "chapterIndex": 0,
+        "title": "Key Issue Numbers",
+        "from": 453,
+        "durationInFrames": 379,
+        "audioDurationSec": 12.251428571428571,
+        "audioFile": "audio/moneyview/scenes/scene_issue_numbers.mp3",
+        "scriptText": "The company is raising 1,200 crore in a price band of 120 to 128 per share, with a lot size of 115 shares requiring a minimum investment of 14,720."
+      },
+      {
+        "id": "timeline_stakes",
+        "chapterIndex": 0,
+        "title": "IPO Roadmap & Dates",
+        "from": 832,
+        "durationInFrames": 405,
+        "audioDurationSec": 13.139591836734693,
+        "audioFile": "audio/moneyview/scenes/scene_timeline_stakes.mp3",
+        "scriptText": "Bidding opens on Oct 14 – Oct 16, 2026, with allotment finalized on Oct 19, 2026 and listing slated for Oct 22, 2026. Mark your calendar."
+      },
+      {
+        "id": "biz_title",
+        "chapterIndex": 1,
+        "title": "Business Model Intro",
+        "from": 1237,
+        "durationInFrames": 309,
+        "audioDurationSec": 9.926530612244898,
+        "audioFile": "audio/moneyview/scenes/scene_biz_title.mp3",
+        "scriptText": "Chapter two: Business Model. How does Money View Technologies actually monetize its platform? Let us break down their core revenue streams."
+      },
+      {
+        "id": "biz_story",
+        "chapterIndex": 1,
+        "title": "Platform Value Proposition",
+        "from": 1546,
+        "durationInFrames": 547,
+        "audioDurationSec": 17.867755102040817,
+        "audioFile": "audio/moneyview/scenes/scene_biz_story.mp3",
+        "scriptText": "Full-Stack Digital Lending & Financial Services Platform. Money View operates an end-to-end proprietary mobile platform providing unsecured personal loans, credit products, and digital financial management tools to underserved Tier 2 and Tier 3 consumers."
+      },
+      {
+        "id": "biz_donut",
+        "chapterIndex": 1,
+        "title": "Revenue Segment Breakdown",
+        "from": 2093,
+        "durationInFrames": 375,
+        "audioDurationSec": 12.146938775510204,
+        "audioFile": "audio/moneyview/scenes/scene_biz_donut.mp3",
+        "scriptText": "Looking at revenue contribution, Personal Loans & Credit accounts for 74 percent, and Origination & Distribution Fees accounts for 18 percent, and Value-Added Financial Products accounts for 8 percent."
+      },
+      {
+        "id": "biz_metrics",
+        "chapterIndex": 1,
+        "title": "Operational Scale & AUM",
+        "from": 2468,
+        "durationInFrames": 284,
+        "audioDurationSec": 9.09061224489796,
+        "audioFile": "audio/moneyview/scenes/scene_biz_metrics.mp3",
+        "scriptText": "Operationally, the platform boasts 50 million plus App Downloads, 2.8 Million Active Borrowers, 3,850 crore A U M."
+      },
+      {
+        "id": "ind_title",
+        "chapterIndex": 2,
+        "title": "Market Opportunity Intro",
+        "from": 2752,
+        "durationInFrames": 269,
+        "audioDurationSec": 8.594285714285714,
+        "audioFile": "audio/moneyview/scenes/scene_ind_title.mp3",
+        "scriptText": "Chapter three: Market Opportunity. How large is India's consumer credit space, and what tailwinds are driving this expansion?"
+      },
+      {
+        "id": "tam_reveal",
+        "chapterIndex": 2,
+        "title": "Addressable Market TAM",
+        "from": 3021,
+        "durationInFrames": 350,
+        "audioDurationSec": 11.284897959183674,
+        "audioFile": "audio/moneyview/scenes/scene_tam_reveal.mp3",
+        "scriptText": "The Indian Digital Lending & Consumer Credit is projected to expand into a 350 billion dollars by 2030, compounding at a rapid 28.5 percent Industry compound annual growth rate."
+      },
+      {
+        "id": "growth_drivers",
+        "chapterIndex": 2,
+        "title": "Structural Growth Drivers",
+        "from": 3371,
+        "durationInFrames": 303,
+        "audioDurationSec": 9.743673469387755,
+        "audioFile": "audio/moneyview/scenes/scene_growth_drivers.mp3",
+        "scriptText": "Key structural growth catalysts include Smartphone & UPI Penetration, alongside Account Aggregator Ecosystem, alongside Under-Penetrated Credit Landscape."
+      },
+      {
+        "id": "market_position",
+        "chapterIndex": 2,
+        "title": "Competitive Positioning",
+        "from": 3674,
+        "durationInFrames": 237,
+        "audioDurationSec": 7.523265306122449,
+        "audioFile": "audio/moneyview/scenes/scene_market_position.mp3",
+        "scriptText": "Money View Technologies holds a commanding market presence, currently Ranked among India's Top 3 independent digital lending ecosystems."
+      },
+      {
+        "id": "fin_title",
+        "chapterIndex": 3,
+        "title": "Financials Deep Dive Intro",
+        "from": 3911,
+        "durationInFrames": 275,
+        "audioDurationSec": 8.80326530612245,
+        "audioFile": "audio/moneyview/scenes/scene_fin_title.mp3",
+        "scriptText": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength."
+      },
+      {
+        "id": "revenue_chart",
+        "chapterIndex": 3,
+        "title": "3-Year Revenue Growth",
+        "from": 4186,
+        "durationInFrames": 432,
+        "audioDurationSec": 14.027755102040816,
+        "audioFile": "audio/moneyview/scenes/scene_revenue_chart.mp3",
+        "scriptText": "Topline revenue surged from 577 crore in financial year 23 to 1,620 crore in financial year 25, representing an impressive 67.5 percent compound annual growth rate."
+      },
+      {
+        "id": "profit_arc",
+        "chapterIndex": 3,
+        "title": "Profitability Turnaround & EBITDA",
+        "from": 4618,
+        "durationInFrames": 395,
+        "audioDurationSec": 12.8,
+        "audioFile": "audio/moneyview/scenes/scene_profit_arc.mp3",
+        "scriptText": "On the bottom line, ebitda scaled to 295 crore, while net profit made a sharp turnaround from a loss of 18 crore to positive 172 crore with 10.6 percent profit margin."
+      },
+      {
+        "id": "balance_sheet",
+        "chapterIndex": 3,
+        "title": "Balance Sheet & Cash Flows",
+        "from": 5013,
+        "durationInFrames": 341,
+        "audioDurationSec": 10.997551020408164,
+        "audioFile": "audio/moneyview/scenes/scene_balance_sheet.mp3",
+        "scriptText": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.42 times, positive operating cash flow of 142 crore, and a return on net worth of 19.8 percent."
+      },
+      {
+        "id": "fin_summary",
+        "chapterIndex": 3,
+        "title": "Financial Health Takeaway",
+        "from": 5354,
+        "durationInFrames": 219,
+        "audioDurationSec": 6.948571428571428,
+        "audioFile": "audio/moneyview/scenes/scene_fin_summary.mp3",
+        "scriptText": "Overall, the company has successfully decoupled unit economics from aggressive marketing spend, demonstrating durable cash generation."
+      },
+      {
+        "id": "issue_title",
+        "chapterIndex": 4,
+        "title": "Issue Details Intro",
+        "from": 5573,
+        "durationInFrames": 212,
+        "audioDurationSec": 6.713469387755102,
+        "audioFile": "audio/moneyview/scenes/scene_issue_title.mp3",
+        "scriptText": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?"
+      },
+      {
+        "id": "issue_split",
+        "chapterIndex": 4,
+        "title": "Fresh Issue vs OFS Split",
+        "from": 5785,
+        "durationInFrames": 338,
+        "audioDurationSec": 10.893061224489795,
+        "audioFile": "audio/moneyview/scenes/scene_issue_split.mp3",
+        "scriptText": "The issue is structured with a fresh capital issue of 800 crore, or 66.7 percent, and an offer for sale component of 400 crore, or 33.3 percent."
+      },
+      {
+        "id": "objects_issue",
+        "chapterIndex": 4,
+        "title": "Objects of the Offer",
+        "from": 6123,
+        "durationInFrames": 436,
+        "audioDurationSec": 14.158367346938775,
+        "audioFile": "audio/moneyview/scenes/scene_objects_issue.mp3",
+        "scriptText": "Fresh proceeds are earmarked for 65 percent towards Augmenting capital base for future lending growth, and 20 percent towards Technology infrastructure & AI risk underwriting models, and 15 percent towards General corporate purposes & offer expenses."
+      },
+      {
+        "id": "investor_quota",
+        "chapterIndex": 4,
+        "title": "Reservation Quotas",
+        "from": 6559,
+        "durationInFrames": 323,
+        "audioDurationSec": 10.396734693877551,
+        "audioFile": "audio/moneyview/scenes/scene_investor_quota.mp3",
+        "scriptText": "For subscription quotas, retail investors are allocated 35 percent, qualified institutional buyers get 50 percent, and high net-worth individuals receive 15 percent."
+      },
+      {
+        "id": "val_title",
+        "chapterIndex": 5,
+        "title": "Valuation & Peers Intro",
+        "from": 6882,
+        "durationInFrames": 227,
+        "audioDurationSec": 7.183673469387755,
+        "audioFile": "audio/moneyview/scenes/scene_val_title.mp3",
+        "scriptText": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?"
+      },
+      {
+        "id": "peer_comparison",
+        "chapterIndex": 5,
+        "title": "Peer Benchmarking Matrix",
+        "from": 7109,
+        "durationInFrames": 390,
+        "audioDurationSec": 12.617142857142857,
+        "audioFile": "audio/moneyview/scenes/scene_peer_comparison.mp3",
+        "scriptText": "At the upper price band, the company demands a price-to-earnings multiple of 24.6 times, compared to Bajaj Finance at 31.2 times and Poonawalla Fincorp at 34.5 times."
+      },
+      {
+        "id": "val_summary",
+        "chapterIndex": 5,
+        "title": "Valuation Assessment",
+        "from": 7499,
+        "durationInFrames": 332,
+        "audioDurationSec": 10.684081632653061,
+        "audioFile": "audio/moneyview/scenes/scene_val_summary.mp3",
+        "scriptText": "Against an industry average P E of 33.8 times, Priced at a reasonable discount to established listed peers Bajaj Finance and Poonawalla."
+      },
+      {
+        "id": "risk_title",
+        "chapterIndex": 6,
+        "title": "Key Risks Intro",
+        "from": 7831,
+        "durationInFrames": 239,
+        "audioDurationSec": 7.601632653061224,
+        "audioFile": "audio/moneyview/scenes/scene_risk_title.mp3",
+        "scriptText": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh."
+      },
+      {
+        "id": "risk_cards",
+        "chapterIndex": 6,
+        "title": "Primary Structural Risks",
+        "from": 8070,
+        "durationInFrames": 270,
+        "audioDurationSec": 7.053061224489796,
+        "audioFile": "audio/moneyview/scenes/scene_risk_cards.mp3",
+        "scriptText": "The foremost risk is Unsecured Loan Exposure, along with RBI Digital Lending Guidelines and Co-Lending Capital Partnerships."
+      },
+      {
+        "id": "risk_summary",
+        "chapterIndex": 6,
+        "title": "Asset Quality & Risk Rating",
+        "from": 8340,
+        "durationInFrames": 292,
+        "audioDurationSec": 9.37795918367347,
+        "audioFile": "audio/moneyview/scenes/scene_risk_summary.mp3",
+        "scriptText": "Overall risk is assessed as Moderate. While gross non-performing assets remain under two percent, unsecured loan books face heightened vulnerability during credit downturns."
+      },
+      {
+        "id": "verdict_title",
+        "chapterIndex": 7,
+        "title": "Verdict & Scorecard Intro",
+        "from": 8632,
+        "durationInFrames": 207,
+        "audioDurationSec": 6.530612244897959,
+        "audioFile": "audio/moneyview/scenes/scene_verdict_title.mp3",
+        "scriptText": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard."
+      },
+      {
+        "id": "scorecard",
+        "chapterIndex": 7,
+        "title": "GMP & Analyst Scorecard",
+        "from": 8839,
+        "durationInFrames": 582,
+        "audioDurationSec": 19.04326530612245,
+        "audioFile": "audio/moneyview/scenes/scene_scorecard.mp3",
+        "scriptText": "With an active grey market premium of 28 (21.9 percent) pointing to an estimated listing price of 156, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.9 / 10."
+      },
+      {
+        "id": "outro",
+        "chapterIndex": 7,
+        "title": "Summary Take & Outro",
+        "from": 9421,
+        "durationInFrames": 646,
+        "audioDurationSec": 21.15918367346939,
+        "audioFile": "audio/moneyview/scenes/scene_outro.mp3",
+        "scriptText": "Money View stands out as a rare profitable Indian fintech IPO with clean capital discipline. Suitable for both listing gains and long-term compounders. What is your bidding strategy for Money View Technologies? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+      }
+    ]
+  },
+  "sceneScripts": {
+    "cold_open": "Is India's upcoming fintech giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.",
+    "logo_reveal": "Money View Technologies is hitting Dalal Street with a landmark digital lending IPO on the NSE  and  BSE.",
+    "issue_numbers": "The company is raising ₹1,200 Cr in a price band of ₹120 – ₹128 per share, with a lot size of 115 shares requiring a minimum investment of ₹14,720.",
+    "timeline_stakes": "Bidding opens on Oct 14 – Oct 16, 2026, with allotment finalized on Oct 19, 2026 and listing slated for Oct 22, 2026. Mark your calendar.",
+    "biz_title": "Chapter two: Business Model. How does Money View Technologies actually monetize its platform? Let us break down their core revenue streams.",
+    "biz_story": "Full-Stack Digital Lending & Financial Services Platform. Money View operates an end-to-end proprietary mobile platform providing unsecured personal loans, credit products, and digital financial management tools to underserved Tier-2 and Tier-3 consumers.",
+    "biz_donut": "Looking at revenue contribution, Personal Loans & Credit accounts for 74 percent, and Origination & Distribution Fees accounts for 18 percent, and Value-Added Financial Products accounts for 8 percent.",
+    "biz_metrics": "Operationally, the platform boasts 50M+ App Downloads, 2.8 Million Active Borrowers, ₹3,850 Cr AUM.",
+    "ind_title": "Chapter three: Market Opportunity. How large is India's consumer credit space, and what tailwinds are driving this expansion?",
+    "tam_reveal": "The Indian Digital Lending & Consumer Credit is projected to expand into a $350 Billion by 2030, compounding at a rapid 28.5% Industry CAGR.",
+    "growth_drivers": "Key structural growth catalysts include Smartphone & UPI Penetration, alongside Account Aggregator Ecosystem, alongside Under-Penetrated Credit Landscape.",
+    "market_position": "Money View Technologies holds a commanding market presence, currently Ranked among India's Top 3 independent digital lending ecosystems.",
+    "fin_title": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength.",
+    "revenue_chart": "Topline revenue surged from ₹577 Cr in FY23 to ₹1,620 Cr in FY25, representing an impressive 67.5% CAGR.",
+    "profit_arc": "On the bottom line, ebitda scaled to ₹295 Cr, while net profit made a sharp turnaround from a loss of ₹18 Cr to positive ₹172 Cr with 10.6% profit margin.",
+    "balance_sheet": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.42x, positive operating cash flow of ₹142 Cr, and a return on net worth of 19.8%.",
+    "fin_summary": "Overall, the company has successfully decoupled unit economics from aggressive marketing spend, demonstrating durable cash generation.",
+    "issue_title": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?",
+    "issue_split": "The issue is structured with a fresh capital issue of ₹800 Cr, or 66.7%, and an offer for sale component of ₹400 Cr, or 33.3%.",
+    "objects_issue": "Fresh proceeds are earmarked for 65% towards Augmenting capital base for future lending growth, and 20% towards Technology infrastructure & AI risk underwriting models, and 15% towards General corporate purposes & offer expenses.",
+    "investor_quota": "For subscription quotas, retail investors are allocated 35%, qualified institutional buyers get 50%, and high net-worth individuals receive 15%.",
+    "val_title": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?",
+    "peer_comparison": "At the upper price band, the company demands a price-to-earnings multiple of 24.6x, compared to Bajaj Finance at 31.2x and Poonawalla Fincorp at 34.5x.",
+    "val_summary": "Against an industry average P E of 33.8x, Priced at a reasonable discount to established listed peers Bajaj Finance and Poonawalla.",
+    "risk_title": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.",
+    "risk_cards": "The foremost risk is Unsecured Loan Exposure, along with RBI Digital Lending Guidelines and Co-Lending Capital Partnerships.",
+    "risk_summary": "Overall risk is assessed as Moderate. While gross non-performing assets remain under two percent, unsecured loan books face heightened vulnerability during credit downturns.",
+    "verdict_title": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.",
+    "scorecard": "With an active grey market premium of ₹28 (21.9%) pointing to an estimated listing price of ₹156, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.9 / 10.",
+    "outro": "Money View stands out as a rare profitable Indian fintech IPO with clean capital discipline. Suitable for both listing gains and long-term compounders. What is your bidding strategy for Money View Technologies? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+  }
+}

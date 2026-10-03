@@ -1,0 +1,207 @@
+{
+  "id": "pooja-logistics",
+  "companyName": "POOJA LOGISTICS",
+  "companyNameLines": [
+    "Pooja",
+    "Logistics"
+  ],
+  "logoInitials": "PL",
+  "domain": "poojalogistics.com",
+  "logoUrl": "https://www.google.com/s2/favicons?domain=poojalogistics.com&sz=256",
+  "exchange": "BSE • NSE",
+  "badgeSubtitle": "IPO Analysis 2026",
+  "listingDate": "2026-06-01",
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  },
+  "issue": {
+    "totalFormatted": "₹214.48 Cr",
+    "freshFormatted": "₹0.00 Cr",
+    "freshPercent": "~0% of total",
+    "ofsFormatted": "₹214.48 Cr",
+    "ofsPercent": "~100% of total",
+    "priceBand": "₹326 – ₹343",
+    "lotSize": "800 shares",
+    "minInvestment": "₹274,400"
+  },
+  "growth": {
+    "period1": {
+      "label": "FY24",
+      "revenue": "₹206.45 Cr",
+      "height": 380
+    },
+    "period2": {
+      "label": "FY26",
+      "revenue": "₹236.50 Cr",
+      "height": 560
+    },
+    "timeSpanText": "2 yrs",
+    "cagrText": "~7% growth",
+    "cagrLabel": "Revenue Growth (YoY)"
+  },
+  "profitability": {
+    "patFormatted": "₹38.69 Cr",
+    "patPeriod": "FY26 Net Profit (PAT)",
+    "cautions": [
+      {
+        "icon": "⚠️",
+        "text": "High contingent liability of ₹61.64 Cr"
+      },
+      {
+        "icon": "📈",
+        "text": "Inconsistent bottom line with FY25 setback"
+      }
+    ],
+    "footnote": "Profitability spiked in 9M-FY26 but sustainability is questionable due to accounting adjustments in FY25.",
+    "netMargin": "16.36%",
+    "revenueContext": "On ₹236.50 Cr revenue",
+    "marginAssessment": "Moderate"
+  },
+  "valuation": {
+    "ipoPrice": "₹343",
+    "priceBandLabel": "₹326 – ₹343",
+    "bandNote": "Upper price band",
+    "companyPe": "15.51×",
+    "companyPeStatus": "✅ Fairly priced",
+    "companyPeStatusColor": "#1F8A5E",
+    "peerMedianPe": "24.45×",
+    "peerMedianStatus": "⚠️ Sector avg",
+    "takeaway": "P/E of 15.51x based on 9M-FY26 earnings appears reasonable compared to peers, but relies on unsustainable bumper profits."
+  },
+  "risks": {
+    "items": [
+      {
+        "num": "01",
+        "title": "High Borrowings",
+        "detail": "Overall borrowings of ₹242.57 Cr raise concerns about debt burden."
+      },
+      {
+        "num": "02",
+        "title": "Contingent Liabilities",
+        "detail": "Contingent liability of ₹61.64 Cr as of Dec 2025 is a significant alarm."
+      }
+    ],
+    "bottomNote": "The company has no listed peers, making valuation difficult, and financial inconsistencies raise red flags."
+  },
+  "myTake": {
+    "metrics": [
+      {
+        "label": "Growth Rate",
+        "score": "6/10",
+        "color": "#F39C12"
+      },
+      {
+        "label": "Valuation",
+        "score": "7/10",
+        "color": "#1F8A5E"
+      },
+      {
+        "label": "Risk Level",
+        "score": "High",
+        "color": "#E74C3C"
+      }
+    ],
+    "suggestion": {
+      "headlinePrefix": "Apply for ",
+      "highlightWord": "long term",
+      "headlineSuffix": " only.",
+      "detail": "Well-informed investors may park moderate funds for long term, but caution is advised due to high debt and inconsistent profits."
+    }
+  },
+  "verdict": {
+    "positives": [
+      "Top-line growth in reported periods",
+      "Strong R&D capabilities and 12 years of brand establishment"
+    ],
+    "concerns": [
+      "FY25 bottom line setback due to accounting adjustments",
+      "High contingent liabilities and overall borrowings"
+    ],
+    "gmpWarningHeadline": "GMP is indicative, not guaranteed",
+    "gmpWarningSubtitle": "Always analyze core business fundamentals.",
+    "ctaHeadline": "Subscribe & Follow for More",
+    "ctaSubtitle": "Daily IPO reviews & deep-dives."
+  },
+  "scripts": {
+    "scene_0": "POOJA LOGISTICS is hitting Dalal Street with a 214.48 crore IPO! Should you apply or avoid? Let's check the numbers.",
+    "scene_1": "The issue size is 214.48 crore, with shares priced between 326 to 343. You can bid with a minimum investment of 274,400.",
+    "scene_2": "Topline surged from 206.45 crore in FY24 to 236.50 crore in FY26, delivering a solid ~7% growth expansion.",
+    "scene_3": "Here is the catch: POOJA LOGISTICS reported a net profit of 38.69Cr in FY26 Net Profit (PAT), continuing operational cash burn.",
+    "scene_4": "At 343 per share, price to earnings is 15.51×, trading at 3.2 times sales against peers.",
+    "scene_5": "Watch out for three big risks: High Borrowings, Contingent Liabilities. Never invest blindly without understanding the business.",
+    "scene_6": "My personal take: growth is visible, but sustained profitability remains unproven. Listing gains look risky without positive operating cash flows.",
+    "scene_7": "Turnarounds carry heavy execution risk. Don't decide based on grey market hype alone. Follow for data-driven IPO breakdowns every single week!"
+  },
+  "timeline": {
+    "totalFrames": 2282,
+    "fps": 30,
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "scenes": [
+      {
+        "index": 0,
+        "id": "scene_0",
+        "from": 0,
+        "durationInFrames": 264,
+        "audioDurationSec": 8.385306122448979,
+        "audioFile": "audio/pooja-logistics/scene_0.mp3"
+      },
+      {
+        "index": 1,
+        "id": "scene_1",
+        "from": 244,
+        "durationInFrames": 373,
+        "audioDurationSec": 12.016326530612245,
+        "audioFile": "audio/pooja-logistics/scene_1.mp3"
+      },
+      {
+        "index": 2,
+        "id": "scene_2",
+        "from": 607,
+        "durationInFrames": 285,
+        "audioDurationSec": 9.09061224489796,
+        "audioFile": "audio/pooja-logistics/scene_2.mp3"
+      },
+      {
+        "index": 3,
+        "id": "scene_3",
+        "from": 882,
+        "durationInFrames": 364,
+        "audioDurationSec": 11.702857142857143,
+        "audioFile": "audio/pooja-logistics/scene_3.mp3"
+      },
+      {
+        "index": 4,
+        "id": "scene_4",
+        "from": 1236,
+        "durationInFrames": 212,
+        "audioDurationSec": 6.635102040816326,
+        "audioFile": "audio/pooja-logistics/scene_4.mp3"
+      },
+      {
+        "index": 5,
+        "id": "scene_5",
+        "from": 1438,
+        "durationInFrames": 231,
+        "audioDurationSec": 7.288163265306123,
+        "audioFile": "audio/pooja-logistics/scene_5.mp3"
+      },
+      {
+        "index": 6,
+        "id": "scene_6",
+        "from": 1659,
+        "durationInFrames": 333,
+        "audioDurationSec": 10.684081632653061,
+        "audioFile": "audio/pooja-logistics/scene_6.mp3"
+      },
+      {
+        "index": 7,
+        "id": "scene_7",
+        "from": 1982,
+        "durationInFrames": 300,
+        "audioDurationSec": 9.142857142857142,
+        "audioFile": "audio/pooja-logistics/scene_7.mp3"
+      }
+    ]
+  }
+}

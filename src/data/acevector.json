@@ -1,0 +1,217 @@
+{
+  "id": "acevector",
+  "companyName": "ACEVECTOR",
+  "companyNameLines": [
+    "ACE",
+    "VECTOR"
+  ],
+  "domain": "snapdeal.com",
+  "logoUrl": "https://www.google.com/s2/favicons?domain=snapdeal.com&sz=256",
+  "logoInitials": "AV",
+  "exchange": "BSE • NSE",
+  "badgeSubtitle": "IPO Analysis 2026",
+  "listingDate": "2026-10-05",
+  "issue": {
+    "totalFormatted": "₹420 Cr",
+    "freshFormatted": "₹287 Cr",
+    "freshPercent": "~68% of total",
+    "ofsFormatted": "₹133 Cr",
+    "ofsPercent": "~32% of total",
+    "priceBand": "₹30 – ₹32",
+    "lotSize": "468 shares",
+    "minInvestment": "₹14,976"
+  },
+  "growth": {
+    "period1": {
+      "label": "FY25",
+      "revenue": "₹407 Cr",
+      "height": 380
+    },
+    "period2": {
+      "label": "FY26",
+      "revenue": "₹538 Cr",
+      "height": 550
+    },
+    "timeSpanText": "1 yr",
+    "cagrText": "~32% growth",
+    "cagrLabel": "Revenue Growth (YoY)"
+  },
+  "profitability": {
+    "patFormatted": "-₹45.5 Cr",
+    "patPeriod": "FY26 Net Loss (PAT)",
+    "cautions": [
+      {
+        "icon": "⚠️",
+        "text": "Continued losses for 3 consecutive years"
+      },
+      {
+        "icon": "📉",
+        "text": "Negative operating cash flows"
+      }
+    ],
+    "footnote": "Loss reduced by ~64% from ₹126 Cr in FY25 — heading toward breakeven.",
+    "netMargin": "Negative",
+    "revenueContext": "On ₹538 Cr revenue",
+    "marginAssessment": "Loss-making business model"
+  },
+  "valuation": {
+    "ipoPrice": "₹32",
+    "priceBandLabel": "₹30 – ₹32",
+    "bandNote": "Upper band",
+    "companyPe": "N/A",
+    "companyPeStatus": "Loss making ⚠️",
+    "peerMedianPe": "3.2× P/S",
+    "peerMedianStatus": "E-comm peer avg",
+    "takeaway": "Valuation relies on Snapdeal turnaround & Unicommerce SaaS."
+  },
+  "risks": {
+    "items": [
+      {
+        "num": "01",
+        "title": "Snapdeal Reliance",
+        "detail": "Major revenue tied to Snapdeal in hyper-competitive e-commerce."
+      },
+      {
+        "num": "02",
+        "title": "Operating Cash Burn",
+        "detail": "Negative operating cash flow requires external capital support."
+      },
+      {
+        "num": "03",
+        "title": "Path to Profit",
+        "detail": "Three straight years of net losses with no dividend history."
+      }
+    ],
+    "bottomNote": "Unicommerce stake is partial; value depends heavily on core marketplace."
+  },
+  "myTake": {
+    "metrics": [
+      {
+        "label": "📈 Growth Story",
+        "score": "Moderate 🟡",
+        "color": "#E8730A"
+      },
+      {
+        "label": "💵 Valuation",
+        "score": "Risky ⚠️",
+        "color": "#D7263D"
+      },
+      {
+        "label": "💳 Cash Flow",
+        "score": "Negative ❌",
+        "color": "#D7263D"
+      },
+      {
+        "label": "📊 Profit Margin",
+        "score": "Loss ❌",
+        "color": "#D7263D"
+      }
+    ],
+    "suggestion": {
+      "headlinePrefix": "High risk: ",
+      "highlightWord": "Avoid or Speculative",
+      "headlineSuffix": " bet.",
+      "detail": "Losses are narrowing rapidly, but fierce competition from giants makes it a high-risk long-term bet."
+    }
+  },
+  "verdict": {
+    "positives": [
+      "• Net loss narrowed significantly by ~64%",
+      "• Consolidates profitable SaaS unit (Unicommerce)",
+      "• Attractive entry valuation at ₹32/share"
+    ],
+    "concerns": [
+      "• Persistent negative operating cash flows",
+      "• Intense rivalry from Flipkart, Amazon & Meesho",
+      "• Heavy execution risk on turnaround"
+    ],
+    "gmpWarningHeadline": "Don't trade on GMP hype 🚫",
+    "gmpWarningSubtitle": "Examine balance sheet sustainability first.",
+    "ctaHeadline": "🔔 Follow for more IPO breakdowns",
+    "ctaSubtitle": "Every week. Data-driven. Free."
+  },
+  "scripts": {
+    "scene_0": "ACEVECTOR IPO is live with a massive 420 crore issue. Should you apply or avoid this high-risk opportunity?",
+    "scene_1": "Total issue is 420 crore, priced between 30 and 32. Lot size is 468 shares, requiring minimum 14,976 to invest.",
+    "scene_2": "Revenue surged from 407 crore to 538 crore, marking a strong thirty-two percent growth rate for the upcoming fiscal year.",
+    "scene_3": "However, they posted a 45 crore net loss. Three consecutive years of losses and negative operating cash flow remain major concerns.",
+    "scene_4": "Priced at 32 per share, P/E is unavailable due to losses. Valuation relies entirely on future turnaround potential rather than current profits.",
+    "scene_5": "Major risks include heavy Snapdeal reliance, intense competition from Amazon and Flipkart, and continuous cash burn requiring external capital support.",
+    "scene_6": "While the loss narrowed by sixty-four percent, execution risk is high. Listing gains depend heavily on market sentiment and successful operational turnaround.",
+    "scene_7": "Apply only if you accept high risk. Ignore GMP hype and focus on fundamentals. Subscribe for more honest IPO analysis and stay informed."
+  },
+  "timeline": {
+    "totalFrames": 2326,
+    "fps": 30,
+    "scenes": [
+      {
+        "index": 0,
+        "id": "scene_0",
+        "from": 0,
+        "durationInFrames": 255,
+        "audioDurationSec": 8.071836734693878,
+        "audioFile": "audio/acevector/scene_0.mp3"
+      },
+      {
+        "index": 1,
+        "id": "scene_1",
+        "from": 235,
+        "durationInFrames": 337,
+        "audioDurationSec": 10.81469387755102,
+        "audioFile": "audio/acevector/scene_1.mp3"
+      },
+      {
+        "index": 2,
+        "id": "scene_2",
+        "from": 562,
+        "durationInFrames": 239,
+        "audioDurationSec": 7.549387755102041,
+        "audioFile": "audio/acevector/scene_2.mp3"
+      },
+      {
+        "index": 3,
+        "id": "scene_3",
+        "from": 791,
+        "durationInFrames": 294,
+        "audioDurationSec": 9.37795918367347,
+        "audioFile": "audio/acevector/scene_3.mp3"
+      },
+      {
+        "index": 4,
+        "id": "scene_4",
+        "from": 1075,
+        "durationInFrames": 321,
+        "audioDurationSec": 10.292244897959185,
+        "audioFile": "audio/acevector/scene_4.mp3"
+      },
+      {
+        "index": 5,
+        "id": "scene_5",
+        "from": 1386,
+        "durationInFrames": 328,
+        "audioDurationSec": 10.52734693877551,
+        "audioFile": "audio/acevector/scene_5.mp3"
+      },
+      {
+        "index": 6,
+        "id": "scene_6",
+        "from": 1704,
+        "durationInFrames": 323,
+        "audioDurationSec": 10.344489795918367,
+        "audioFile": "audio/acevector/scene_6.mp3"
+      },
+      {
+        "index": 7,
+        "id": "scene_7",
+        "from": 2017,
+        "durationInFrames": 309,
+        "audioDurationSec": 9.874285714285714,
+        "audioFile": "audio/acevector/scene_7.mp3"
+      }
+    ]
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  }
+}
