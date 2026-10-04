@@ -8,7 +8,6 @@
   "dependencies": {
     "@andresaya/edge-tts": "^1.8.1",
     "@remotion/cli": "4.0.529",
-    "@remotion/compositor-win32-x64-msvc": "^4.0.529",
     "@remotion/tailwind-v4": "4.0.529",
     "dotenv": "^18.0.4",
     "googleapis": "^182.0.0",
