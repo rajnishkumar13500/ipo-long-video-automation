@@ -12,3 +12,6 @@ service_account.json
 credentials.json
 # Independent projects
 ipo-youtube-publisher/
+
+# Local processing tracker store
+data/processed_ipos.json
