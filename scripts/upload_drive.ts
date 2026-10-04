@@ -227,7 +227,8 @@ async function uploadBufferToDrive(
  */
 export async function uploadIPOToDrive(
   ipoData: IPOData,
-  videoFilePath: string
+  videoFilePath: string,
+  thumbnailPath?: string
 ): Promise<DriveUploadResult | null> {
   const parentFolderId = process.env.GDRIVE_PARENT_FOLDER_ID;
   if (!parentFolderId) {
@@ -362,6 +363,42 @@ export async function uploadIPOToDrive(
       } catch (err) {
         console.warn(`   ⚠️ Could not download logo:`, err);
       }
+    } else if (ipoData.logoUrl) {
+      const localLogoPath = path.resolve(__dirname, `../public/${ipoData.logoUrl.replace(/^\//, "")}`);
+      if (fs.existsSync(localLogoPath)) {
+        const logoBuffer = fs.readFileSync(localLogoPath);
+        const ext = path.extname(localLogoPath).slice(1) || "png";
+        const logoResult = await uploadBufferToDrive(
+          drive,
+          assetsFolderId,
+          `logo.${ext}`,
+          logoBuffer,
+          `image/${ext}`
+        );
+        uploadedFiles.push({ name: logoResult.name, id: logoResult.id, subfolder: "assets" });
+        console.log(`   ✅ Local company logo uploaded to assets/logo.${ext}`);
+      }
+    }
+
+    // E. 1280x720 Thumbnail Image
+    let finalThumbPath = thumbnailPath;
+    if (!finalThumbPath || !fs.existsSync(finalThumbPath)) {
+      const defaultThumbPath = path.resolve(__dirname, `../out/${ipoData.id}-thumb.png`);
+      if (fs.existsSync(defaultThumbPath)) {
+        finalThumbPath = defaultThumbPath;
+      }
+    }
+    if (finalThumbPath && fs.existsSync(finalThumbPath)) {
+      console.log(`   📤 Uploading 1280x720 thumbnail: ${path.basename(finalThumbPath)}...`);
+      const thumbResult = await uploadFileToDrive(
+        drive,
+        assetsFolderId,
+        finalThumbPath,
+        "thumbnail.png",
+        "image/png"
+      );
+      uploadedFiles.push({ name: thumbResult.name, id: thumbResult.id, subfolder: "assets" });
+      console.log(`   ✅ Thumbnail uploaded to assets/thumbnail.png (ID: ${thumbResult.id})`);
     }
 
     // 6. Upload Generated Scene Audio to audio/ subfolder

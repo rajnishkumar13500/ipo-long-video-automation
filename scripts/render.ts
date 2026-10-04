@@ -57,3 +57,36 @@ export function renderIPOVideo(ipoData: IPOData, dataFilePath?: string): string 
     throw error;
   }
 }
+
+/**
+ * Renders a crisp 1280x720 high-CTR thumbnail for YouTube using Remotion Still
+ */
+export function renderIPOThumbnail(ipoData: IPOData, dataFilePath?: string): string {
+  const outDir = path.resolve(__dirname, "../out");
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+
+  let jsonPath = dataFilePath;
+  if (!jsonPath) {
+    jsonPath = path.resolve(__dirname, `../src/data/${ipoData.id}.json`);
+  }
+
+  const thumbFileName = `${ipoData.id}-thumb.png`;
+  const thumbPath = path.join(outDir, thumbFileName);
+
+  console.log(`\n🖼️ Rendering 1280x720 thumbnail for ${ipoData.companyName}...`);
+  console.log(`   Output: out/${thumbFileName}`);
+
+  try {
+    const cmd = `npx remotion still src/index.ts Thumbnail "out/${thumbFileName}" --props="${jsonPath.replace(/\\/g, "/")}"`;
+    console.log(`   Running: ${cmd}`);
+    execSync(cmd, { stdio: "inherit" });
+    console.log(`✅ Thumbnail generated: out/${thumbFileName}`);
+    return thumbPath;
+  } catch (error: any) {
+    console.error(`⚠️ Thumbnail generation failed for ${ipoData.companyName}:`, error?.message || error);
+    return "";
+  }
+}
+

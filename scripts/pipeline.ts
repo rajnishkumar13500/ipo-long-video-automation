@@ -4,7 +4,7 @@ import { getUnprocessedIPOs, DiscoveredIPO } from "./discover";
 import { extractIPODataFromUrl } from "./extract_ipo";
 import { generateIPOScripts } from "./generate_script";
 import { generateAudioAndTimeline } from "./generate_audio";
-import { renderIPOVideo } from "./render";
+import { renderIPOVideo, renderIPOThumbnail } from "./render";
 import { uploadIPOToDrive } from "./upload_drive";
 import { IPOData } from "../src/types/ipo";
 import { loadTracker, recordIPO } from "./tracker";
@@ -122,17 +122,20 @@ async function runPipeline() {
     ).toFixed(1)}s)`
   );
 
-  // Step 4: Render Video with Remotion
+  // Step 4: Render Video & 1280x720 Thumbnail with Remotion
   console.log("\n🎥 Step 4: Rendering animated 16:9 widescreen long-form video with Remotion...");
   let videoPath = "";
+  let thumbnailPath = "";
   try {
     videoPath = renderIPOVideo(ipoData, jsonPath);
+    thumbnailPath = renderIPOThumbnail(ipoData, jsonPath);
     console.log("\n==================================================");
     console.log("🎉  RENDER COMPLETE!");
-    console.log(`📹  Video File: ${videoPath}`);
-    console.log(`📊  Data File:  ${jsonPath}`);
-    console.log(`🎧  Audio Dir:  public/audio/${ipoData.id}/`);
-    console.log(`⏱️  Duration:   ${ipoData.timeline.totalFrames} frames (~${(ipoData.timeline.totalFrames / 30 / 60).toFixed(2)} mins)`);
+    console.log(`📹  Video File:     ${videoPath}`);
+    console.log(`🖼️  Thumbnail File: ${thumbnailPath}`);
+    console.log(`📊  Data File:      ${jsonPath}`);
+    console.log(`🎧  Audio Dir:      public/audio/${ipoData.id}/`);
+    console.log(`⏱️  Duration:       ${ipoData.timeline.totalFrames} frames (~${(ipoData.timeline.totalFrames / 30 / 60).toFixed(2)} mins)`);
     console.log("==================================================");
   } catch (error) {
     console.error("\n❌ Pipeline failed during video rendering:", error);
@@ -151,7 +154,7 @@ async function runPipeline() {
 
   if (shouldUploadDrive) {
     console.log("\n☁️  Step 5: Archiving video and assets to Google Drive...");
-    const driveResult = await uploadIPOToDrive(ipoData, videoPath);
+    const driveResult = await uploadIPOToDrive(ipoData, videoPath, thumbnailPath);
     if (driveResult?.success) {
       recordIPO({
         id: ipoData.id,
