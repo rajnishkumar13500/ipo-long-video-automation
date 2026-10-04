@@ -38,7 +38,8 @@ export function renderIPOVideo(ipoData: IPOData, dataFilePath?: string): string 
   recordIPO(trackerEntry);
 
   try {
-    const cmd = `npx remotion render src/index.ts IPOVideo "out/${outFileName}" --props="${jsonPath.replace(/\\/g, "/")}" --concurrency=6`;
+    const concurrency = process.env.REMOTION_CONCURRENCY || "100%";
+    const cmd = `npx remotion render src/index.ts IPOVideo "out/${outFileName}" --props="${jsonPath.replace(/\\/g, "/")}" --concurrency=${concurrency}`;
     console.log(`   Running: ${cmd}`);
     execSync(cmd, { stdio: "inherit" });
 
