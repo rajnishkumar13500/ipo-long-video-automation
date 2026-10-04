@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { IPOData } from "../src/types/ipo";
+import { ensureVerifiedCompanyLogo } from "./logo_fetcher";
 
 dotenv.config();
 
@@ -408,8 +409,12 @@ export async function extractIPODataFromUrl(
     companyName: companyName,
     ticker: slug.toUpperCase().replace(/[^A-Z0-9]/g, ""),
     domain: domainGuess,
-    logoUrl: `https://www.google.com/s2/favicons?domain=${domainGuess}&sz=256`,
+    logoUrl: "",
   };
+
+  // Verify and download genuine logo across multi-website fallback cascade
+  console.log(`\n🎨 Verifying brand logo across web fallback cascade...`);
+  await ensureVerifiedCompanyLogo(finalData);
 
   // Save to src/data/<slug>.json
   const targetPath = path.resolve(__dirname, `../src/data/${slug}.json`);

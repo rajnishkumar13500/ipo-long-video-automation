@@ -69,6 +69,31 @@ interface KineticTextProps {
 }
 
 /** Each word animates in sequentially with its own color and emphasis. */
+const WordSpan: React.FC<{
+  word: string;
+  wordDelay: number;
+  color: string;
+  size: number;
+  weight: number;
+}> = ({ word, wordDelay, color, size, weight }) => {
+  const opacity = useFadeIn(wordDelay, 12);
+  return (
+    <span
+      style={{
+        fontFamily: FONT.heading,
+        fontSize: size,
+        fontWeight: weight,
+        color,
+        opacity,
+        letterSpacing: "-0.02em",
+        textShadow: color !== C.text ? `0 0 30px ${color}60` : "none",
+      }}
+    >
+      {word}
+    </span>
+  );
+};
+
 export const KineticText: React.FC<KineticTextProps> = ({
   words,
   delay = 0,
@@ -89,28 +114,16 @@ export const KineticText: React.FC<KineticTextProps> = ({
         ...style,
       }}
     >
-      {words.map((word, idx) => {
-        const wordDelay = delay + idx * gap;
-        const opacity = useFadeIn(wordDelay, 12);
-        const color = colors[idx] || C.text;
-
-        return (
-          <span
-            key={idx}
-            style={{
-              fontFamily: FONT.heading,
-              fontSize: size,
-              fontWeight: weight,
-              color,
-              opacity,
-              letterSpacing: "-0.02em",
-              textShadow: color !== C.text ? `0 0 30px ${color}60` : "none",
-            }}
-          >
-            {word}
-          </span>
-        );
-      })}
+      {words.map((word, idx) => (
+        <WordSpan
+          key={idx}
+          word={word}
+          wordDelay={delay + idx * gap}
+          color={colors[idx] || C.text}
+          size={size}
+          weight={weight}
+        />
+      ))}
     </div>
   );
 };

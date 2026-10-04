@@ -143,9 +143,12 @@ GROQ_MODEL=qwen/qwen3.6-27b
 GEMINI_API_KEY=your_gemini_api_key
 GEMINI_MODEL=gemini-2.5-flash
 
-# ─── Voice Synthesis (ElevenLabs with Multi-Key Failover) ────────────────
+# ─── Voice Synthesis (ElevenLabs Dynamic Multi-Key Failover Pool) ─────────
+# Add as many keys as you want (ELEVENLABS_API_KEY_1 ... ELEVENLABS_API_KEY_N or comma-separated ELEVENLABS_API_KEYS)
 ELEVENLABS_API_KEY_1=your_first_elevenlabs_key
 ELEVENLABS_API_KEY_2=your_second_elevenlabs_key
+ELEVENLABS_API_KEY_3=your_third_elevenlabs_key
+# ELEVENLABS_API_KEYS=key1,key2,key3,key4,key5
 ELEVENLABS_VOICE_ID=pNInz6obpgDQGcFmaJgB
 ELEVENLABS_MODEL_ID=eleven_multilingual_v2
 

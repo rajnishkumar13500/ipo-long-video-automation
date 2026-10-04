@@ -10,16 +10,46 @@ export interface DiscoveredIPO {
 
 export function cleanCompanyName(title: string): string {
   let cleaned = title
-    // Remove prefixes/suffixes like "Review by Dilip Davda", "Subscription Status", "(BSE SME)", etc.
-    .replace(/\s*IPO\s*(Review.*|Subscription.*|Allotment.*|GMP.*|Details.*)?/i, "")
+    // 1. Remove CDATA
+    .replace(/<!\[CDATA\[(.*?)\]\]>/g, "$1")
+    // Decode common HTML entities
+    .replace(/&#8217;/g, "'")
+    .replace(/&#8216;/g, "'")
+    .replace(/&#8211;/g, "–")
+    .replace(/&#8212;/g, "—")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    // 2. Remove parenthetical tags like (BSE SME), (NSE SME), (Mainboard), etc.
     .replace(/\(.*?\)/g, "")
-    .replace(/Review by.*/i, "")
+    // 3. Remove leading editorial tags
+    .replace(/^(?:IPO\s*(?:Alert|Update|Watch|Review|Details)?\s*[:\-–—]\s*)/i, "")
+    // 4. Remove author suffixes like "Review by Dilip Davda"
+    .replace(/Review\s+by\s+.*/i, "")
     .trim();
 
-  // If still ends with IPO, remove it
-  cleaned = cleaned.replace(/\s+IPO$/i, "").trim();
+  // 5. If "IPO" appears as an isolated word, extract company name from the left side
+  if (/\bIPO\b/i.test(cleaned)) {
+    const parts = cleaned.split(/\bIPO\b/i);
+    if (parts[0].trim().length >= 2) {
+      cleaned = parts[0].trim();
+    } else if (parts[1] && parts[1].trim().length >= 2) {
+      cleaned = parts[1].trim();
+    }
+  }
+
+  // 6. Strip trailing boilerplate terms that may occur
+  cleaned = cleaned
+    .replace(/\s*(?:Date|Review|Price|Details|Allotment|GMP|Subscription|Status|Analysis|Band|Size|Dates).*$/i, "")
+    // 7. Strip trailing hyphens, colons, commas, or pipes
+    .replace(/[\s\-–—,:|]+$/, "")
+    // 8. Normalize spacing
+    .replace(/\s+/g, " ")
+    .trim();
+
   return cleaned;
 }
+
 
 export async function fetchLatestIPOs(): Promise<DiscoveredIPO[]> {
   const feedUrl = "https://ipowatch.in/feed/";

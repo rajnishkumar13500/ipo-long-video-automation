@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
-import { Img } from "remotion";
-import { C } from "./Tokens";
+import { Img, staticFile } from "remotion";
+import { C, FONT } from "./Tokens";
 
 export interface CompanyLogoProps {
   logoUrl?: string;
@@ -31,22 +31,33 @@ export function buildLogoCandidateSources(opts: {
 }): string[] {
   const candidates: string[] = [];
 
-  // Priority 1: Explicit direct URL
+  const resolveUrl = (raw: string): string => {
+    const trimmed = raw.trim();
+    if (!trimmed) return "";
+    // If local asset in public/ folder, wrap with staticFile()
+    if (trimmed.startsWith("logos/") || trimmed.startsWith("/logos/")) {
+      return staticFile(trimmed.replace(/^\//, ""));
+    }
+    return trimmed;
+  };
+
+  // Priority 1: Explicit direct URL or local path
   if (opts.logoUrl && opts.logoUrl.trim()) {
-    candidates.push(opts.logoUrl.trim());
+    candidates.push(resolveUrl(opts.logoUrl));
   }
 
   // Priority 2: Custom multi-source URLs
   if (opts.logoUrls && Array.isArray(opts.logoUrls)) {
     for (const url of opts.logoUrls) {
-      if (url && url.trim() && !candidates.includes(url.trim())) {
-        candidates.push(url.trim());
+      const resolved = resolveUrl(url);
+      if (resolved && !candidates.includes(resolved)) {
+        candidates.push(resolved);
       }
     }
   }
 
-  // Priority 3: The 3 Reliable Logo & Favicon Services
-  if (opts.domain && opts.domain.trim()) {
+  // Priority 3: Online providers ONLY IF logoUrl is undefined (not explicitly disabled with "")
+  if (opts.logoUrl === undefined && opts.domain && opts.domain.trim()) {
     const cleanDomain = opts.domain
       .toLowerCase()
       .replace(/^https?:\/\//i, "")
@@ -54,20 +65,18 @@ export function buildLogoCandidateSources(opts: {
       .trim();
 
     if (cleanDomain) {
-      // Site 1: Google Favicon High-Res API (sz=256)
-      const s1 = `https://www.google.com/s2/favicons?domain=${cleanDomain}&sz=256`;
-      // Site 2: Unavatar Multi-Engine Service (aggregates Clearbit, Google, Favicon, DDG)
-      const s2 = `https://unavatar.io/${cleanDomain}`;
-      // Site 3: Icon Horse Icon CDN (direct web-icon scraper)
-      const s3 = `https://icon.horse/icon/${cleanDomain}`;
-      // Site 4 (extra backup): DuckDuckGo Favicon
-      const s4 = `https://icons.duckduckgo.com/ip3/${cleanDomain}.ico`;
+      const providers = [
+        `https://www.google.com/s2/favicons?domain=${cleanDomain}&sz=256`,
+        `https://unavatar.io/${cleanDomain}?fallback=false`,
+        `https://icons.duckduckgo.com/ip3/${cleanDomain}.ico`,
+        `https://icon.horse/icon/${cleanDomain}`,
+      ];
 
-      [s1, s2, s3, s4].forEach((url) => {
-        if (!candidates.includes(url)) {
-          candidates.push(url);
+      for (const p of providers) {
+        if (!candidates.includes(p)) {
+          candidates.push(p);
         }
-      });
+      }
     }
   }
 
@@ -97,7 +106,6 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
   const borderRadius = Math.round(size * 0.22);
   const borderWidth = Math.max(3, Math.round(size * 0.05));
   const shadowOffset = Math.max(2, Math.round(size * 0.04));
-  // Minimal inner padding so logo fills the square tile as requested
   const innerPadding = padding !== undefined ? padding : Math.max(2, Math.round(size * 0.04));
   const fontSize = Math.round(size * 0.44);
 
@@ -132,7 +140,7 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
         <Img
           src={currentUrl}
           onError={() => {
-            // Graceful fallback to next site URL
+            // Graceful fallback to next provider in cascade
             setSourceIndex((prev) => prev + 1);
           }}
           style={{
@@ -149,24 +157,28 @@ export const CompanyLogo: React.FC<CompanyLogoProps> = ({
     );
   }
 
-  // Final Fallback: Stylized Monogram Avatar
+  // Final Fallback: Stylized Executive Neo-Brutalist Monogram Avatar
   return (
     <div
       style={{
         ...containerStyle,
         padding: 0,
         background: bgColor === "#FFFFFF" ? C.yellow : bgColor,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <span
         style={{
-          fontFamily: "'Comic Sans MS', cursive, sans-serif",
+          fontFamily: FONT.heading,
           fontSize,
           fontWeight: 800,
           color: C.black,
-          letterSpacing: -0.5,
+          letterSpacing: "-0.03em",
           userSelect: "none",
           lineHeight: 1,
+          textTransform: "uppercase",
         }}
       >
         {displayInitials}

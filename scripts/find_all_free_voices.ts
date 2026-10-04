@@ -1,9 +1,11 @@
 import "dotenv/config";
 import fs from "fs";
 import path from "path";
+import { getElevenLabsKeys } from "./generate_audio";
 
 async function main() {
-  const key = process.env.ELEVENLABS_API_KEY_1;
+  const keys = getElevenLabsKeys();
+  const key = keys[0];
   const res = await fetch("https://api.elevenlabs.io/v1/voices", {
     headers: { "xi-api-key": key || "" },
   });

@@ -1,17 +1,5 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-03T14:47:06.571Z",
-  "history": [
-    {
-      "id": "moneyview",
-      "companyName": "Money View Technologies",
-      "listingDate": "2026-10-22",
-      "status": "completed",
-      "processedAt": "2026-10-03T14:47:06.570Z",
-      "dataPath": "src/data/moneyview.json",
-      "videoPath": "out/moneyview.mp4",
-      "driveFolderId": "1IeoLZqjfGcVN3cyhljKwFTrRn47sznOk",
-      "driveFolderUrl": "https://drive.google.com/drive/folders/1IeoLZqjfGcVN3cyhljKwFTrRn47sznOk"
-    }
-  ]
+  "lastUpdated": "2026-10-03T17:59:20.010Z",
+  "history": []
 }

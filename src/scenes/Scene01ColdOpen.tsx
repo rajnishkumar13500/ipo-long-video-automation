@@ -7,7 +7,7 @@ import { IPOData } from "../types/ipo";
 /** Scene 01: Cold Open — Tension question mark, then dramatic text reveal. */
 export const Scene01ColdOpen: React.FC<{ data: IPOData }> = ({ data }) => {
   const f = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
   // Question mark sketch draw
   const qDrawProgress = interpolate(f, [5, 35], [0, 1], {
@@ -21,7 +21,7 @@ export const Scene01ColdOpen: React.FC<{ data: IPOData }> = ({ data }) => {
   const displayText = questionText.substring(0, visibleChars);
 
   // Shatter effect for transition (last 20 frames)
-  const totalDur = 240; // ~8 sec at 30fps
+  const totalDur = durationInFrames;
   const shatterProgress = interpolate(f, [totalDur - 25, totalDur], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",

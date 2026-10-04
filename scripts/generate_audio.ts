@@ -139,7 +139,18 @@ export function cleanScriptForSpeech(text: string): string {
     .replace(/\bNII\b/gi, "N I I")
     .replace(/\bOFS\b/gi, "O F S")
     .replace(/\bGMP\b/gi, "G M P")
-    .replace(/\bFLDG\b/gi, "F L D G")
+    // Calendar months (prevents TTS engines from spelling out abbreviations like "O-C-T" or "S-E-P")
+    .replace(/\bJan\b\.?/gi, "January")
+    .replace(/\bFeb\b\.?/gi, "February")
+    .replace(/\bMar\b\.?/gi, "March")
+    .replace(/\bApr\b\.?/gi, "April")
+    .replace(/\bJun\b\.?/gi, "June")
+    .replace(/\bJul\b\.?/gi, "July")
+    .replace(/\bAug\b\.?/gi, "August")
+    .replace(/\b(?:Sep|Sept)\b\.?/gi, "September")
+    .replace(/\bOct\b\.?/gi, "October")
+    .replace(/\bNov\b\.?/gi, "November")
+    .replace(/\bDec\b\.?/gi, "December")
     // Clean up bullets and excess whitespace
     .replace(/[•·]/g, " ")
     .replace(/\s+/g, " ")
@@ -155,20 +166,55 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     ? data.exchange.replace(/[•·\-\/]/g, " and ")
     : "National and Bombay Stock Exchanges";
 
-  const patLossCleaned = data.financials.pat.valuesFormatted[0].replace(/[-–—]/g, "");
+  // Financial calculations
+  const rawPatFirst = data.financials.pat.valuesFormatted[0] || "0";
+  const isFirstYearLoss = rawPatFirst.includes("-") || rawPatFirst.toLowerCase().includes("loss");
+  const patLossCleaned = rawPatFirst.replace(/[-–—]/g, "");
+
+  // Peers dynamic extraction
+  const peers = data.peers.table || [];
+  const targetPeer = peers.find((p) => p.isTargetCompany) || peers[0];
+  const listedPeers = peers.filter((p) => p !== targetPeer);
+
+  let peerSnippet = "";
+  if (listedPeers.length >= 2) {
+    const p1 = listedPeers[0];
+    const p2 = listedPeers[1];
+    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "with unlisted multiples";
+    const p2Ratio = p2.peRatio && p2.peRatio !== "N/A" ? `at ${p2.peRatio}` : "with unlisted multiples";
+    peerSnippet = `compared to ${p1.name} ${p1Ratio} and ${p2.name} ${p2Ratio}.`;
+  } else if (listedPeers.length === 1) {
+    const p1 = listedPeers[0];
+    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "with unlisted multiples";
+    peerSnippet = `compared to listed peer ${p1.name} ${p1Ratio}.`;
+  } else {
+    peerSnippet = `against broader sector multiples.`;
+  }
+
+  // Dates
+  const allotmentPart = data.issue.allotmentDate ? `, with allotment finalized on ${data.issue.allotmentDate}` : "";
+  const listingPart = data.issue.listingDate ? ` and listing slated for ${data.issue.listingDate}` : "";
+
+  // Sector / Industry
+  const sectorName = data.industryContext.sectorName || data.industry || "industry";
+
+  // Profit arc
+  const profitArcText = isFirstYearLoss
+    ? `On the bottom line, ebitda scaled to ${data.financials.ebitda.valuesFormatted[2]}, while net profit made a sharp turnaround from a loss of ${patLossCleaned} to positive ${data.financials.pat.valuesFormatted[2]} with ${data.financials.pat.marginsPercent[2]} profit margin.`
+    : `On the bottom line, ebitda scaled to ${data.financials.ebitda.valuesFormatted[2]}, while net profit expanded from ${data.financials.pat.valuesFormatted[0]} to ${data.financials.pat.valuesFormatted[2]} with a ${data.financials.pat.marginsPercent[2]} profit margin.`;
 
   const scripts: Record<string, string> = {
     // 01: Cold Open
-    cold_open: `Is India's upcoming fintech giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.`,
+    cold_open: `Is India's upcoming ${data.industry || "market"} giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.`,
 
     // 02: Dalal Street Entrance
-    logo_reveal: `${data.companyName} is hitting Dalal Street with a landmark digital lending IPO on the ${exchangeText}.`,
+    logo_reveal: `${data.companyName} is hitting Dalal Street with a landmark ${data.industry || "mainboard"} IPO on the ${exchangeText}.`,
 
     // 03: Key Issue Numbers
     issue_numbers: `The company is raising ${data.issue.totalFormatted} in a price band of ${data.issue.priceBand} per share, with a lot size of ${data.issue.lotSize} requiring a minimum investment of ${data.issue.minInvestment}.`,
 
     // 04: IPO Roadmap & Dates
-    timeline_stakes: `Bidding opens on ${data.issue.biddingDates}, with allotment finalized on ${data.issue.allotmentDate || "October 19"} and listing slated for ${data.issue.listingDate || "October 22"}. Mark your calendar.`,
+    timeline_stakes: `Bidding opens on ${data.issue.biddingDates || "the announced dates"}${allotmentPart}${listingPart}. Mark your calendar.`,
 
     // 05: Business Model Intro
     biz_title: `Chapter two: Business Model. How does ${data.companyName} actually monetize its platform? Let us break down their core revenue streams.`,
@@ -183,7 +229,7 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     biz_metrics: `Operationally, the platform boasts ${data.businessModel.keyHighlights.map((k) => `${k.value} ${k.label}`).join(", ")}.`,
 
     // 09: Market Opportunity Intro
-    ind_title: `Chapter three: Market Opportunity. How large is India's consumer credit space, and what tailwinds are driving this expansion?`,
+    ind_title: `Chapter three: Market Opportunity. How large is India's ${sectorName} space, and what tailwinds are driving this expansion?`,
 
     // 10: Addressable Market TAM
     tam_reveal: `The ${data.industryContext.sectorName} is projected to expand into a ${data.industryContext.marketSizeFormatted}, compounding at a rapid ${data.industryContext.cagrText}.`,
@@ -201,13 +247,13 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     revenue_chart: `Topline revenue surged from ${data.financials.revenue.valuesFormatted[0]} in ${data.financials.years[0]} to ${data.financials.revenue.valuesFormatted[2]} in ${data.financials.years[2]}, representing an impressive ${data.financials.revenue.cagr}.`,
 
     // 15: Profitability Turnaround & EBITDA
-    profit_arc: `On the bottom line, ebitda scaled to ${data.financials.ebitda.valuesFormatted[2]}, while net profit made a sharp turnaround from a loss of ${patLossCleaned} to positive ${data.financials.pat.valuesFormatted[2]} with ${data.financials.pat.marginsPercent[2]} profit margin.`,
+    profit_arc: profitArcText,
 
     // 16: Balance Sheet & Cash Flows
     balance_sheet: `Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of ${data.financials.balanceSheet.debtToEquity}, positive operating cash flow of ${data.financials.balanceSheet.cashFromOperations}, and a return on net worth of ${data.financials.balanceSheet.ronwFormatted}.`,
 
     // 17: Financial Health Takeaway
-    fin_summary: `Overall, the company has successfully decoupled unit economics from aggressive marketing spend, demonstrating durable cash generation.`,
+    fin_summary: `Overall, ${data.companyName} demonstrates solid operating leverage and durable cash generation heading into the public markets.`,
 
     // 18: Issue Details Intro
     issue_title: `Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?`,
@@ -216,7 +262,7 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     issue_split: `The issue is structured with a fresh capital issue of ${data.issue.freshFormatted}, or ${data.issue.freshPercent}, and an offer for sale component of ${data.issue.ofsFormatted}, or ${data.issue.ofsPercent}.`,
 
     // 20: Objects of the Offer
-    objects_issue: `Fresh proceeds are earmarked for ${data.issue.objectsOfIssue ? data.issue.objectsOfIssue.map((o) => `${o.percentage} towards ${o.purpose}`).join(", and ") : "augmenting the lending capital base and technological infrastructure"}.`,
+    objects_issue: `Fresh proceeds are earmarked for ${data.issue.objectsOfIssue && data.issue.objectsOfIssue.length > 0 ? data.issue.objectsOfIssue.map((o) => `${o.percentage} towards ${o.purpose}`).join(", and ") : "business expansion and corporate infrastructure"}.`,
 
     // 21: Reservation Quotas
     investor_quota: `For subscription quotas, retail investors are allocated ${data.issue.retailQuota || "35 percent"}, qualified institutional buyers get ${data.issue.qibQuota || "50 percent"}, and high net-worth individuals receive ${data.issue.niiQuota || "15 percent"}.`,
@@ -225,19 +271,19 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     val_title: `Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?`,
 
     // 23: Peer Benchmarking Matrix
-    peer_comparison: `At the upper price band, the company demands a price-to-earnings multiple of ${data.peers.table[0]?.peRatio || "24.6 times"}, compared to Bajaj Finance at ${data.peers.table[1]?.peRatio || "31.2 times"} and Poonawalla Fincorp at ${data.peers.table[2]?.peRatio || "34.5 times"}.`,
+    peer_comparison: `At the upper price band, ${data.companyName} demands a price-to-earnings multiple of ${targetPeer?.peRatio || "the upper valuation"}, ${peerSnippet}`,
 
     // 24: Valuation Assessment
-    val_summary: `Against an industry average P E of ${data.peers.industryAveragePe}, ${data.peers.commentary}`,
+    val_summary: `Against an industry average P E of ${data.peers.industryAveragePe}, ${data.peers.commentary || "the issue pricing provides a key benchmark against listed peers."}`,
 
     // 25: Key Risks Intro
     risk_title: `Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.`,
 
     // 26: Primary Structural Risks
-    risk_cards: `The foremost risk is ${data.risks.items[0]?.title || "unsecured lending exposure"}, along with ${data.risks.items[1]?.title || "regulatory guidelines"} and ${data.risks.items[2]?.title || "capital partnership reliance"}.`,
+    risk_cards: `The foremost risk is ${data.risks.items[0]?.title || "market concentration"}, along with ${data.risks.items[1]?.title || "regulatory guidelines"} and ${data.risks.items[2]?.title || "operating dependencies"}.`,
 
     // 27: Asset Quality & Risk Rating
-    risk_summary: `Overall risk is assessed as ${data.risks.overallRiskLevel}. While gross non-performing assets remain under two percent, unsecured loan books face heightened vulnerability during credit downturns.`,
+    risk_summary: `Overall risk is assessed as ${data.risks.overallRiskLevel}. ${data.risks.bottomNote || "Investors should carefully evaluate these risk factors before committing capital."}`,
 
     // 28: Verdict & Scorecard Intro
     verdict_title: `Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.`,
@@ -253,23 +299,42 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
 }
 
 /**
- * Collects distinct ElevenLabs API keys from environment
+ * Dynamically collects all distinct ElevenLabs API keys from environment:
+ * - Scans ELEVENLABS_API_KEY_1, ELEVENLABS_API_KEY_2, ... ELEVENLABS_API_KEY_N (unlimited!)
+ * - Scans unnumbered ELEVENLABS_API_KEY
+ * - Scans comma/newline-separated ELEVENLABS_API_KEYS=key1,key2,key3...
  */
-function getElevenLabsKeys(): string[] {
-  const candidates = [
-    process.env.ELEVENLABS_API_KEY_1,
-    process.env.ELEVENLABS_API_KEY_2,
-    process.env.ELEVENLABS_API_KEY_3,
-    process.env.ELEVENLABS_API_KEY_4,
-    process.env.ELEVENLABS_API_KEY,
-  ];
-
+export function getElevenLabsKeys(): string[] {
   const keys: string[] = [];
-  for (const c of candidates) {
-    if (c && c.trim() && !keys.includes(c.trim())) {
-      keys.push(c.trim());
+
+  // 1. Check for comma/newline-separated list in ELEVENLABS_API_KEYS
+  if (process.env.ELEVENLABS_API_KEYS) {
+    const list = process.env.ELEVENLABS_API_KEYS
+      .split(/[,\n\r;]+/)
+      .map((k) => k.trim())
+      .filter((k) => k.length > 5);
+
+    for (const k of list) {
+      if (!keys.includes(k)) keys.push(k);
     }
   }
+
+  // 2. Scan all environment variables matching ELEVENLABS_API_KEY or ELEVENLABS_API_KEY_<number>
+  const envKeyNames = Object.keys(process.env)
+    .filter((k) => /^ELEVENLABS_API_KEY(_\d+)?$/i.test(k))
+    .sort((a, b) => {
+      const numA = parseInt(a.replace(/\D/g, ""), 10) || 999999;
+      const numB = parseInt(b.replace(/\D/g, ""), 10) || 999999;
+      return numA - numB;
+    });
+
+  for (const envName of envKeyNames) {
+    const val = process.env[envName]?.trim();
+    if (val && val.length > 5 && !keys.includes(val)) {
+      keys.push(val);
+    }
+  }
+
   return keys;
 }
 
@@ -323,7 +388,7 @@ async function synthesizeWithEdgeTTS(text: string, voiceName: string, outMp3Path
 
 /**
  * Cascade voice synthesizer for an audio track:
- * 1. ElevenLabs (if valid API keys configured)
+ * 1. ElevenLabs multi-key pool (skips depleted keys automatically)
  * 2. Microsoft Neural Indian English (en-IN-PrabhatNeural)
  * 3. Local offline speech synthesis
  */
@@ -333,11 +398,16 @@ async function synthesizeSpeech(
   outWavPath: string,
   keys: string[],
   voiceId: string,
-  modelId: string
+  modelId: string,
+  exhaustedKeys?: Set<string>
 ): Promise<{ filePath: string; isFallback: boolean }> {
-  // Option 1: ElevenLabs
+  // Option 1: ElevenLabs Multi-Key Failover Pool
   for (let kIdx = 0; kIdx < keys.length; kIdx++) {
     const key = keys[kIdx];
+    if (exhaustedKeys && exhaustedKeys.has(key)) {
+      continue;
+    }
+
     const keyLabel = `Key #${kIdx + 1} (...${key.slice(-4)})`;
     try {
       const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
@@ -367,7 +437,21 @@ async function synthesizeSpeech(
       }
 
       const errText = await res.text();
-      console.warn(`   ⚠️ ElevenLabs ${keyLabel} returned HTTP ${res.status}: ${errText.slice(0, 80)}`);
+      console.warn(`   ⚠️ ElevenLabs ${keyLabel} returned HTTP ${res.status}: ${errText.slice(0, 90)}`);
+
+      // If quota exhausted or unauthorized, mark this key depleted so subsequent scenes skip it immediately
+      if (
+        res.status === 401 ||
+        res.status === 429 ||
+        errText.toLowerCase().includes("quota") ||
+        errText.toLowerCase().includes("limit") ||
+        errText.toLowerCase().includes("credit")
+      ) {
+        console.warn(`   ⚠️ [ElevenLabs Pool] ${keyLabel} quota/credits exhausted. Moving to next key in pool...`);
+        if (exhaustedKeys) {
+          exhaustedKeys.add(key);
+        }
+      }
     } catch (netErr) {
       console.warn(`   ⚠️ ElevenLabs ${keyLabel} error:`, netErr instanceof Error ? netErr.message : netErr);
     }
@@ -414,12 +498,14 @@ export async function generateAudioAndTimeline(
   ipoData.sceneScripts = sceneScripts;
 
   const keys = getElevenLabsKeys();
+  const exhaustedKeys = new Set<string>();
   const voiceId = options.voiceId || process.env.ELEVENLABS_VOICE_ID || "pNInz6obpgDQGcFmaJgB";
   const modelId = options.modelId || process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
 
   console.log(`\n🎧 ======================================================`);
   console.log(`🎧 GENERATING SCENE-BY-SCENE AUDIO & TIMELINE: ${ipoData.companyName}`);
   console.log(`🎧 Slug: ${slug} | 30 Granular Sub-Scenes across 8 Chapters`);
+  console.log(`🎧 ElevenLabs Failover Pool: ${keys.length} API key(s) detected`);
   console.log(`🎧 ======================================================`);
 
   const generatedAudioFiles: string[] = [];
@@ -446,7 +532,7 @@ export async function generateAudioAndTimeline(
       activeFilePath = hasValidMp3 ? mp3File : wavFile;
       console.log(`   ⚡ [Cache Hit] Reusing: ${path.basename(activeFilePath)}`);
     } else {
-      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId);
+      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId, exhaustedKeys);
       activeFilePath = res.filePath;
       if (res.isFallback) anyFallbackUsed = true;
     }

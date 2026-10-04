@@ -69,7 +69,8 @@ export function useTypewriter(textLength: number, delay = 0, charsPerFrame = 1.2
 }
 
 /** Bar grow: returns 0→1 for height scaling. */
-export function useBarGrow(delay = 0, dur = 22) {
+export function useBarGrow(delay = 0, _dur = 22) {
+  void _dur;
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({
@@ -166,7 +167,8 @@ export function useParallax(depth = 1, speed = 0.3) {
 }
 
 /** Gauge fill: returns 0→target fraction for circular gauges. */
-export function useGaugeFill(targetFraction: number, delay = 0, dur = 28) {
+export function useGaugeFill(targetFraction: number, delay = 0, _dur = 28) {
+  void _dur;
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = spring({

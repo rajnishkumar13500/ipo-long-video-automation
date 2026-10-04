@@ -8,6 +8,7 @@ import { renderIPOVideo } from "./render";
 import { uploadIPOToDrive } from "./upload_drive";
 import { IPOData } from "../src/types/ipo";
 import { loadTracker, recordIPO } from "./tracker";
+import { ensureVerifiedCompanyLogo } from "./logo_fetcher";
 
 async function runPipeline() {
   console.log("==================================================");
@@ -84,6 +85,16 @@ async function runPipeline() {
       console.log(`   No local data file found for ${selectedIPO.slug}. Automatically extracting from article URL...`);
       ipoData = await extractIPODataFromUrl(selectedIPO.link, selectedIPO.companyName, selectedIPO.slug);
     }
+  }
+
+  // Step 1.5: Verify & Fetch Company Brand Logo across multi-website fallback cascade
+  console.log("\n🎨 Step 1.5: Verifying Company Logo & Brand Assets...");
+  const logoResult = await ensureVerifiedCompanyLogo(ipoData);
+  fs.writeFileSync(jsonPath, JSON.stringify(ipoData, null, 2), "utf-8");
+  if (logoResult.success) {
+    console.log(`   ✅ Verified logo saved at: ${ipoData.logoUrl} [Provider: ${logoResult.provider}]`);
+  } else {
+    console.log(`   ℹ️ No valid web logo found across 6 providers. Using verified executive monogram badge.`);
   }
 
   // Step 2: Script Generation (Groq -> Gemini -> Deterministic safety net)
