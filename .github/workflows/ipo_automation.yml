@@ -1,0 +1,100 @@
+name: Scheduled IPO Video Automation
+
+on:
+  schedule:
+    # Daily Run: 05:30 PM IST (12:00 UTC) - Every day (Mon - Sun, 7 days a week)
+    # Renders full-length 16:9 video + 1280x720 thumbnail and uploads to Drive before evening scheduler
+    - cron: '0 12 * * *'
+
+  # Manual on-demand trigger anytime via GitHub Actions UI
+  workflow_dispatch:
+    inputs:
+      ipo_slug:
+        description: 'Specific IPO slug to process (leave blank to auto-discover latest unworked IPO)'
+        required: false
+        default: ''
+      force_render:
+        description: 'Force re-render even if audio/scripts already exist'
+        type: boolean
+        default: false
+      voice_id:
+        description: 'ElevenLabs Voice ID (default: Chris iP95p4xoKVk53GoZ742B)'
+        required: false
+        default: 'iP95p4xoKVk53GoZ742B'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ipo-video-automation
+  cancel-in-progress: false
+
+jobs:
+  build-and-render:
+    name: Auto Discover, Render 16:9 Video & Thumbnail, Cloud Archive
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Chromium & Graphics Dependencies for Headless Remotion
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libnss3 \
+            libatk1.0-0 \
+            libatk-bridge2.0-0 \
+            libcups2 \
+            libdrm2 \
+            libxkbcommon0 \
+            libxcomposite1 \
+            libxdamage1 \
+            libxfixes3 \
+            libxrandr2 \
+            libgbm1 \
+            libasound2t64 \
+            fonts-noto-color-emoji \
+            fonts-liberation \
+            || sudo apt-get install -y libasound2
+
+      - name: Install NPM Dependencies
+        run: npm ci
+
+      - name: Execute Autonomous Full-Length Video & Thumbnail Pipeline
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: 'llama-3.3-70b-versatile'
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: 'gemini-2.5-flash'
+          ELEVENLABS_API_KEY_1: ${{ secrets.ELEVENLABS_API_KEY_1 }}
+          ELEVENLABS_API_KEY_2: ${{ secrets.ELEVENLABS_API_KEY_2 }}
+          ELEVENLABS_API_KEY_3: ${{ secrets.ELEVENLABS_API_KEY_3 }}
+          ELEVENLABS_API_KEY_4: ${{ secrets.ELEVENLABS_API_KEY_4 }}
+          ELEVENLABS_MODEL_ID: 'eleven_multilingual_v2'
+          ELEVENLABS_VOICE_ID: ${{ github.event.inputs.voice_id || 'iP95p4xoKVk53GoZ742B' }}
+          BG_MUSIC_VOLUME: '0.05'
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_SERVICE_ACCOUNT_KEY: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_KEY }}
+          GDRIVE_PARENT_FOLDER_ID: ${{ secrets.GDRIVE_PARENT_FOLDER_ID }}
+        run: |
+          CLI_ARGS="--upload-drive"
+          if [ -n "${{ github.event.inputs.ipo_slug }}" ]; then
+            CLI_ARGS="$CLI_ARGS --ipo=${{ github.event.inputs.ipo_slug }}"
+          fi
+          if [ "${{ github.event.inputs.force_render }}" = "true" ]; then
+            CLI_ARGS="$CLI_ARGS --force-scripts --force-audio"
+          fi
+          npm run pipeline -- $CLI_ARGS
