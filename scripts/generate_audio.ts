@@ -5,6 +5,9 @@ import { spawnSync } from "child_process";
 import * as mm from "music-metadata";
 import { EdgeTTS } from "@andresaya/edge-tts";
 import { IPOData, VideoTimeline, ChapterTiming, SceneTiming } from "../src/types/ipo";
+import { getElevenLabsKeys, markKeyExhausted } from "./key_manager";
+
+export { getElevenLabsKeys } from "./key_manager";
 
 export const CHAPTER_METADATA = [
   { id: "chapter_1", title: "Overview & Issue Highlights", shortTitle: "Overview" },
@@ -299,43 +302,60 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
 }
 
 /**
- * Dynamically collects all distinct ElevenLabs API keys from environment:
- * - Scans ELEVENLABS_API_KEY_1, ELEVENLABS_API_KEY_2, ... ELEVENLABS_API_KEY_N (unlimited!)
- * - Scans unnumbered ELEVENLABS_API_KEY
- * - Scans comma/newline-separated ELEVENLABS_API_KEYS=key1,key2,key3...
+ * Synthesizes audio using Google Translate Web TTS (cross-platform, zero dependencies, works in Linux CI)
  */
-export function getElevenLabsKeys(): string[] {
-  const keys: string[] = [];
+async function synthesizeWithGoogleTTS(text: string, outMp3Path: string): Promise<boolean> {
+  try {
+    const rawChunks = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+    const chunks: string[] = [];
 
-  // 1. Check for comma/newline-separated list in ELEVENLABS_API_KEYS
-  if (process.env.ELEVENLABS_API_KEYS) {
-    const list = process.env.ELEVENLABS_API_KEYS
-      .split(/[,\n\r;]+/)
-      .map((k) => k.trim())
-      .filter((k) => k.length > 5);
-
-    for (const k of list) {
-      if (!keys.includes(k)) keys.push(k);
+    for (const chunk of rawChunks) {
+      const trimmed = chunk.trim();
+      if (!trimmed) continue;
+      if (trimmed.length <= 180) {
+        chunks.push(trimmed);
+      } else {
+        const words = trimmed.split(" ");
+        let curr = "";
+        for (const w of words) {
+          if ((curr + " " + w).trim().length <= 180) {
+            curr = (curr + " " + w).trim();
+          } else {
+            if (curr) chunks.push(curr);
+            curr = w;
+          }
+        }
+        if (curr) chunks.push(curr);
+      }
     }
-  }
 
-  // 2. Scan all environment variables matching ELEVENLABS_API_KEY or ELEVENLABS_API_KEY_<number>
-  const envKeyNames = Object.keys(process.env)
-    .filter((k) => /^ELEVENLABS_API_KEY(_\d+)?$/i.test(k))
-    .sort((a, b) => {
-      const numA = parseInt(a.replace(/\D/g, ""), 10) || 999999;
-      const numB = parseInt(b.replace(/\D/g, ""), 10) || 999999;
-      return numA - numB;
-    });
-
-  for (const envName of envKeyNames) {
-    const val = process.env[envName]?.trim();
-    if (val && val.length > 5 && !keys.includes(val)) {
-      keys.push(val);
+    const buffers: Buffer[] = [];
+    for (const chunk of chunks) {
+      const url = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=${encodeURIComponent(chunk)}`;
+      const res = await fetch(url, {
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        },
+      });
+      if (!res.ok) {
+        throw new Error(`Google TTS returned HTTP ${res.status}`);
+      }
+      const arr = await res.arrayBuffer();
+      buffers.push(Buffer.from(arr));
     }
-  }
 
-  return keys;
+    if (buffers.length > 0) {
+      const totalBuffer = Buffer.concat(buffers);
+      fs.writeFileSync(outMp3Path, totalBuffer);
+      if (fs.existsSync(outMp3Path) && fs.statSync(outMp3Path).size > 1000) {
+        return true;
+      }
+    }
+    return false;
+  } catch (err) {
+    console.warn(`   ⚠️ Google TTS fallback error:`, err instanceof Error ? err.message : err);
+    return false;
+  }
 }
 
 /**
@@ -362,35 +382,45 @@ function generateOfflineTTS(text: string, outWavPath: string): boolean {
     }
     return false;
   } catch (err) {
-    console.error("Local SAPI TTS failed:", err);
     return false;
   }
 }
 
 /**
- * Synthesizes audio using Edge-TTS (Default: en-IN-PrabhatNeural Indian English)
+ * Synthesizes audio using Edge-TTS with multi-voice retry
  */
 async function synthesizeWithEdgeTTS(text: string, voiceName: string, outMp3Path: string): Promise<boolean> {
-  try {
-    const tts = new EdgeTTS();
-    await tts.synthesize(text, voiceName, { rate: "+3%", pitch: "+0Hz" });
-    await tts.toFile(outMp3Path);
+  const candidateVoices = [
+    voiceName,
+    "en-IN-PrabhatNeural",
+    "en-IN-NeerjaNeural",
+    "en-US-ChristopherNeural",
+    "en-US-GuyNeural",
+  ];
+  const uniqueVoices = Array.from(new Set(candidateVoices));
 
-    if (fs.existsSync(outMp3Path) && fs.statSync(outMp3Path).size > 1000) {
-      return true;
+  for (const v of uniqueVoices) {
+    try {
+      const tts = new EdgeTTS();
+      await tts.synthesize(text, v, { rate: "+3%", pitch: "+0Hz" });
+      await tts.toFile(outMp3Path);
+
+      if (fs.existsSync(outMp3Path) && fs.statSync(outMp3Path).size > 1000) {
+        return true;
+      }
+    } catch {
+      // try next voice in list
     }
-    return false;
-  } catch (err) {
-    console.warn(`   ⚠️ EdgeTTS (${voiceName}) error:`, err instanceof Error ? err.message : err);
-    return false;
   }
+  return false;
 }
 
 /**
  * Cascade voice synthesizer for an audio track:
- * 1. ElevenLabs multi-key pool (skips depleted keys automatically)
- * 2. Microsoft Neural Indian English (en-IN-PrabhatNeural)
- * 3. Local offline speech synthesis
+ * 1. ElevenLabs multi-key pool (rotates and tracks exhausted keys)
+ * 2. Microsoft Neural Indian English (Edge-TTS)
+ * 3. Cross-platform Web Speech (Google TTS)
+ * 4. Local offline speech synthesis (Windows SAPI)
  */
 async function synthesizeSpeech(
   text: string,
@@ -399,76 +429,82 @@ async function synthesizeSpeech(
   keys: string[],
   voiceId: string,
   modelId: string,
-  exhaustedKeys?: Set<string>
-): Promise<{ filePath: string; isFallback: boolean }> {
+  startKeyIndex: number = 0
+): Promise<{ filePath: string; isFallback: boolean; usedKeyIndex: number }> {
   // Option 1: ElevenLabs Multi-Key Failover Pool
-  for (let kIdx = 0; kIdx < keys.length; kIdx++) {
-    const key = keys[kIdx];
-    if (exhaustedKeys && exhaustedKeys.has(key)) {
-      continue;
-    }
+  if (keys.length > 0) {
+    for (let offset = 0; offset < keys.length; offset++) {
+      const kIdx = (startKeyIndex + offset) % keys.length;
+      const key = keys[kIdx];
+      const keyLabel = `Key #${kIdx + 1} (...${key.slice(-4)})`;
 
-    const keyLabel = `Key #${kIdx + 1} (...${key.slice(-4)})`;
-    try {
-      const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
-        method: "POST",
-        headers: {
-          "xi-api-key": key,
-          "Content-Type": "application/json",
-          Accept: "audio/mpeg",
-        },
-        body: JSON.stringify({
-          text,
-          model_id: modelId,
-          voice_settings: {
-            stability: 0.45,
-            similarity_boost: 0.85,
-            style: 0.20,
-            use_speaker_boost: true,
+      try {
+        const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+          method: "POST",
+          headers: {
+            "xi-api-key": key,
+            "Content-Type": "application/json",
+            Accept: "audio/mpeg",
           },
-        }),
-      });
+          body: JSON.stringify({
+            text,
+            model_id: modelId,
+            voice_settings: {
+              stability: 0.45,
+              similarity_boost: 0.85,
+              style: 0.20,
+              use_speaker_boost: true,
+            },
+          }),
+        });
 
-      if (res.ok) {
-        const arrayBuffer = await res.arrayBuffer();
-        fs.writeFileSync(outMp3Path, Buffer.from(arrayBuffer));
-        console.log(`   ✅ Synthesized with ElevenLabs ${keyLabel}`);
-        return { filePath: outMp3Path, isFallback: false };
-      }
-
-      const errText = await res.text();
-      console.warn(`   ⚠️ ElevenLabs ${keyLabel} returned HTTP ${res.status}: ${errText.slice(0, 90)}`);
-
-      // If quota exhausted or unauthorized, mark this key depleted so subsequent scenes skip it immediately
-      if (
-        res.status === 401 ||
-        res.status === 429 ||
-        errText.toLowerCase().includes("quota") ||
-        errText.toLowerCase().includes("limit") ||
-        errText.toLowerCase().includes("credit")
-      ) {
-        console.warn(`   ⚠️ [ElevenLabs Pool] ${keyLabel} quota/credits exhausted. Moving to next key in pool...`);
-        if (exhaustedKeys) {
-          exhaustedKeys.add(key);
+        if (res.ok) {
+          const arrayBuffer = await res.arrayBuffer();
+          fs.writeFileSync(outMp3Path, Buffer.from(arrayBuffer));
+          console.log(`   ✅ Synthesized with ElevenLabs ${keyLabel}`);
+          return { filePath: outMp3Path, isFallback: false, usedKeyIndex: kIdx };
         }
+
+        const errText = await res.text();
+        console.warn(`   ⚠️ ElevenLabs ${keyLabel} returned HTTP ${res.status}: ${errText.slice(0, 90)}`);
+
+        if (
+          res.status === 401 ||
+          res.status === 429 ||
+          errText.toLowerCase().includes("quota") ||
+          errText.toLowerCase().includes("limit") ||
+          errText.toLowerCase().includes("credit") ||
+          errText.toLowerCase().includes("unusual_activity")
+        ) {
+          console.warn(`   ⚠️ [ElevenLabs Pool] ${keyLabel} quota/credits exhausted. Moving to next key in pool...`);
+          markKeyExhausted(key, `HTTP ${res.status}`);
+        }
+      } catch (netErr) {
+        console.warn(`   ⚠️ ElevenLabs ${keyLabel} error:`, netErr instanceof Error ? netErr.message : netErr);
       }
-    } catch (netErr) {
-      console.warn(`   ⚠️ ElevenLabs ${keyLabel} error:`, netErr instanceof Error ? netErr.message : netErr);
     }
   }
 
-  // Option 2: Microsoft Neural Indian English Voice (Prabhat)
+  // Option 2: Microsoft Neural Indian English Voice (Edge-TTS)
+  console.log(`   🎙️ Falling back to Microsoft Neural Voice (Edge-TTS)...`);
   const defaultIndianVoice = process.env.EDGE_TTS_VOICE || "en-IN-PrabhatNeural";
   const edgeOk = await synthesizeWithEdgeTTS(text, defaultIndianVoice, outMp3Path);
   if (edgeOk) {
-    return { filePath: outMp3Path, isFallback: false };
+    return { filePath: outMp3Path, isFallback: true, usedKeyIndex: -1 };
   }
 
-  // Option 3: Offline local speech synthesis
-  console.log(`   🎙️ Falling back to offline speech synthesizer...`);
+  // Option 3: Cross-platform Web Speech (Google TTS)
+  console.log(`   🎙️ Falling back to Cross-Platform Web Speech synthesizer...`);
+  const googleOk = await synthesizeWithGoogleTTS(text, outMp3Path);
+  if (googleOk) {
+    return { filePath: outMp3Path, isFallback: true, usedKeyIndex: -1 };
+  }
+
+  // Option 4: Local offline speech synthesis (Windows SAPI)
+  console.log(`   🎙️ Falling back to offline local voice synthesizer...`);
   const success = generateOfflineTTS(text, outWavPath);
   if (success) {
-    return { filePath: outWavPath, isFallback: true };
+    return { filePath: outWavPath, isFallback: true, usedKeyIndex: -1 };
   }
 
   throw new Error(`Failed to synthesize voice for text: "${text.slice(0, 40)}..."`);
@@ -498,7 +534,6 @@ export async function generateAudioAndTimeline(
   ipoData.sceneScripts = sceneScripts;
 
   const keys = getElevenLabsKeys();
-  const exhaustedKeys = new Set<string>();
   const voiceId = options.voiceId || process.env.ELEVENLABS_VOICE_ID || "pNInz6obpgDQGcFmaJgB";
   const modelId = options.modelId || process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
 
@@ -512,6 +547,7 @@ export async function generateAudioAndTimeline(
   const scenes: SceneTiming[] = [];
   let anyFallbackUsed = false;
   let currentFrom = 0;
+  let activeKeyIndex = 0;
 
   for (let idx = 0; idx < SUB_SCENE_DEFINITIONS.length; idx++) {
     const sceneDef = SUB_SCENE_DEFINITIONS[idx];
@@ -532,7 +568,10 @@ export async function generateAudioAndTimeline(
       activeFilePath = hasValidMp3 ? mp3File : wavFile;
       console.log(`   ⚡ [Cache Hit] Reusing: ${path.basename(activeFilePath)}`);
     } else {
-      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId, exhaustedKeys);
+      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId, activeKeyIndex);
+      if (res.usedKeyIndex >= 0) {
+        activeKeyIndex = res.usedKeyIndex;
+      }
       activeFilePath = res.filePath;
       if (res.isFallback) anyFallbackUsed = true;
     }

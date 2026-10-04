@@ -84,52 +84,60 @@ Chapter Word Counts (Target ~800 words total):
 /**
  * Tier 1: Groq API (Llama 3.3 / Qwen)
  */
-async function generateWithGroq(data: IPOData): Promise<ChapterScripts | null> {
+async function generateWithGroq(data: IPOData): Promise<{ scripts: ChapterScripts; model: string } | null> {
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey || !apiKey.trim()) return null;
 
-  const model = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
-  console.log(`📡 [AI Script] Attempting Primary: Groq API (Model: ${model})...`);
+  const candidateModels = Array.from(
+    new Set([process.env.GROQ_MODEL, "qwen/qwen3.8-27b", "openai/gpt-oss-120b", "llama-3.3-70b-versatile"].filter(Boolean))
+  ) as string[];
 
-  try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey.trim()}`,
-      },
-      body: JSON.stringify({
-        model,
-        messages: [
-          {
-            role: "system",
-            content: "You are a professional financial video producer who outputs strictly valid JSON only. Never use the rupee symbol.",
-          },
-          {
-            role: "user",
-            content: buildLongFormPrompt(data),
-          },
-        ],
-        response_format: { type: "json_object" },
-        max_tokens: 1800,
-        temperature: 0.35,
-      }),
-    });
+  for (const model of candidateModels) {
+    console.log(`📡 [AI Script] Attempting Groq API (Model: ${model})...`);
 
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`Groq HTTP ${res.status}: ${errText}`);
+    try {
+      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey.trim()}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            {
+              role: "system",
+              content: "You are a professional financial video producer who outputs strictly valid JSON only. Never use the rupee symbol.",
+            },
+            {
+              role: "user",
+              content: buildLongFormPrompt(data),
+            },
+          ],
+          response_format: { type: "json_object" },
+          max_tokens: 1800,
+          temperature: 0.35,
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        console.warn(`⚠️ [AI Script] Groq HTTP ${res.status} (${model}): ${errText.substring(0, 150)}`);
+        continue;
+      }
+
+      const json = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
+      const content = json.choices?.[0]?.message?.content;
+      if (!content) continue;
+
+      const scripts = JSON.parse(content) as ChapterScripts;
+      return { scripts, model };
+    } catch (error) {
+      console.warn(`⚠️ [AI Script] Groq error (${model}):`, error instanceof Error ? error.message : error);
     }
-
-    const json = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
-    const content = json.choices?.[0]?.message?.content;
-    if (!content) throw new Error("Empty response from Groq");
-
-    return JSON.parse(content) as ChapterScripts;
-  } catch (error) {
-    console.warn(`⚠️ [AI Script] Groq generation failed:`, error instanceof Error ? error.message : error);
-    return null;
   }
+
+  return null;
 }
 
 /**
@@ -205,10 +213,10 @@ export function generateDeterministicScript(data: IPOData): ChapterScripts {
  */
 export async function generateIPOScripts(data: IPOData): Promise<ScriptGenerationResult> {
   // 1. Try Groq
-  const groqScripts = await generateWithGroq(data);
-  if (groqScripts && validateLongFormScripts(groqScripts)) {
-    console.log(`✅ [AI Script] Successfully generated scripts via Groq (${process.env.GROQ_MODEL || "llama-3.3-70b-versatile"})`);
-    return { source: "groq", modelUsed: process.env.GROQ_MODEL || "llama-3.3-70b-versatile", scripts: groqScripts };
+  const groqResult = await generateWithGroq(data);
+  if (groqResult && validateLongFormScripts(groqResult.scripts)) {
+    console.log(`✅ [AI Script] Successfully generated scripts via Groq (${groqResult.model})`);
+    return { source: "groq", modelUsed: groqResult.model, scripts: groqResult.scripts };
   }
 
   // 2. Try Gemini

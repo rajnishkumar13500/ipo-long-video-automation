@@ -1,0 +1,15 @@
+# ==============================================================================
+# ELEVENLABS API KEYS POOL
+# ==============================================================================
+# You can paste as many ElevenLabs API keys as you want here (one per line).
+# You can also add keys to your .env file as:
+#   ELEVENLABS_API_KEY_1=sk_...
+#   ELEVENLABS_API_KEY_2=sk_...
+#   ELEVENLABS_API_KEY_99=sk_...
+# Or as a comma-separated list:
+#   ELEVENLABS_API_KEYS=sk_xxx,sk_yyy,sk_zzz
+#
+# Check remaining characters anytime by running:
+#   npm run check-keys
+# ==============================================================================
+

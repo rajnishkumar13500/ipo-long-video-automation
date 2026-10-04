@@ -46,39 +46,45 @@ async function extractWithGroq(articleText: string, companyName: string, slug: s
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey || !apiKey.trim()) return null;
 
-  const model = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
-  console.log(`   📡 [Data Extractor] Querying Groq (${model})...`);
+  const candidateModels = Array.from(
+    new Set([process.env.GROQ_MODEL, "qwen/qwen3.8-27b", "openai/gpt-oss-120b", "llama-3.3-70b-versatile"].filter(Boolean))
+  ) as string[];
 
   const prompt = buildExtractionPrompt(articleText, companyName, slug);
 
-  try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey.trim()}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model,
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.1,
-        max_tokens: 3000,
-        response_format: { type: "json_object" },
-      }),
-    });
+  for (const model of candidateModels) {
+    console.log(`   📡 [Data Extractor] Querying Groq (${model})...`);
 
-    if (!res.ok) {
-      const errText = await res.text();
-      console.warn(`   ⚠️ Groq extraction HTTP ${res.status}: ${errText.substring(0, 150)}`);
-      return null;
+    try {
+      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey.trim()}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: "user", content: prompt }],
+          temperature: 0.1,
+          max_tokens: 3000,
+          response_format: { type: "json_object" },
+        }),
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        console.warn(`   ⚠️ Groq extraction HTTP ${res.status} (${model}): ${errText.substring(0, 150)}`);
+        continue;
+      }
+
+      const data = await res.json();
+      return JSON.parse(data.choices[0].message.content) as IPOData;
+    } catch (err) {
+      console.warn(`   ⚠️ Groq extraction error (${model}):`, err instanceof Error ? err.message : err);
     }
-
-    const data = await res.json();
-    return JSON.parse(data.choices[0].message.content) as IPOData;
-  } catch (err) {
-    console.warn("   ⚠️ Groq extraction error:", err instanceof Error ? err.message : err);
-    return null;
   }
+
+  return null;
 }
 
 /**

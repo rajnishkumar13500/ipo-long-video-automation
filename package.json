@@ -33,7 +33,8 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
     "discover": "tsx scripts/discover.ts",
-    "pipeline": "tsx scripts/pipeline.ts"
+    "pipeline": "tsx scripts/pipeline.ts",
+    "check-keys": "tsx scripts/check_keys.ts"
   },
   "sideEffects": [
     "*.css"
