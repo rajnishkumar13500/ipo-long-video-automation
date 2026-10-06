@@ -9,21 +9,30 @@ import { IPOData } from "../types/ipo";
 /** Scene 27: Scorecard Reveal — Five-category scorecard with GMP and verdict stamps. */
 export const Scene27Scorecard: React.FC<{ data: IPOData }> = ({ data }) => {
   const f = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const v = data.verdict;
 
-  // Overall score slam
-  const overallDelay = 90;
+  // Overall score slam when "achieving an overall rating of X" is spoken (~second 6)
+  const overallDelay = 175;
   const overallSlam = spring({ frame: f - overallDelay, fps, config: { damping: 6, stiffness: 200, mass: 0.5 } });
   const overallScale = interpolate(overallSlam, [0, 1], [3, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const shake = useCameraShake(overallDelay, 12, 5);
 
-  // GMP section
-  const gmpOp = interpolate(f, [130, 145], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  // GMP section: Visible immediately from frame 6 so the viewer sees the GMP numbers while they are spoken
+  const gmpSpring = spring({ frame: f - 6, fps, config: { damping: 14, stiffness: 120, mass: 0.7 } });
+  const gmpOp = interpolate(gmpSpring, [0, 1], [0, 1]);
 
-  // Verdict stamps
-  const stamp1Slam = spring({ frame: f - 180, fps, config: { damping: 7, stiffness: 180, mass: 0.5 } });
-  const stamp2Slam = spring({ frame: f - 210, fps, config: { damping: 7, stiffness: 180, mass: 0.5 } });
+  // Verdict stamps: Slam when short-term and long-term verdicts are spoken (~second 3.3 to 4.5)
+  const stamp1Slam = spring({ frame: f - 100, fps, config: { damping: 7, stiffness: 180, mass: 0.5 } });
+  const stamp2Slam = spring({ frame: f - 135, fps, config: { damping: 7, stiffness: 180, mass: 0.5 } });
+
+  // Smooth exit transition into outro
+  const exitOp = interpolate(
+    f,
+    [durationInFrames - 15, durationInFrames],
+    [1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
 
   const scoreItems = [
     { label: "Business Moat", score: v.scorecard.businessMoat, color: C.blue },
@@ -47,6 +56,7 @@ export const Scene27Scorecard: React.FC<{ data: IPOData }> = ({ data }) => {
         overflow: "hidden",
         padding: "90px 100px 50px",
         transform: `translate(${shake.x}px, ${shake.y}px)`,
+        opacity: exitOp,
       }}
     >
       <GrainOverlay opacity={0.03} />

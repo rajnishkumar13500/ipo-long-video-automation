@@ -12,22 +12,32 @@ export interface ScriptGenerationResult {
 /**
  * Builds the structured long-form prompt given the IPO data
  */
+function cleanAmount(val: string): string {
+  return val
+    .replace(/₹\s*/g, "")
+    .replace(/(\d+)\.00(?!\d)/g, "$1")
+    .replace(/(\d+\.\d)0(?!\d)/g, "$1")
+    .replace(/(\d+(?:\.\d+)?)\s*Cr\b/gi, "$1 crore")
+    .replace(/(\d+(?:\.\d+)?)\s*Lakh\b/gi, "$1 lakh")
+    .replace(/\bCr\b/gi, "crore");
+}
+
 function buildLongFormPrompt(data: IPOData): string {
-  const cleanTotal = data.issue.totalFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const cleanFresh = data.issue.freshFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const cleanOfs = data.issue.ofsFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
+  const cleanTotal = cleanAmount(data.issue.totalFormatted);
+  const cleanFresh = cleanAmount(data.issue.freshFormatted);
+  const cleanOfs = cleanAmount(data.issue.ofsFormatted);
   const cleanPrice = data.issue.priceBand.replace(/₹\s*/g, "").replace(/–/g, "to");
   const cleanMin = data.issue.minInvestment.replace(/₹\s*/g, "");
 
   const fin = data.financials;
   const revSummary = fin.years
-    .map((y, i) => `${y}: ${fin.revenue.valuesFormatted[i].replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore")}`)
+    .map((y, i) => `${y}: ${cleanAmount(fin.revenue.valuesFormatted[i] || "")}`)
     .join(", ");
   const ebitdaSummary = fin.years
     .map((y, i) => `${y} margin ${fin.ebitda.marginsPercent[i]}`)
     .join(", ");
   const patSummary = fin.years
-    .map((y, i) => `${y}: ${fin.pat.valuesFormatted[i].replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore")}`)
+    .map((y, i) => `${y}: ${cleanAmount(fin.pat.valuesFormatted[i] || "")}`)
     .join(", ");
 
   const peersSummary = data.peers.table
@@ -185,16 +195,16 @@ async function generateWithGemini(data: IPOData): Promise<ChapterScripts | null>
  * Tier 3: Deterministic Financial Copy Engine (Zero API Safety Net)
  */
 export function generateDeterministicScript(data: IPOData): ChapterScripts {
-  const cleanTotal = data.issue.totalFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const cleanFresh = data.issue.freshFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const cleanOfs = data.issue.ofsFormatted.replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
+  const cleanTotal = cleanAmount(data.issue.totalFormatted);
+  const cleanFresh = cleanAmount(data.issue.freshFormatted);
+  const cleanOfs = cleanAmount(data.issue.ofsFormatted);
   const cleanPrice = data.issue.priceBand.replace(/₹\s*/g, "").replace(/–/g, "to");
   const cleanMin = data.issue.minInvestment.replace(/₹\s*/g, "");
   const fin = data.financials;
 
-  const rev1 = fin.revenue.valuesFormatted[0].replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const rev3 = fin.revenue.valuesFormatted[2].replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
-  const pat3 = fin.pat.valuesFormatted[2].replace(/₹\s*/g, "").replace(/\bCr\b/g, "crore");
+  const rev1 = cleanAmount(fin.revenue.valuesFormatted[0] || "");
+  const rev3 = cleanAmount(fin.revenue.valuesFormatted[2] || "");
+  const pat3 = cleanAmount(fin.pat.valuesFormatted[2] || "");
 
   return {
     chapter_1: `${data.companyName} is making its debut on the primary market with a ${cleanTotal} initial public offering, comprising a ${cleanFresh} fresh issue and a ${cleanOfs} offer for sale. Priced between ${cleanPrice}, retail investors can participate with an investment of under ${cleanMin}. But in an increasingly competitive market, does this IPO offer genuine value or is it overpriced hype? In this in-depth analysis, we break down their business model, 3-year financial health, peer valuations, and our final verdict.`,

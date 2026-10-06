@@ -146,8 +146,16 @@ const RiskCardItem: React.FC<RiskCardItemProps> = ({
 /** Scene 25: Risk Cards — Three risks revealed sequentially with isolation. */
 export const Scene25RiskCards: React.FC<{ data: IPOData }> = ({ data }) => {
   const f = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
   const risks = data.risks.items;
+
+  // Smooth exit transition into next scene
+  const exitOp = interpolate(
+    f,
+    [durationInFrames - 15, durationInFrames],
+    [1, 0],
+    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+  );
 
   const severityColors: Record<string, string> = {
     High: C.coral,
@@ -169,6 +177,7 @@ export const Scene25RiskCards: React.FC<{ data: IPOData }> = ({ data }) => {
         alignItems: "center",
         overflow: "hidden",
         padding: "60px 100px",
+        opacity: exitOp,
       }}
     >
       <GrainOverlay opacity={0.04} />

@@ -66,13 +66,13 @@ export const SUB_SCENE_DEFINITIONS: SubSceneMeta[] = [
 
   // Chapter 7: Structural Risks (3 scenes)
   { id: "risk_title", chapterIndex: 6, title: "Key Risks Intro", minFrames: 90 },
-  { id: "risk_cards", chapterIndex: 6, title: "Primary Structural Risks", minFrames: 270 },
-  { id: "risk_summary", chapterIndex: 6, title: "Asset Quality & Risk Rating", minFrames: 180 },
+  { id: "risk_cards", chapterIndex: 6, title: "Primary Structural Risks", minFrames: 150 },
+  { id: "risk_summary", chapterIndex: 6, title: "Asset Quality & Risk Rating", minFrames: 150 },
 
   // Chapter 8: Decision & Scorecard (3 scenes)
   { id: "verdict_title", chapterIndex: 7, title: "Verdict & Scorecard Intro", minFrames: 90 },
-  { id: "scorecard", chapterIndex: 7, title: "GMP & Analyst Scorecard", minFrames: 330 },
-  { id: "outro", chapterIndex: 7, title: "Summary Take & Outro", minFrames: 270 },
+  { id: "scorecard", chapterIndex: 7, title: "GMP & Analyst Scorecard", minFrames: 240 },
+  { id: "outro", chapterIndex: 7, title: "Summary Take & Outro", minFrames: 240 },
 ];
 
 export interface AudioGenerationOptions {
@@ -114,12 +114,19 @@ export function cleanScriptForSpeech(text: string): string {
     .replace(/Indian\s+Rupees?/gi, "")
     .replace(/\$(\d+(\.\d+)?)\s*Billion/gi, "$1 billion dollars")
     .replace(/\$(\d+(\.\d+)?)\s*Million/gi, "$1 million dollars")
+    // Clean trailing zero decimals before unit expansion so TTS never says "point zero zero" or glitches
+    .replace(/(\d+)\.00(?!\d)/g, "$1")
+    .replace(/(\d+\.\d)0(?!\d)/g, "$1")
+    .replace(/(\d+)\.0(?!\d)/g, "$1")
     // Ranges & negative signs
     .replace(/(\d+)\s*[-–—]\s*(\d+)/g, "$1 to $2")
     .replace(/(^|[\s(])[-–—](\d+(\.\d+)?)/g, "$1negative $2")
-    // Units & Abbreviations
-    .replace(/(\d+)\s*Cr\b/gi, "$1 crore")
+    // Units & Abbreviations (support full integer and decimal values like 270.58 Cr or 45 Cr)
+    .replace(/(\d+(?:\.\d+)?)\s*Cr\b/gi, "$1 crore")
+    .replace(/(\d+(?:\.\d+)?)\s*crores?\b/gi, "$1 crore")
     .replace(/\bCr\b/gi, "crore")
+    .replace(/(\d+(?:\.\d+)?)\s*Lakh\b/gi, "$1 lakh")
+    .replace(/(\d+(?:\.\d+)?)\s*lakhs?\b/gi, "$1 lakh")
     .replace(/(\d+)\s*M\+/gi, "$1 million plus")
     .replace(/#(\d+)/g, "number $1")
     .replace(/(\d+(\.\d+)?)x\b/gi, "$1 times")
@@ -283,7 +290,7 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     risk_title: `Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.`,
 
     // 26: Primary Structural Risks
-    risk_cards: `The foremost risk is ${data.risks.items[0]?.title || "market concentration"}, along with ${data.risks.items[1]?.title || "regulatory guidelines"} and ${data.risks.items[2]?.title || "operating dependencies"}.`,
+    risk_cards: `The foremost risk is ${data.risks.items[0]?.title || "market concentration"}${data.risks.items[0]?.detail ? `, primarily driven by ${data.risks.items[0].detail}` : ""}. In addition, investors should monitor ${data.risks.items[1]?.title || "regulatory guidelines"} and ${data.risks.items[2]?.title || "operating dependencies"}.`,
 
     // 27: Asset Quality & Risk Rating
     risk_summary: `Overall risk is assessed as ${data.risks.overallRiskLevel}. ${data.risks.bottomNote || "Investors should carefully evaluate these risk factors before committing capital."}`,
@@ -295,7 +302,7 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     scorecard: `With an active grey market premium of ${data.verdict.gmp.currentGmpFormatted} pointing to an estimated listing price of ${data.verdict.gmp.estimatedListingPrice}, our verdict is ${data.verdict.shortTermVerdict} for short-term gains, and ${data.verdict.longTermVerdict} for long-term compounding, achieving an overall rating of ${data.verdict.scorecard.overallRating}.`,
 
     // 30: Summary Take & Outro
-    outro: `${data.verdict.summaryTake} What is your bidding strategy for ${data.companyName}? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis.`,
+    outro: `${data.verdict.summaryTake} What is your bidding strategy for ${data.companyName}? Share your thoughts in the comments below! If you enjoyed this video, hit the like button and subscribe for daily in-depth IPO analysis.`,
   };
 
   return scripts;
