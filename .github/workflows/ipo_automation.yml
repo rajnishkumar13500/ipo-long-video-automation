@@ -2,9 +2,9 @@ name: Scheduled IPO Video Automation
 
 on:
   schedule:
-    # Daily Run: 05:30 PM IST (12:00 UTC) - Every day (Mon - Sun, 7 days a week)
-    # Renders full-length 16:9 video + 1280x720 thumbnail and uploads to Drive before evening scheduler
-    - cron: '0 12 * * *'
+    # Daily Run: 10:45 PM IST (17:15 UTC) - Every day (Mon - Sun, 7 days a week)
+    # Off-peak GitHub runner window; all evening Indian market & IPO data is fully closed and published
+    - cron: '15 17 * * *'
 
   # Manual on-demand trigger anytime via GitHub Actions UI
   workflow_dispatch:
