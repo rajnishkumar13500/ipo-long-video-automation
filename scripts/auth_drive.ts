@@ -7,7 +7,33 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const ENV_PATH = path.resolve(__dirname, "../.env");
+const ROOT_DIR = path.resolve(__dirname, "../..");
+const KNOWN_PROJECTS = [
+  "Automation shorts",
+  "Automation fulllength",
+  "schedular_shorts_ig",
+  "yt shorts schedular",
+  "yt fulllength schedular",
+];
+
+function updateAllEnvs(tokenKey: string, tokenValue: string) {
+  const updatedPaths: string[] = [];
+  for (const proj of KNOWN_PROJECTS) {
+    const envPath = path.join(ROOT_DIR, proj, ".env");
+    if (fs.existsSync(envPath)) {
+      let content = fs.readFileSync(envPath, "utf-8");
+      const regex = new RegExp(`^${tokenKey}=.*$`, "m");
+      if (regex.test(content)) {
+        content = content.replace(regex, `${tokenKey}=${tokenValue}`);
+      } else {
+        content = content.trimEnd() + `\n${tokenKey}=${tokenValue}\n`;
+      }
+      fs.writeFileSync(envPath, content, "utf-8");
+      updatedPaths.push(envPath);
+    }
+  }
+  return updatedPaths;
+}
 
 async function runAuth() {
   console.log("==================================================");
@@ -43,7 +69,6 @@ async function runAuth() {
   console.log(authUrl);
   console.log("\n⏳ Waiting for authorization on http://localhost:3000/oauth2callback ...\n");
 
-  // Spin up temporary local server to capture redirect code
   const server = http.createServer(async (req, res) => {
     try {
       if (req.url && req.url.startsWith("/oauth2callback")) {
@@ -75,24 +100,20 @@ async function runAuth() {
             return;
           }
 
-          console.log(`\n🎉 Refresh token acquired!`);
-          console.log(`🔑 Refresh Token: ${tokens.refresh_token.substring(0, 15)}...`);
+          console.log("\n==================================================");
+          console.log("🎉 GDRIVE_REFRESH_TOKEN ACQUIRED!");
+          console.log("==================================================");
+          console.log(tokens.refresh_token);
+          console.log("==================================================\n");
 
-          // Update .env
-          let envContent = fs.existsSync(ENV_PATH) ? fs.readFileSync(ENV_PATH, "utf-8") : "";
-          if (envContent.includes("GDRIVE_REFRESH_TOKEN=")) {
-            envContent = envContent.replace(
-              /GDRIVE_REFRESH_TOKEN=.*/g,
-              `GDRIVE_REFRESH_TOKEN=${tokens.refresh_token}`
-            );
-          } else {
-            envContent += `\nGDRIVE_REFRESH_TOKEN=${tokens.refresh_token}\n`;
+          const updated = updateAllEnvs("GDRIVE_REFRESH_TOKEN", tokens.refresh_token);
+          console.log("💾 Automatically updated local .env files:");
+          for (const p of updated) {
+            console.log(`   ✓ ${p}`);
           }
 
-          fs.writeFileSync(ENV_PATH, envContent, "utf-8");
-          console.log(`💾 Saved GDRIVE_REFRESH_TOKEN to .env!`);
           console.log("\n==================================================");
-          console.log("🚀  READY! Now run: npx tsx scripts/test_drive.ts");
+          console.log("🚀  READY! Now update GitHub Secrets and run test_drive.ts");
           console.log("==================================================");
           process.exit(0);
         }
@@ -107,7 +128,6 @@ async function runAuth() {
   });
 
   server.listen(3000, () => {
-    // Attempt auto-open browser if available
     import("child_process").then(({ exec }) => {
       const startCmd = process.platform === "win32" ? "start" : process.platform === "darwin" ? "open" : "xdg-open";
       try {
@@ -116,6 +136,5 @@ async function runAuth() {
     });
   });
 }
-
 
 runAuth();

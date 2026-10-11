@@ -52,19 +52,52 @@ export function cleanCompanyName(title: string): string {
 
 
 export async function fetchLatestIPOs(): Promise<DiscoveredIPO[]> {
-  const feedUrl = "https://ipowatch.in/feed/";
-  try {
-    const res = await fetch(feedUrl, {
-      headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-      },
-    });
+  const feedUrls = [
+    "https://ipowatch.in/feed/",
+    "https://ipowatch.in/?feed=rss2",
+    "https://ipowatch.in/?feed=atom",
+  ];
 
-    if (!res.ok) {
-      throw new Error(`Failed to fetch feed: ${res.statusText}`);
+  const headers = {
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    Accept: "application/rss+xml, application/xml, text/xml, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Cache-Control": "no-cache",
+  };
+
+  let xml: string | null = null;
+  let lastError: any = null;
+
+  for (const url of feedUrls) {
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const res = await fetch(url, { headers });
+        if (res.ok) {
+          xml = await res.text();
+          break;
+        } else {
+          lastError = new Error(`HTTP ${res.status} ${res.statusText} from ${url}`);
+          if (attempt < 3 && res.status >= 500) {
+            await new Promise((r) => setTimeout(r, attempt * 1500));
+          }
+        }
+      } catch (err: any) {
+        lastError = err;
+        if (attempt < 3) {
+          await new Promise((r) => setTimeout(r, attempt * 1500));
+        }
+      }
     }
+    if (xml) break;
+  }
 
-    const xml = await res.text();
+  if (!xml) {
+    console.error("❌ Failed to fetch IPO feed after retries & fallback URLs:", lastError?.message || lastError);
+    return [];
+  }
+
+  try {
     const itemRegex = /<item>[\s\S]*?<title>(.*?)<\/title>[\s\S]*?<link>(.*?)<\/link>[\s\S]*?<pubDate>(.*?)<\/pubDate>/g;
     let match: RegExpExecArray | null;
 
@@ -94,7 +127,7 @@ export async function fetchLatestIPOs(): Promise<DiscoveredIPO[]> {
 
     return list;
   } catch (error) {
-    console.error("Error fetching latest IPOs from feed:", error);
+    console.error("Error parsing IPO feed XML:", error);
     return [];
   }
 }
