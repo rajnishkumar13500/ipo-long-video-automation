@@ -87,6 +87,21 @@ jobs:
           ELEVENLABS_API_KEY_8: ${{ secrets.ELEVENLABS_API_KEY_8 }}
           ELEVENLABS_API_KEY_9: ${{ secrets.ELEVENLABS_API_KEY_9 }}
           ELEVENLABS_API_KEY_10: ${{ secrets.ELEVENLABS_API_KEY_10 }}
+          ELEVENLABS_API_KEY_11: ${{ secrets.ELEVENLABS_API_KEY_11 }}
+          ELEVENLABS_API_KEY_12: ${{ secrets.ELEVENLABS_API_KEY_12 }}
+          ELEVENLABS_API_KEY_13: ${{ secrets.ELEVENLABS_API_KEY_13 }}
+          ELEVENLABS_API_KEY_14: ${{ secrets.ELEVENLABS_API_KEY_14 }}
+          ELEVENLABS_API_KEY_15: ${{ secrets.ELEVENLABS_API_KEY_15 }}
+          ELEVENLABS_API_KEY_16: ${{ secrets.ELEVENLABS_API_KEY_16 }}
+          ELEVENLABS_API_KEY_17: ${{ secrets.ELEVENLABS_API_KEY_17 }}
+          ELEVENLABS_API_KEY_18: ${{ secrets.ELEVENLABS_API_KEY_18 }}
+          ELEVENLABS_API_KEY_19: ${{ secrets.ELEVENLABS_API_KEY_19 }}
+          ELEVENLABS_API_KEY_20: ${{ secrets.ELEVENLABS_API_KEY_20 }}
+          ELEVENLABS_API_KEY_21: ${{ secrets.ELEVENLABS_API_KEY_21 }}
+          ELEVENLABS_API_KEY_22: ${{ secrets.ELEVENLABS_API_KEY_22 }}
+          ELEVENLABS_API_KEY_23: ${{ secrets.ELEVENLABS_API_KEY_23 }}
+          ELEVENLABS_API_KEY_24: ${{ secrets.ELEVENLABS_API_KEY_24 }}
+          ELEVENLABS_API_KEY_25: ${{ secrets.ELEVENLABS_API_KEY_25 }}
           ELEVENLABS_API_KEYS: ${{ secrets.ELEVENLABS_API_KEYS }}
           ELEVENLABS_MODEL_ID: 'eleven_multilingual_v2'
           ELEVENLABS_VOICE_ID: ${{ github.event.inputs.voice_id || 'iP95p4xoKVk53GoZ742B' }}
