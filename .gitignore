@@ -10,6 +10,12 @@ out
 service_account.json
 *service_account*.json
 credentials.json
-# Independent projects
-ipo-youtube-publisher/
+# Remotion build and bundle cache
+build/
+.remotion/
 
+# Dynamic per-IPO audio renders (keep shared assets)
+public/audio/*/
+!public/audio/samples/
+!public/audio/sfx/
+!public/audio/voice_samples/

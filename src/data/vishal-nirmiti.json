@@ -1,0 +1,668 @@
+{
+  "id": "vishal-nirmiti",
+  "companyName": "Vishal Nirmiti",
+  "ticker": "VISHALNIRMITI",
+  "industry": "Civil Engineering & Construction",
+  "domain": "vishalnirmiti.in",
+  "logoUrl": "logos/vishal-nirmiti.png",
+  "logoInitials": "VN",
+  "exchange": "NSE • BSE",
+  "badgeSubtitle": "IPO Deep-Dive Breakdown",
+  "listingDate": "2026-10-08",
+  "issue": {
+    "totalFormatted": "₹178 Cr",
+    "freshFormatted": "₹145 Cr",
+    "freshPercent": "81%",
+    "ofsFormatted": "₹33 Cr",
+    "ofsPercent": "19%",
+    "priceBand": "₹208 – ₹220",
+    "lotSize": "68 shares",
+    "minInvestment": "₹14,960",
+    "retailQuota": "70%",
+    "qibQuota": "1%",
+    "niiQuota": "29%",
+    "biddingDates": "Sep 30 – Oct 5, 2026",
+    "allotmentDate": "Oct 6, 2026",
+    "listingDate": "Oct 8, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Funding Working Capital Requirements",
+        "amountFormatted": "₹75.00 Cr",
+        "percentage": "42%"
+      },
+      {
+        "purpose": "Repayment and/or pre-payment of term loans",
+        "amountFormatted": "₹19.00 Cr",
+        "percentage": "11%"
+      },
+      {
+        "purpose": "General Corporate Purpose",
+        "amountFormatted": "₹51.00 Cr",
+        "percentage": "29%"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Leading manufacturer of Pre-Stressed Concrete (PSC) sleepers and EPC services for railway and civil infrastructure.",
+    "description": "Vishal Nirmiti manufactures PSC sleepers for railways, pre-cast concrete products, and Mild Steel pipes for Pumped Storage Projects. The company offers EPC services for railway infrastructure, irrigation, and civil engineering projects across India.",
+    "segments": [
+      {
+        "name": "Railway Infrastructure (PSC Sleepers)",
+        "sharePercent": 60,
+        "description": "Manufacturing and supply of Pre-Stressed Concrete sleepers for Indian Railways.",
+        "amountFormatted": "₹206.48 Cr"
+      },
+      {
+        "name": "EPC & Civil Engineering",
+        "sharePercent": 30,
+        "description": "Engineering, Procurement, and Construction services for irrigation and industrial projects.",
+        "amountFormatted": "₹103.24 Cr"
+      },
+      {
+        "name": "MS Pipes & Liners",
+        "sharePercent": 10,
+        "description": "Fabrication and erection of Mild Steel pipes and liners for Pumped Storage Projects.",
+        "amountFormatted": "₹34.41 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Pan-India Presence",
+        "value": "7 States",
+        "subtext": "Operations in MH, MP, GJ, HP, UP, OD, KA"
+      },
+      {
+        "label": "Industry Experience",
+        "value": "30+ Years",
+        "subtext": "Incorporated in 1994"
+      },
+      {
+        "label": "FY26 Revenue",
+        "value": "₹344.13 Cr",
+        "subtext": "Consolidated Revenue"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Railway Infrastructure & Construction",
+    "marketSizeFormatted": "$150 Billion by 2030",
+    "cagrText": "8.5% Industry CAGR",
+    "drivers": [
+      {
+        "title": "Railway Modernization",
+        "detail": "Government initiatives to upgrade track infrastructure and increase sleeper replacement rates."
+      },
+      {
+        "title": "Pumped Storage Projects",
+        "detail": "Expansion of renewable energy storage infrastructure driving demand for MS pipes and liners."
+      },
+      {
+        "title": "Urban Infrastructure",
+        "detail": "Increased capital expenditure on irrigation and civil engineering projects across states."
+      }
+    ],
+    "marketPosition": "One of the leading private sector manufacturers of PSC sleepers in India."
+  },
+  "financials": {
+    "years": [
+      "FY23",
+      "FY24",
+      "FY25"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹270.58 Cr",
+        "₹247.93 Cr",
+        "₹324.86 Cr"
+      ],
+      "rawCr": [
+        270.58,
+        247.93,
+        324.86
+      ],
+      "cagr": "5.2% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹15.00 Cr",
+        "₹18.00 Cr",
+        "₹35.00 Cr"
+      ],
+      "marginsPercent": [
+        "5.5%",
+        "7.3%",
+        "10.8%"
+      ],
+      "rawCr": [
+        15,
+        18,
+        35
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹3.01 Cr",
+        "₹3.45 Cr",
+        "₹23.64 Cr"
+      ],
+      "marginsPercent": [
+        "1.1%",
+        "1.4%",
+        "7.3%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "0.8x",
+      "cashFromOperations": "₹25.00 Cr",
+      "ronwFormatted": "12.5%",
+      "roceFormatted": "10.2%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "18.5x",
+    "commentary": "Vishal Nirmiti is trading at a premium to the industry average due to its strong order book and railway sector tailwinds.",
+    "table": [
+      {
+        "name": "Vishal Nirmiti (Target)",
+        "peRatio": "22.4x",
+        "pbRatio": "2.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹344.13 Cr",
+        "patFormatted": "₹24.98 Cr",
+        "ronwFormatted": "12.5%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "Rail Vikas Nigam Ltd",
+        "peRatio": "15.2x",
+        "pbRatio": "1.9x",
+        "evEbitda": "12.5x",
+        "revenueFormatted": "₹1,200.00 Cr",
+        "patFormatted": "₹85.00 Cr",
+        "ronwFormatted": "14.2%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "L&T Construction",
+        "peRatio": "12.8x",
+        "pbRatio": "1.5x",
+        "evEbitda": "10.1x",
+        "revenueFormatted": "₹5,000.00 Cr",
+        "patFormatted": "₹350.00 Cr",
+        "ronwFormatted": "18.5%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Customer Concentration",
+        "title": "Dependence on Indian Railways",
+        "detail": "Significant portion of revenue is derived from Indian Railways, making the company vulnerable to changes in government procurement policies."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Execution Risk",
+        "title": "Project Execution Delays",
+        "detail": "EPC projects are subject to delays due to land acquisition, regulatory approvals, and supply chain disruptions."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Competition",
+        "title": "Intense Competition",
+        "detail": "The construction sector is highly competitive with large players like L&T and Tata Projects competing for contracts."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "The company faces moderate risks primarily due to customer concentration and execution challenges in large-scale infrastructure projects."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹215 (3.4%)",
+      "estimatedListingPrice": "₹225",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.5,
+      "financialGrowth": 8,
+      "profitabilityQuality": 7.5,
+      "valuationFairness": 7.8,
+      "overallRating": "7.7 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Strong GMP and high retail quota suggest good listing gains potential.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Beneficiary of railway infrastructure growth and diversified EPC portfolio.",
+    "summaryTake": "Vishal Nirmiti offers a solid entry into the railway infrastructure space with strong financials and a clear growth trajectory."
+  },
+  "scripts": {
+    "chapter_1": "Vishal NirmitiDate, Review, Price, Allotment Details is making its debut on the primary market with a 178 crore initial public offering, comprising a 145 crore fresh issue and a 33 crore offer for sale. Priced between 208 to 220, retail investors can participate with an investment of under 14,960. But in an increasingly competitive market, does this IPO offer genuine value or is it overpriced hype? In this in-depth analysis, we break down their business model, 3-year financial health, peer valuations, and our final verdict.",
+    "chapter_2": "To evaluate Vishal NirmitiDate, Review, Price, Allotment Details, we first need to understand how the company makes money. Operating as a leading manufacturer of pre-stressed concrete (psc) sleepers and epc services for railway and civil infrastructure., their core revenue comes from Railway Infrastructure (PSC Sleepers), contributing 60 percent of total turnover. The remaining revenue is driven by EPC & Civil Engineering at 30 percent and MS Pipes & Liners at 10 percent. Their proprietary platform enables rapid customer acquisition with low operating overheads.",
+    "chapter_3": "The macroeconomic backdrop provides strong tailwinds for this sector. The industry is projected to reach $150 Billion by 2030, growing at an impressive 8.5% Industry CAGR. Key structural drivers include expanding digital penetration, automated credit underwriting, and rising consumer demand across non-metro cities. Vishal NirmitiDate, Review, Price, Allotment Details is well-positioned to capitalize on this ongoing expansion.",
+    "chapter_4": "Now let's examine the three-year financial trajectory. Between FY23 and FY25, top-line revenue expanded rapidly from 270.58 crore to 324.86 crore, delivering a strong 5.2% CAGR. Operating EBITDA margins improved to 10.8%, with latest net profit reaching 23.64 crore. On the balance sheet, debt-to-equity stands at a healthy 0.8x with positive operating cash flow of ₹25.00 Cr, indicating disciplined capital management.",
+    "chapter_5": "Examining the issue structure, the offer consists of 81% fresh capital and 19% offer for sale. Looking at the objects of the offer, the company plans to utilize fresh proceeds primarily for Funding Working Capital Requirements, followed by technology infrastructure investments and general corporate expenses. The high proportion of fresh growth capital is a positive signal for incoming investors.",
+    "chapter_6": "On the valuation front, at the upper price band, Vishal NirmitiDate, Review, Price, Allotment Details trades at a price to earnings ratio of 22.4x. Comparing this to listed peers, the industry average P/E stands at 18.5x. With a return on net worth of 12.5%, the IPO is priced at a reasonable valuation compared to established industry peers, offering an attractive margin of safety.",
+    "chapter_7": "However, no investment is without risk. There are three key red flags retail investors should be aware of: first, dependence on indian railways which could impact margins; second, project execution delays; and third, intense competition. Investors should carefully monitor asset quality and regulatory developments going forward.",
+    "chapter_8": "To conclude, in the grey market, the premium is trending at ₹215 (3.4%), signaling an estimated listing price of ₹225. On our fundamental scorecard, the company scores 7.7 / 10. Our verdict: Apply for Listing Gains for short-term listing gains, and Subscribe for Long Term for long-term investors. If you found this breakdown helpful, remember to subscribe to the channel and leave your comments below!"
+  },
+  "sceneScripts": {
+    "cold_open": "Is India's upcoming Civil Engineering & Construction giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.",
+    "logo_reveal": "Vishal Nirmiti is hitting Dalal Street with a landmark Civil Engineering & Construction IPO on the NSE  and  BSE.",
+    "issue_numbers": "The company is raising ₹178 Cr in a price band of ₹208 – ₹220 per share, with a lot size of 68 shares requiring a minimum investment of ₹14,960.",
+    "timeline_stakes": "Bidding opens on Sep 30 – Oct 5, 2026, with allotment finalized on Oct 6, 2026 and listing slated for Oct 8, 2026. Mark your calendar.",
+    "biz_title": "Chapter two: Business Model. How does Vishal Nirmiti actually monetize its platform? Let us break down their core revenue streams.",
+    "biz_story": "Leading manufacturer of Pre-Stressed Concrete (PSC) sleepers and EPC services for railway and civil infrastructure.. Vishal Nirmiti manufactures PSC sleepers for railways, pre-cast concrete products, and Mild Steel pipes for Pumped Storage Projects. The company offers EPC services for railway infrastructure, irrigation, and civil engineering projects across India.",
+    "biz_donut": "Looking at revenue contribution, Railway Infrastructure (PSC Sleepers) accounts for 60 percent, and EPC & Civil Engineering accounts for 30 percent, and MS Pipes & Liners accounts for 10 percent.",
+    "biz_metrics": "Operationally, the platform boasts 7 States Pan-India Presence, 30+ Years Industry Experience, ₹344.13 Cr FY26 Revenue.",
+    "ind_title": "Chapter three: Market Opportunity. How large is India's Railway Infrastructure & Construction space, and what tailwinds are driving this expansion?",
+    "tam_reveal": "The Railway Infrastructure & Construction is projected to expand into a $150 Billion by 2030, compounding at a rapid 8.5% Industry CAGR.",
+    "growth_drivers": "Key structural growth catalysts include Railway Modernization, alongside Pumped Storage Projects, alongside Urban Infrastructure.",
+    "market_position": "Vishal Nirmiti holds a commanding market presence, currently One of the leading private sector manufacturers of PSC sleepers in India..",
+    "fin_title": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength.",
+    "revenue_chart": "Topline revenue surged from ₹270.58 Cr in FY23 to ₹324.86 Cr in FY25, representing an impressive 5.2% CAGR.",
+    "profit_arc": "On the bottom line, ebitda scaled to ₹35.00 Cr, while net profit expanded from ₹3.01 Cr to ₹23.64 Cr with a 7.3% profit margin.",
+    "balance_sheet": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.8x, positive operating cash flow of ₹25.00 Cr, and a return on net worth of 12.5%.",
+    "fin_summary": "Overall, Vishal Nirmiti demonstrates solid operating leverage and durable cash generation heading into the public markets.",
+    "issue_title": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?",
+    "issue_split": "The issue is structured with a fresh capital issue of ₹145 Cr, or 81%, and an offer for sale component of ₹33 Cr, or 19%.",
+    "objects_issue": "Fresh proceeds are earmarked for 42% towards Funding Working Capital Requirements, and 11% towards Repayment and/or pre-payment of term loans, and 29% towards General Corporate Purpose.",
+    "investor_quota": "For subscription quotas, retail investors are allocated 70%, qualified institutional buyers get 1%, and high net-worth individuals receive 29%.",
+    "val_title": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?",
+    "peer_comparison": "At the upper price band, Vishal Nirmiti demands a price-to-earnings multiple of 22.4x, compared to Rail Vikas Nigam Ltd at 15.2x and L&T Construction at 12.8x.",
+    "val_summary": "Against an industry average P E of 18.5x, Vishal Nirmiti is trading at a premium to the industry average due to its strong order book and railway sector tailwinds.",
+    "risk_title": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.",
+    "risk_cards": "The foremost risk is Dependence on Indian Railways, primarily driven by high customer concentration from railway tenders. In addition, investors should monitor Project Execution Delays and Intense Competition.",
+    "risk_summary": "Overall risk is assessed as Moderate. The company faces moderate risks primarily due to customer concentration and execution challenges in large-scale infrastructure projects.",
+    "verdict_title": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.",
+    "scorecard": "With an active grey market premium of ₹215 (3.4%) pointing to an estimated listing price of ₹225, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.7 / 10.",
+    "outro": "Vishal Nirmiti offers a solid entry into the railway infrastructure space with strong financials and a clear growth trajectory. What is your bidding strategy for Vishal Nirmiti? Share your thoughts in the comments below! If you enjoyed this video, hit the like button and subscribe for daily in-depth IPO analysis."
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  },
+  "timeline": {
+    "totalFrames": 10519,
+    "fps": 30,
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "chapters": [
+      {
+        "index": 0,
+        "id": "chapter_1",
+        "title": "Overview & Issue Highlights",
+        "shortTitle": "Overview",
+        "from": 0,
+        "durationInFrames": 1223,
+        "audioDurationSec": 39.31428571428572
+      },
+      {
+        "index": 1,
+        "id": "chapter_2",
+        "title": "Business Model & Monetization",
+        "shortTitle": "Business",
+        "from": 1223,
+        "durationInFrames": 1862,
+        "audioDurationSec": 60.604081632653056
+      },
+      {
+        "index": 2,
+        "id": "chapter_3",
+        "title": "Industry Backdrop & Market TAM",
+        "shortTitle": "Industry",
+        "from": 3085,
+        "durationInFrames": 1110,
+        "audioDurationSec": 35.26530612244898
+      },
+      {
+        "index": 3,
+        "id": "chapter_4",
+        "title": "3-Year Financial Statements",
+        "shortTitle": "Financials",
+        "from": 4195,
+        "durationInFrames": 1717,
+        "audioDurationSec": 55.3534693877551
+      },
+      {
+        "index": 4,
+        "id": "chapter_5",
+        "title": "Issue Details & Fresh Capital",
+        "shortTitle": "Issue",
+        "from": 5912,
+        "durationInFrames": 1224,
+        "audioDurationSec": 39.31428571428572
+      },
+      {
+        "index": 5,
+        "id": "chapter_6",
+        "title": "Valuation & Peer Benchmarking",
+        "shortTitle": "Valuation",
+        "from": 7136,
+        "durationInFrames": 1029,
+        "audioDurationSec": 33.201632653061225
+      },
+      {
+        "index": 6,
+        "id": "chapter_7",
+        "title": "Structural Red Flags & Risks",
+        "shortTitle": "Risks",
+        "from": 8165,
+        "durationInFrames": 887,
+        "audioDurationSec": 26.122448979591837
+      },
+      {
+        "index": 7,
+        "id": "chapter_8",
+        "title": "Final Decision & Analyst Scorecard",
+        "shortTitle": "Verdict",
+        "from": 9052,
+        "durationInFrames": 1467,
+        "audioDurationSec": 47.804081632653066
+      }
+    ],
+    "scenes": [
+      {
+        "id": "cold_open",
+        "chapterIndex": 0,
+        "title": "Cold Open Hook",
+        "from": 0,
+        "durationInFrames": 242,
+        "audioDurationSec": 7.706122448979592,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_cold_open.mp3",
+        "scriptText": "Is India's upcoming Civil Engineering & Construction giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply."
+      },
+      {
+        "id": "logo_reveal",
+        "chapterIndex": 0,
+        "title": "Dalal Street Entrance",
+        "from": 242,
+        "durationInFrames": 219,
+        "audioDurationSec": 6.948571428571428,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_logo_reveal.mp3",
+        "scriptText": "Vishal Nirmiti is hitting Dalal Street with a landmark Civil Engineering & Construction IPO on the N S E and B S E."
+      },
+      {
+        "id": "issue_numbers",
+        "chapterIndex": 0,
+        "title": "Key Issue Numbers",
+        "from": 461,
+        "durationInFrames": 387,
+        "audioDurationSec": 12.538775510204081,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_issue_numbers.mp3",
+        "scriptText": "The company is raising 178 crore in a price band of 208 to 220 per share, with a lot size of 68 shares requiring a minimum investment of 14,960."
+      },
+      {
+        "id": "timeline_stakes",
+        "chapterIndex": 0,
+        "title": "IPO Roadmap & Dates",
+        "from": 848,
+        "durationInFrames": 375,
+        "audioDurationSec": 12.120816326530612,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_timeline_stakes.mp3",
+        "scriptText": "Bidding opens on September 30 – October 5, 2026, with allotment finalized on October 6, 2026 and listing slated for October 8, 2026. Mark your calendar."
+      },
+      {
+        "id": "biz_title",
+        "chapterIndex": 1,
+        "title": "Business Model Intro",
+        "from": 1223,
+        "durationInFrames": 281,
+        "audioDurationSec": 9.012244897959183,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_biz_title.mp3",
+        "scriptText": "Chapter two: Business Model. How does Vishal Nirmiti actually monetize its platform? Let us break down their core revenue streams."
+      },
+      {
+        "id": "biz_story",
+        "chapterIndex": 1,
+        "title": "Platform Value Proposition",
+        "from": 1504,
+        "durationInFrames": 799,
+        "audioDurationSec": 26.279183673469387,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_biz_story.mp3",
+        "scriptText": "Leading manufacturer of Pre-Stressed Concrete (PSC) sleepers and EPC services for railway and civil infrastructure.. Vishal Nirmiti manufactures PSC sleepers for railways, pre-cast concrete products, and Mild Steel pipes for Pumped Storage Projects. The company offers EPC services for railway infrastructure, irrigation, and civil engineering projects across India."
+      },
+      {
+        "id": "biz_donut",
+        "chapterIndex": 1,
+        "title": "Revenue Segment Breakdown",
+        "from": 2303,
+        "durationInFrames": 382,
+        "audioDurationSec": 12.35591836734694,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_biz_donut.mp3",
+        "scriptText": "Looking at revenue contribution, Railway Infrastructure (PSC Sleepers) accounts for 60 percent, and EPC & Civil Engineering accounts for 30 percent, and MS Pipes & Liners accounts for 10 percent."
+      },
+      {
+        "id": "biz_metrics",
+        "chapterIndex": 1,
+        "title": "Operational Scale & AUM",
+        "from": 2685,
+        "durationInFrames": 400,
+        "audioDurationSec": 12.956734693877552,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_biz_metrics.mp3",
+        "scriptText": "Operationally, the platform boasts 7 States Pan-India Presence, 30+ Years Industry Experience, 344.13 crore financial year 26 Revenue."
+      },
+      {
+        "id": "ind_title",
+        "chapterIndex": 2,
+        "title": "Market Opportunity Intro",
+        "from": 3085,
+        "durationInFrames": 278,
+        "audioDurationSec": 8.907755102040817,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_ind_title.mp3",
+        "scriptText": "Chapter three: Market Opportunity. How large is India's Railway Infrastructure & Construction space, and what tailwinds are driving this expansion?"
+      },
+      {
+        "id": "tam_reveal",
+        "chapterIndex": 2,
+        "title": "Addressable Market TAM",
+        "from": 3363,
+        "durationInFrames": 371,
+        "audioDurationSec": 12.016326530612245,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_tam_reveal.mp3",
+        "scriptText": "The Railway Infrastructure & Construction is projected to expand into a 150 billion dollars by 2030, compounding at a rapid 8.5 percent Industry compound annual growth rate."
+      },
+      {
+        "id": "growth_drivers",
+        "chapterIndex": 2,
+        "title": "Structural Growth Drivers",
+        "from": 3734,
+        "durationInFrames": 240,
+        "audioDurationSec": 7.340408163265306,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_growth_drivers.mp3",
+        "scriptText": "Key structural growth catalysts include Railway Modernization, alongside Pumped Storage Projects, alongside Urban Infrastructure."
+      },
+      {
+        "id": "market_position",
+        "chapterIndex": 2,
+        "title": "Competitive Positioning",
+        "from": 3974,
+        "durationInFrames": 221,
+        "audioDurationSec": 7.000816326530612,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_market_position.mp3",
+        "scriptText": "Vishal Nirmiti holds a commanding market presence, currently One of the leading private sector manufacturers of PSC sleepers in India.."
+      },
+      {
+        "id": "fin_title",
+        "chapterIndex": 3,
+        "title": "Financials Deep Dive Intro",
+        "from": 4195,
+        "durationInFrames": 263,
+        "audioDurationSec": 8.385306122448979,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_fin_title.mp3",
+        "scriptText": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength."
+      },
+      {
+        "id": "revenue_chart",
+        "chapterIndex": 3,
+        "title": "3-Year Revenue Growth",
+        "from": 4458,
+        "durationInFrames": 440,
+        "audioDurationSec": 14.288979591836735,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_revenue_chart.mp3",
+        "scriptText": "Topline revenue surged from 270.58 crore in financial year 23 to 324.86 crore in financial year 25, representing an impressive 5.2 percent compound annual growth rate."
+      },
+      {
+        "id": "profit_arc",
+        "chapterIndex": 3,
+        "title": "Profitability Turnaround & EBITDA",
+        "from": 4898,
+        "durationInFrames": 393,
+        "audioDurationSec": 12.721632653061224,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_profit_arc.mp3",
+        "scriptText": "On the bottom line, ebitda scaled to 35.00 crore, while net profit expanded from 3.01 crore to 23.64 crore with a 7.3 percent profit margin."
+      },
+      {
+        "id": "balance_sheet",
+        "chapterIndex": 3,
+        "title": "Balance Sheet & Cash Flows",
+        "from": 5291,
+        "durationInFrames": 415,
+        "audioDurationSec": 13.453061224489796,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_balance_sheet.mp3",
+        "scriptText": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.8 times, positive operating cash flow of 25.00 crore, and a return on net worth of 12.5 percent."
+      },
+      {
+        "id": "fin_summary",
+        "chapterIndex": 3,
+        "title": "Financial Health Takeaway",
+        "from": 5706,
+        "durationInFrames": 206,
+        "audioDurationSec": 6.504489795918367,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_fin_summary.mp3",
+        "scriptText": "Overall, Vishal Nirmiti demonstrates solid operating leverage and durable cash generation heading into the public markets."
+      },
+      {
+        "id": "issue_title",
+        "chapterIndex": 4,
+        "title": "Issue Details Intro",
+        "from": 5912,
+        "durationInFrames": 217,
+        "audioDurationSec": 6.870204081632653,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_issue_title.mp3",
+        "scriptText": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?"
+      },
+      {
+        "id": "issue_split",
+        "chapterIndex": 4,
+        "title": "Fresh Issue vs OFS Split",
+        "from": 6129,
+        "durationInFrames": 300,
+        "audioDurationSec": 9.639183673469388,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_issue_split.mp3",
+        "scriptText": "The issue is structured with a fresh capital issue of 145 crore, or 81 percent, and an offer for sale component of 33 crore, or 19 percent."
+      },
+      {
+        "id": "objects_issue",
+        "chapterIndex": 4,
+        "title": "Objects of the Offer",
+        "from": 6429,
+        "durationInFrames": 375,
+        "audioDurationSec": 12.120816326530612,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_objects_issue.mp3",
+        "scriptText": "Fresh proceeds are earmarked for 42 percent towards Funding Working Capital Requirements, and 11 percent towards Repayment and/or pre-payment of term loans, and 29 percent towards General Corporate Purpose."
+      },
+      {
+        "id": "investor_quota",
+        "chapterIndex": 4,
+        "title": "Reservation Quotas",
+        "from": 6804,
+        "durationInFrames": 332,
+        "audioDurationSec": 10.684081632653061,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_investor_quota.mp3",
+        "scriptText": "For subscription quotas, retail investors are allocated 70 percent, qualified institutional buyers get 1 percent, and high net-worth individuals receive 29 percent."
+      },
+      {
+        "id": "val_title",
+        "chapterIndex": 5,
+        "title": "Valuation & Peers Intro",
+        "from": 7136,
+        "durationInFrames": 263,
+        "audioDurationSec": 8.385306122448979,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_val_title.mp3",
+        "scriptText": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?"
+      },
+      {
+        "id": "peer_comparison",
+        "chapterIndex": 5,
+        "title": "Peer Benchmarking Matrix",
+        "from": 7399,
+        "durationInFrames": 391,
+        "audioDurationSec": 12.66938775510204,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_peer_comparison.mp3",
+        "scriptText": "At the upper price band, Vishal Nirmiti demands a price-to-earnings multiple of 22.4 times, compared to Rail Vikas Nigam Ltd at 15.2 times and L&T Construction at 12.8 times."
+      },
+      {
+        "id": "val_summary",
+        "chapterIndex": 5,
+        "title": "Valuation Assessment",
+        "from": 7790,
+        "durationInFrames": 375,
+        "audioDurationSec": 12.146938775510204,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_val_summary.mp3",
+        "scriptText": "Against an industry average P E of 18.5 times, Vishal Nirmiti is trading at a premium to the industry average due to its strong order book and railway sector tailwinds."
+      },
+      {
+        "id": "risk_title",
+        "chapterIndex": 6,
+        "title": "Key Risks Intro",
+        "from": 8165,
+        "durationInFrames": 230,
+        "audioDurationSec": 7.288163265306123,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_risk_title.mp3",
+        "scriptText": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh."
+      },
+      {
+        "id": "risk_cards",
+        "chapterIndex": 6,
+        "title": "Primary Structural Risks",
+        "from": 8395,
+        "durationInFrames": 270,
+        "audioDurationSec": 6.295510204081633,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_risk_cards.mp3",
+        "scriptText": "The foremost risk is Dependence on Indian Railways, along with Project Execution Delays and Intense Competition."
+      },
+      {
+        "id": "risk_summary",
+        "chapterIndex": 6,
+        "title": "Asset Quality & Risk Rating",
+        "from": 8665,
+        "durationInFrames": 387,
+        "audioDurationSec": 12.538775510204081,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_risk_summary.mp3",
+        "scriptText": "Overall risk is assessed as Moderate. The company faces moderate risks primarily due to customer concentration and execution challenges in large-scale infrastructure projects."
+      },
+      {
+        "id": "verdict_title",
+        "chapterIndex": 7,
+        "title": "Verdict & Scorecard Intro",
+        "from": 9052,
+        "durationInFrames": 228,
+        "audioDurationSec": 7.2359183673469385,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_verdict_title.mp3",
+        "scriptText": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard."
+      },
+      {
+        "id": "scorecard",
+        "chapterIndex": 7,
+        "title": "GMP & Analyst Scorecard",
+        "from": 9280,
+        "durationInFrames": 671,
+        "audioDurationSec": 21.995102040816327,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_scorecard.mp3",
+        "scriptText": "With an active grey market premium of 215 (3.4 percent) pointing to an estimated listing price of 225, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.7 / 10."
+      },
+      {
+        "id": "outro",
+        "chapterIndex": 7,
+        "title": "Summary Take & Outro",
+        "from": 9951,
+        "durationInFrames": 568,
+        "audioDurationSec": 18.573061224489795,
+        "audioFile": "audio/vishal-nirmiti/scenes/scene_outro.mp3",
+        "scriptText": "Vishal Nirmiti offers a solid entry into the railway infrastructure space with strong financials and a clear growth trajectory. What is your bidding strategy for Vishal Nirmiti? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+      }
+    ]
+  }
+}

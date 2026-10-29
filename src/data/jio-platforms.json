@@ -1,0 +1,668 @@
+{
+  "id": "jio-platforms",
+  "companyName": "Jio Platforms",
+  "ticker": "JIOPLATFORMS",
+  "industry": "Telecommunications & Digital Services",
+  "domain": "jio.com",
+  "logoUrl": "logos/jio-platforms.png",
+  "logoInitials": "JP",
+  "exchange": "NSE • BSE",
+  "badgeSubtitle": "IPO Deep-Dive Breakdown",
+  "listingDate": "2026-10-26",
+  "issue": {
+    "totalFormatted": "₹1,08,000 Cr",
+    "freshFormatted": "₹1,08,000 Cr",
+    "freshPercent": "100%",
+    "ofsFormatted": "₹0 Cr",
+    "ofsPercent": "0%",
+    "priceBand": "₹400 – ₹420",
+    "lotSize": "100 shares",
+    "minInvestment": "₹42,000",
+    "retailQuota": "35%",
+    "qibQuota": "50%",
+    "niiQuota": "15%",
+    "biddingDates": "Oct 21 – Oct 23, 2026",
+    "allotmentDate": "Oct 24, 2026",
+    "listingDate": "Oct 26, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Debt Repayment",
+        "amountFormatted": "₹60,000 Cr",
+        "percentage": "55%"
+      },
+      {
+        "purpose": "Capital Expenditure (5G & Data Centers)",
+        "amountFormatted": "₹35,000 Cr",
+        "percentage": "32%"
+      },
+      {
+        "purpose": "General Corporate Purposes",
+        "amountFormatted": "₹13,000 Cr",
+        "percentage": "13%"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "India's leading integrated digital ecosystem provider combining telecom, digital services, and enterprise solutions.",
+    "description": "Jio Platforms operates a massive 4G/5G network serving over 450 million subscribers, while expanding into digital payments, cloud computing, and enterprise IoT. The company leverages its subscriber base to cross-sell high-margin digital services and B2B solutions, creating a diversified revenue stream beyond traditional voice and data.",
+    "segments": [
+      {
+        "name": "Telecommunications",
+        "sharePercent": 70,
+        "description": "Voice, data, and video services over 4G/5G networks.",
+        "amountFormatted": "₹1,80,000 Cr"
+      },
+      {
+        "name": "Digital Services",
+        "sharePercent": 20,
+        "description": "JioMart, JioCloud, JioPayments, and OTT content platforms.",
+        "amountFormatted": "₹50,000 Cr"
+      },
+      {
+        "name": "Enterprise Solutions",
+        "sharePercent": 10,
+        "description": "IoT, cybersecurity, and enterprise cloud services.",
+        "amountFormatted": "₹25,000 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Subscribers",
+        "value": "450M+",
+        "subtext": "Active 4G/5G users"
+      },
+      {
+        "label": "Market Share",
+        "value": "~35%",
+        "subtext": "India's largest telecom operator"
+      },
+      {
+        "label": "5G Coverage",
+        "value": "800+ Cities",
+        "subtext": "Rapid 5G rollout across India"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Telecommunications & Digital Infrastructure",
+    "marketSizeFormatted": "$150 Billion by 2030",
+    "cagrText": "12% Industry CAGR",
+    "drivers": [
+      {
+        "title": "5G Adoption",
+        "detail": "Rapid expansion of 5G networks driving higher ARPU and new service monetization."
+      },
+      {
+        "title": "Digital India",
+        "detail": "Government initiatives promoting digital infrastructure and fintech adoption."
+      },
+      {
+        "title": "Enterprise Cloud",
+        "detail": "Growing demand for cloud computing and IoT solutions among Indian businesses."
+      }
+    ],
+    "marketPosition": "Market Leader in Indian Telecom with ~35% market share."
+  },
+  "financials": {
+    "years": [
+      "FY23",
+      "FY24",
+      "FY25"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹1,20,000 Cr",
+        "₹1,45,000 Cr",
+        "₹1,75,000 Cr"
+      ],
+      "rawCr": [
+        120000,
+        145000,
+        175000
+      ],
+      "cagr": "18% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹35,000 Cr",
+        "₹48,000 Cr",
+        "₹62,000 Cr"
+      ],
+      "marginsPercent": [
+        "29%",
+        "33%",
+        "35%"
+      ],
+      "rawCr": [
+        35000,
+        48000,
+        62000
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹12,000 Cr",
+        "₹22,000 Cr",
+        "₹35,000 Cr"
+      ],
+      "marginsPercent": [
+        "10%",
+        "15%",
+        "20%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "1.2x",
+      "cashFromOperations": "₹85,000 Cr",
+      "ronwFormatted": "18%",
+      "roceFormatted": "22%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "18.5x",
+    "commentary": "Jio trades at a premium to peers due to its dominant market share and diversified digital ecosystem.",
+    "table": [
+      {
+        "name": "Jio Platforms (Target)",
+        "peRatio": "25.0x",
+        "pbRatio": "4.5x",
+        "evEbitda": "12.0x",
+        "revenueFormatted": "₹1,75,000 Cr",
+        "patFormatted": "₹35,000 Cr",
+        "ronwFormatted": "18%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "Bharti Airtel",
+        "peRatio": "22.0x",
+        "pbRatio": "3.8x",
+        "evEbitda": "10.5x",
+        "revenueFormatted": "₹1,60,000 Cr",
+        "patFormatted": "₹28,000 Cr",
+        "ronwFormatted": "16%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Vodafone Idea",
+        "peRatio": "N/A",
+        "pbRatio": "0.8x",
+        "evEbitda": "N/A",
+        "revenueFormatted": "₹85,000 Cr",
+        "patFormatted": "₹-15,000 Cr",
+        "ronwFormatted": "-5%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Competition",
+        "title": "Intense Price Competition",
+        "detail": "Aggressive pricing by competitors like Airtel and Vi could pressure ARPU and margins."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Regulatory",
+        "title": "Spectrum Costs",
+        "detail": "High spectrum acquisition costs and regulatory changes could impact profitability."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Execution",
+        "title": "5G Monetization",
+        "detail": "Uncertainty in monetizing 5G services and achieving expected digital service growth."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "While market leadership provides a strong moat, intense competition and high capex requirements pose significant risks."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹125 (30%)",
+      "estimatedListingPrice": "₹545",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 9,
+      "financialGrowth": 8.5,
+      "profitabilityQuality": 8,
+      "valuationFairness": 7.5,
+      "overallRating": "8.2 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Strong GMP of ₹125 indicates high demand, suggesting a potential listing gain of 30% or more.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Jio's dominant market position and diversified digital ecosystem offer strong long-term growth potential.",
+    "summaryTake": "Jio Platforms is a high-quality IPO with strong fundamentals and market leadership, suitable for both short-term listing gains and long-term investment."
+  },
+  "scripts": {
+    "chapter_1": "Jio Platforms is making its debut on the primary market with a 1,08,000 crore initial public offering, comprising a 1,08,000 crore fresh issue and a 0 crore offer for sale. Priced between 400 to 420, retail investors can participate with an investment of under 42,000. But in an increasingly competitive market, does this IPO offer genuine value or is it overpriced hype? In this in-depth analysis, we break down their business model, 3-year financial health, peer valuations, and our final verdict.",
+    "chapter_2": "To evaluate Jio Platforms, we first need to understand how the company makes money. Operating as a india's leading integrated digital ecosystem provider combining telecom, digital services, and enterprise solutions., their core revenue comes from Telecommunications, contributing 70 percent of total turnover. The remaining revenue is driven by Digital Services at 20 percent and Enterprise Solutions at 10 percent. Their proprietary platform enables rapid customer acquisition with low operating overheads.",
+    "chapter_3": "The macroeconomic backdrop provides strong tailwinds for this sector. The industry is projected to reach $150 Billion by 2030, growing at an impressive 12% Industry CAGR. Key structural drivers include expanding digital penetration, automated credit underwriting, and rising consumer demand across non-metro cities. Jio Platforms is well-positioned to capitalize on this ongoing expansion.",
+    "chapter_4": "Now let's examine the three-year financial trajectory. Between FY23 and FY25, top-line revenue expanded rapidly from 1,20,000 crore to 1,75,000 crore, delivering a strong 18% CAGR. Operating EBITDA margins improved to 35%, with latest net profit reaching 35,000 crore. On the balance sheet, debt-to-equity stands at a healthy 1.2x with positive operating cash flow of ₹85,000 Cr, indicating disciplined capital management.",
+    "chapter_5": "Examining the issue structure, the offer consists of 100% fresh capital and 0% offer for sale. Looking at the objects of the offer, the company plans to utilize fresh proceeds primarily for Debt Repayment, followed by technology infrastructure investments and general corporate expenses. The high proportion of fresh growth capital is a positive signal for incoming investors.",
+    "chapter_6": "On the valuation front, at the upper price band, Jio Platforms trades at a price to earnings ratio of 25.0x. Comparing this to listed peers, the industry average P/E stands at 18.5x. With a return on net worth of 18%, the IPO is priced at a reasonable valuation compared to established industry peers, offering an attractive margin of safety.",
+    "chapter_7": "However, no investment is without risk. There are three key red flags retail investors should be aware of: first, intense price competition which could impact margins; second, spectrum costs; and third, 5g monetization. Investors should carefully monitor asset quality and regulatory developments going forward.",
+    "chapter_8": "To conclude, in the grey market, the premium is trending at ₹125 (30%), signaling an estimated listing price of ₹545. On our fundamental scorecard, the company scores 8.2 / 10. Our verdict: Apply for Listing Gains for short-term listing gains, and Subscribe for Long Term for long-term investors. If you found this breakdown helpful, remember to subscribe to the channel and leave your comments below!"
+  },
+  "sceneScripts": {
+    "cold_open": "Is India's upcoming Telecommunications & Digital Services giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.",
+    "logo_reveal": "Jio Platforms is hitting Dalal Street with a landmark Telecommunications & Digital Services IPO on the NSE  and  BSE.",
+    "issue_numbers": "The company is raising ₹1,08,000 Cr in a price band of ₹400 – ₹420 per share, with a lot size of 100 shares requiring a minimum investment of ₹42,000.",
+    "timeline_stakes": "Bidding opens on Oct 21 – Oct 23, 2026, with allotment finalized on Oct 24, 2026 and listing slated for Oct 26, 2026. Mark your calendar.",
+    "biz_title": "Chapter two: Business Model. How does Jio Platforms actually monetize its platform? Let us break down their core revenue streams.",
+    "biz_story": "India's leading integrated digital ecosystem provider combining telecom, digital services, and enterprise solutions.. Jio Platforms operates a massive 4G/5G network serving over 450 million subscribers, while expanding into digital payments, cloud computing, and enterprise IoT. The company leverages its subscriber base to cross-sell high-margin digital services and B2B solutions, creating a diversified revenue stream beyond traditional voice and data.",
+    "biz_donut": "Looking at revenue contribution, Telecommunications accounts for 70 percent, and Digital Services accounts for 20 percent, and Enterprise Solutions accounts for 10 percent.",
+    "biz_metrics": "Operationally, the platform boasts 450M+ Subscribers, ~35% Market Share, 800+ Cities 5G Coverage.",
+    "ind_title": "Chapter three: Market Opportunity. How large is India's Telecommunications & Digital Infrastructure space, and what tailwinds are driving this expansion?",
+    "tam_reveal": "The Telecommunications & Digital Infrastructure is projected to expand into a $150 Billion by 2030, compounding at a rapid 12% Industry CAGR.",
+    "growth_drivers": "Key structural growth catalysts include 5G Adoption, alongside Digital India, alongside Enterprise Cloud.",
+    "market_position": "Jio Platforms holds a commanding market presence, currently Market Leader in Indian Telecom with ~35% market share..",
+    "fin_title": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength.",
+    "revenue_chart": "Topline revenue surged from ₹1,20,000 Cr in FY23 to ₹1,75,000 Cr in FY25, representing an impressive 18% CAGR.",
+    "profit_arc": "On the bottom line, ebitda scaled to ₹62,000 Cr, while net profit expanded from ₹12,000 Cr to ₹35,000 Cr with a 20% profit margin.",
+    "balance_sheet": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 1.2x, positive operating cash flow of ₹85,000 Cr, and a return on net worth of 18%.",
+    "fin_summary": "Overall, Jio Platforms demonstrates solid operating leverage and durable cash generation heading into the public markets.",
+    "issue_title": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?",
+    "issue_split": "The issue is structured with a fresh capital issue of ₹1,08,000 Cr, or 100%, and an offer for sale component of ₹0 Cr, or 0%.",
+    "objects_issue": "Fresh proceeds are earmarked for 55% towards Debt Repayment, and 32% towards Capital Expenditure (5G & Data Centers), and 13% towards General Corporate Purposes.",
+    "investor_quota": "For subscription quotas, retail investors are allocated 35%, qualified institutional buyers get 50%, and high net-worth individuals receive 15%.",
+    "val_title": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?",
+    "peer_comparison": "At the upper price band, Jio Platforms demands a price-to-earnings multiple of 25.0x, compared to Bharti Airtel at 22.0x and Vodafone Idea with unlisted multiples.",
+    "val_summary": "Against an industry average P E of 18.5x, Jio trades at a premium to peers due to its dominant market share and diversified digital ecosystem.",
+    "risk_title": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.",
+    "risk_cards": "The foremost risk is Intense Price Competition, along with Spectrum Costs and 5G Monetization.",
+    "risk_summary": "Overall risk is assessed as Moderate. While market leadership provides a strong moat, intense competition and high capex requirements pose significant risks.",
+    "verdict_title": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.",
+    "scorecard": "With an active grey market premium of ₹125 (30%) pointing to an estimated listing price of ₹545, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 8.2 / 10.",
+    "outro": "Jio Platforms is a high-quality IPO with strong fundamentals and market leadership, suitable for both short-term listing gains and long-term investment. What is your bidding strategy for Jio Platforms? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  },
+  "timeline": {
+    "totalFrames": 9999,
+    "fps": 30,
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "chapters": [
+      {
+        "index": 0,
+        "id": "chapter_1",
+        "title": "Overview & Issue Highlights",
+        "shortTitle": "Overview",
+        "from": 0,
+        "durationInFrames": 1231,
+        "audioDurationSec": 39.57551020408164
+      },
+      {
+        "index": 1,
+        "id": "chapter_2",
+        "title": "Business Model & Monetization",
+        "shortTitle": "Business",
+        "from": 1231,
+        "durationInFrames": 1795,
+        "audioDurationSec": 58.38367346938775
+      },
+      {
+        "index": 2,
+        "id": "chapter_3",
+        "title": "Industry Backdrop & Market TAM",
+        "shortTitle": "Industry",
+        "from": 3026,
+        "durationInFrames": 1044,
+        "audioDurationSec": 32.23510204081633
+      },
+      {
+        "index": 3,
+        "id": "chapter_4",
+        "title": "3-Year Financial Statements",
+        "shortTitle": "Financials",
+        "from": 4070,
+        "durationInFrames": 1628,
+        "audioDurationSec": 52.42775510204082
+      },
+      {
+        "index": 4,
+        "id": "chapter_5",
+        "title": "Issue Details & Fresh Capital",
+        "shortTitle": "Issue",
+        "from": 5698,
+        "durationInFrames": 1164,
+        "audioDurationSec": 37.35510204081633
+      },
+      {
+        "index": 5,
+        "id": "chapter_6",
+        "title": "Valuation & Peer Benchmarking",
+        "shortTitle": "Valuation",
+        "from": 6862,
+        "durationInFrames": 929,
+        "audioDurationSec": 29.88408163265306
+      },
+      {
+        "index": 6,
+        "id": "chapter_7",
+        "title": "Structural Red Flags & Risks",
+        "shortTitle": "Risks",
+        "from": 7791,
+        "durationInFrames": 764,
+        "audioDurationSec": 22.17795918367347
+      },
+      {
+        "index": 7,
+        "id": "chapter_8",
+        "title": "Final Decision & Analyst Scorecard",
+        "shortTitle": "Verdict",
+        "from": 8555,
+        "durationInFrames": 1444,
+        "audioDurationSec": 47.0204081632653
+      }
+    ],
+    "scenes": [
+      {
+        "id": "cold_open",
+        "chapterIndex": 0,
+        "title": "Cold Open Hook",
+        "from": 0,
+        "durationInFrames": 266,
+        "audioDurationSec": 8.489795918367347,
+        "audioFile": "audio/jio-platforms/scenes/scene_cold_open.mp3",
+        "scriptText": "Is India's upcoming Telecommunications & Digital Services giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply."
+      },
+      {
+        "id": "logo_reveal",
+        "chapterIndex": 0,
+        "title": "Dalal Street Entrance",
+        "from": 266,
+        "durationInFrames": 196,
+        "audioDurationSec": 6.164897959183674,
+        "audioFile": "audio/jio-platforms/scenes/scene_logo_reveal.mp3",
+        "scriptText": "Jio Platforms is hitting Dalal Street with a landmark Telecommunications & Digital Services IPO on the N S E and B S E."
+      },
+      {
+        "id": "issue_numbers",
+        "chapterIndex": 0,
+        "title": "Key Issue Numbers",
+        "from": 462,
+        "durationInFrames": 339,
+        "audioDurationSec": 10.94530612244898,
+        "audioFile": "audio/jio-platforms/scenes/scene_issue_numbers.mp3",
+        "scriptText": "The company is raising 1,08,000 crore in a price band of 400 to 420 per share, with a lot size of 100 shares requiring a minimum investment of 42,000."
+      },
+      {
+        "id": "timeline_stakes",
+        "chapterIndex": 0,
+        "title": "IPO Roadmap & Dates",
+        "from": 801,
+        "durationInFrames": 430,
+        "audioDurationSec": 13.975510204081633,
+        "audioFile": "audio/jio-platforms/scenes/scene_timeline_stakes.mp3",
+        "scriptText": "Bidding opens on October 21 – October 23, 2026, with allotment finalized on October 24, 2026 and listing slated for October 26, 2026. Mark your calendar."
+      },
+      {
+        "id": "biz_title",
+        "chapterIndex": 1,
+        "title": "Business Model Intro",
+        "from": 1231,
+        "durationInFrames": 287,
+        "audioDurationSec": 9.195102040816327,
+        "audioFile": "audio/jio-platforms/scenes/scene_biz_title.mp3",
+        "scriptText": "Chapter two: Business Model. How does Jio Platforms actually monetize its platform? Let us break down their core revenue streams."
+      },
+      {
+        "id": "biz_story",
+        "chapterIndex": 1,
+        "title": "Platform Value Proposition",
+        "from": 1518,
+        "durationInFrames": 934,
+        "audioDurationSec": 30.772244897959183,
+        "audioFile": "audio/jio-platforms/scenes/scene_biz_story.mp3",
+        "scriptText": "India's leading integrated digital ecosystem provider combining telecom, digital services, and enterprise solutions.. Jio Platforms operates a massive 4G/5G network serving over 450 million subscribers, while expanding into digital payments, cloud computing, and enterprise IoT. The company leverages its subscriber base to cross-sell high-margin digital services and B2B solutions, creating a diversified revenue stream beyond traditional voice and data."
+      },
+      {
+        "id": "biz_donut",
+        "chapterIndex": 1,
+        "title": "Revenue Segment Breakdown",
+        "from": 2452,
+        "durationInFrames": 314,
+        "audioDurationSec": 10.109387755102041,
+        "audioFile": "audio/jio-platforms/scenes/scene_biz_donut.mp3",
+        "scriptText": "Looking at revenue contribution, Telecommunications accounts for 70 percent, and Digital Services accounts for 20 percent, and Enterprise Solutions accounts for 10 percent."
+      },
+      {
+        "id": "biz_metrics",
+        "chapterIndex": 1,
+        "title": "Operational Scale & AUM",
+        "from": 2766,
+        "durationInFrames": 260,
+        "audioDurationSec": 8.306938775510204,
+        "audioFile": "audio/jio-platforms/scenes/scene_biz_metrics.mp3",
+        "scriptText": "Operationally, the platform boasts 450 million plus Subscribers, ~35 percent Market Share, 800+ Cities 5G Coverage."
+      },
+      {
+        "id": "ind_title",
+        "chapterIndex": 2,
+        "title": "Market Opportunity Intro",
+        "from": 3026,
+        "durationInFrames": 235,
+        "audioDurationSec": 7.471020408163265,
+        "audioFile": "audio/jio-platforms/scenes/scene_ind_title.mp3",
+        "scriptText": "Chapter three: Market Opportunity. How large is India's Telecommunications & Digital Infrastructure space, and what tailwinds are driving this expansion?"
+      },
+      {
+        "id": "tam_reveal",
+        "chapterIndex": 2,
+        "title": "Addressable Market TAM",
+        "from": 3261,
+        "durationInFrames": 323,
+        "audioDurationSec": 10.396734693877551,
+        "audioFile": "audio/jio-platforms/scenes/scene_tam_reveal.mp3",
+        "scriptText": "The Telecommunications & Digital Infrastructure is projected to expand into a 150 billion dollars by 2030, compounding at a rapid 12 percent Industry compound annual growth rate."
+      },
+      {
+        "id": "growth_drivers",
+        "chapterIndex": 2,
+        "title": "Structural Growth Drivers",
+        "from": 3584,
+        "durationInFrames": 240,
+        "audioDurationSec": 6.530612244897959,
+        "audioFile": "audio/jio-platforms/scenes/scene_growth_drivers.mp3",
+        "scriptText": "Key structural growth catalysts include 5G Adoption, alongside Digital India, alongside Enterprise Cloud."
+      },
+      {
+        "id": "market_position",
+        "chapterIndex": 2,
+        "title": "Competitive Positioning",
+        "from": 3824,
+        "durationInFrames": 246,
+        "audioDurationSec": 7.836734693877551,
+        "audioFile": "audio/jio-platforms/scenes/scene_market_position.mp3",
+        "scriptText": "Jio Platforms holds a commanding market presence, currently Market Leader in Indian Telecom with ~35 percent market share.."
+      },
+      {
+        "id": "fin_title",
+        "chapterIndex": 3,
+        "title": "Financials Deep Dive Intro",
+        "from": 4070,
+        "durationInFrames": 253,
+        "audioDurationSec": 8.071836734693878,
+        "audioFile": "audio/jio-platforms/scenes/scene_fin_title.mp3",
+        "scriptText": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength."
+      },
+      {
+        "id": "revenue_chart",
+        "chapterIndex": 3,
+        "title": "3-Year Revenue Growth",
+        "from": 4323,
+        "durationInFrames": 411,
+        "audioDurationSec": 13.322448979591837,
+        "audioFile": "audio/jio-platforms/scenes/scene_revenue_chart.mp3",
+        "scriptText": "Topline revenue surged from 1,20,000 crore in financial year 23 to 1,75,000 crore in financial year 25, representing an impressive 18 percent compound annual growth rate."
+      },
+      {
+        "id": "profit_arc",
+        "chapterIndex": 3,
+        "title": "Profitability Turnaround & EBITDA",
+        "from": 4734,
+        "durationInFrames": 345,
+        "audioDurationSec": 11.128163265306123,
+        "audioFile": "audio/jio-platforms/scenes/scene_profit_arc.mp3",
+        "scriptText": "On the bottom line, ebitda scaled to 62,000 crore, while net profit expanded from 12,000 crore to 35,000 crore with a 20 percent profit margin."
+      },
+      {
+        "id": "balance_sheet",
+        "chapterIndex": 3,
+        "title": "Balance Sheet & Cash Flows",
+        "from": 5079,
+        "durationInFrames": 366,
+        "audioDurationSec": 11.833469387755102,
+        "audioFile": "audio/jio-platforms/scenes/scene_balance_sheet.mp3",
+        "scriptText": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 1.2 times, positive operating cash flow of 85,000 crore, and a return on net worth of 18 percent."
+      },
+      {
+        "id": "fin_summary",
+        "chapterIndex": 3,
+        "title": "Financial Health Takeaway",
+        "from": 5445,
+        "durationInFrames": 253,
+        "audioDurationSec": 8.071836734693878,
+        "audioFile": "audio/jio-platforms/scenes/scene_fin_summary.mp3",
+        "scriptText": "Overall, Jio Platforms demonstrates solid operating leverage and durable cash generation heading into the public markets."
+      },
+      {
+        "id": "issue_title",
+        "chapterIndex": 4,
+        "title": "Issue Details Intro",
+        "from": 5698,
+        "durationInFrames": 210,
+        "audioDurationSec": 6.635102040816326,
+        "audioFile": "audio/jio-platforms/scenes/scene_issue_title.mp3",
+        "scriptText": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?"
+      },
+      {
+        "id": "issue_split",
+        "chapterIndex": 4,
+        "title": "Fresh Issue vs OFS Split",
+        "from": 5908,
+        "durationInFrames": 287,
+        "audioDurationSec": 9.195102040816327,
+        "audioFile": "audio/jio-platforms/scenes/scene_issue_split.mp3",
+        "scriptText": "The issue is structured with a fresh capital issue of 1,08,000 crore, or 100 percent, and an offer for sale component of 0 crore, or 0 percent."
+      },
+      {
+        "id": "objects_issue",
+        "chapterIndex": 4,
+        "title": "Objects of the Offer",
+        "from": 6195,
+        "durationInFrames": 357,
+        "audioDurationSec": 11.546122448979592,
+        "audioFile": "audio/jio-platforms/scenes/scene_objects_issue.mp3",
+        "scriptText": "Fresh proceeds are earmarked for 55 percent towards Debt Repayment, and 32 percent towards Capital Expenditure (5G & Data Centers), and 13 percent towards General Corporate Purposes."
+      },
+      {
+        "id": "investor_quota",
+        "chapterIndex": 4,
+        "title": "Reservation Quotas",
+        "from": 6552,
+        "durationInFrames": 310,
+        "audioDurationSec": 9.978775510204082,
+        "audioFile": "audio/jio-platforms/scenes/scene_investor_quota.mp3",
+        "scriptText": "For subscription quotas, retail investors are allocated 35 percent, qualified institutional buyers get 50 percent, and high net-worth individuals receive 15 percent."
+      },
+      {
+        "id": "val_title",
+        "chapterIndex": 5,
+        "title": "Valuation & Peers Intro",
+        "from": 6862,
+        "durationInFrames": 221,
+        "audioDurationSec": 7.000816326530612,
+        "audioFile": "audio/jio-platforms/scenes/scene_val_title.mp3",
+        "scriptText": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?"
+      },
+      {
+        "id": "peer_comparison",
+        "chapterIndex": 5,
+        "title": "Peer Benchmarking Matrix",
+        "from": 7083,
+        "durationInFrames": 394,
+        "audioDurationSec": 12.773877551020409,
+        "audioFile": "audio/jio-platforms/scenes/scene_peer_comparison.mp3",
+        "scriptText": "At the upper price band, Jio Platforms demands a price-to-earnings multiple of 25.0 times, compared to Bharti Airtel at 22.0 times and Vodafone Idea with unlisted multiples."
+      },
+      {
+        "id": "val_summary",
+        "chapterIndex": 5,
+        "title": "Valuation Assessment",
+        "from": 7477,
+        "durationInFrames": 314,
+        "audioDurationSec": 10.109387755102041,
+        "audioFile": "audio/jio-platforms/scenes/scene_val_summary.mp3",
+        "scriptText": "Against an industry average P E of 18.5 times, Jio trades at a premium to peers due to its dominant market share and diversified digital ecosystem."
+      },
+      {
+        "id": "risk_title",
+        "chapterIndex": 6,
+        "title": "Key Risks Intro",
+        "from": 7791,
+        "durationInFrames": 217,
+        "audioDurationSec": 6.870204081632653,
+        "audioFile": "audio/jio-platforms/scenes/scene_risk_title.mp3",
+        "scriptText": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh."
+      },
+      {
+        "id": "risk_cards",
+        "chapterIndex": 6,
+        "title": "Primary Structural Risks",
+        "from": 8008,
+        "durationInFrames": 270,
+        "audioDurationSec": 6.452244897959184,
+        "audioFile": "audio/jio-platforms/scenes/scene_risk_cards.mp3",
+        "scriptText": "The foremost risk is Intense Price Competition, along with Spectrum Costs and 5G Monetization."
+      },
+      {
+        "id": "risk_summary",
+        "chapterIndex": 6,
+        "title": "Asset Quality & Risk Rating",
+        "from": 8278,
+        "durationInFrames": 277,
+        "audioDurationSec": 8.855510204081632,
+        "audioFile": "audio/jio-platforms/scenes/scene_risk_summary.mp3",
+        "scriptText": "Overall risk is assessed as Moderate. While market leadership provides a strong moat, intense competition and high capex requirements pose significant risks."
+      },
+      {
+        "id": "verdict_title",
+        "chapterIndex": 7,
+        "title": "Verdict & Scorecard Intro",
+        "from": 8555,
+        "durationInFrames": 232,
+        "audioDurationSec": 7.366530612244898,
+        "audioFile": "audio/jio-platforms/scenes/scene_verdict_title.mp3",
+        "scriptText": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard."
+      },
+      {
+        "id": "scorecard",
+        "chapterIndex": 7,
+        "title": "GMP & Analyst Scorecard",
+        "from": 8787,
+        "durationInFrames": 588,
+        "audioDurationSec": 19.22612244897959,
+        "audioFile": "audio/jio-platforms/scenes/scene_scorecard.mp3",
+        "scriptText": "With an active grey market premium of 125 (30 percent) pointing to an estimated listing price of 545, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 8.2 / 10."
+      },
+      {
+        "id": "outro",
+        "chapterIndex": 7,
+        "title": "Summary Take & Outro",
+        "from": 9375,
+        "durationInFrames": 624,
+        "audioDurationSec": 20.427755102040816,
+        "audioFile": "audio/jio-platforms/scenes/scene_outro.mp3",
+        "scriptText": "Jio Platforms is a high-quality IPO with strong fundamentals and market leadership, suitable for both short-term listing gains and long-term investment. What is your bidding strategy for Jio Platforms? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+      }
+    ]
+  }
+}

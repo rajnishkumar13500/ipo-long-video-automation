@@ -1,0 +1,657 @@
+{
+  "id": "nityas-gems",
+  "companyName": "Nityas Gems",
+  "ticker": "NITYASGEMS",
+  "industry": "Jewellery & Diamonds",
+  "domain": "nityasgems.com",
+  "logoUrl": "logos/nityas-gems.png",
+  "logoInitials": "NG",
+  "exchange": "NSE • BSE",
+  "badgeSubtitle": "IPO Deep-Dive Breakdown",
+  "listingDate": "2026-10-08",
+  "issue": {
+    "totalFormatted": "₹108.35 Cr",
+    "freshFormatted": "₹108.35 Cr",
+    "freshPercent": "100%",
+    "ofsFormatted": "₹0.00 Cr",
+    "ofsPercent": "0%",
+    "priceBand": "₹70 – ₹75",
+    "lotSize": "200 shares",
+    "minInvestment": "₹15,000",
+    "retailQuota": "10%",
+    "qibQuota": "75%",
+    "niiQuota": "15%",
+    "biddingDates": "Sep 30 – Oct 5, 2026",
+    "allotmentDate": "Oct 6, 2026",
+    "listingDate": "Oct 8, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Funding Working Capital requirements of the Company",
+        "amountFormatted": "₹70.00 Cr",
+        "percentage": "64.6%"
+      },
+      {
+        "purpose": "General Corporate Purpose",
+        "amountFormatted": "₹38.35 Cr",
+        "percentage": "35.4%"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Leading manufacturer and distributor of diamond-studded gold jewellery with a dual B2B and D2C model.",
+    "description": "Nityas Gems operates through B2B manufacturing and distribution to retailers/wholesalers and direct-to-consumer (D2C) omnichannel retail via its subsidiary Ayaani Diamonds. The company handles the entire value chain from sourcing raw materials and designing to manufacturing, quality checks, and distribution. It supplies major brands like GIVA, Palmonas, ONYA, and Ladia Diamonds while maintaining its own retail presence.",
+    "segments": [
+      {
+        "name": "B2B Manufacturing & Distribution",
+        "sharePercent": 60,
+        "description": "Supply of diamond-studded gold jewellery to retailers, wholesalers, and major jewellery brands.",
+        "amountFormatted": "₹122.00 Cr"
+      },
+      {
+        "name": "D2C Retail (Ayaani Diamonds)",
+        "sharePercent": 40,
+        "description": "Direct-to-consumer sales through omnichannel retail operations including online and offline stores.",
+        "amountFormatted": "₹81.33 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Revenue Growth",
+        "value": "110%",
+        "subtext": "YoY growth in FY26"
+      },
+      {
+        "label": "Net Profit",
+        "value": "₹22.32 Cr",
+        "subtext": "FY26 Net Profit"
+      },
+      {
+        "label": "Promoter Holding",
+        "value": "43.51%",
+        "subtext": "Post-IPO Promoter Stake"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Indian Jewellery Market",
+    "marketSizeFormatted": "$150 Billion by 2030",
+    "cagrText": "8.5% Industry CAGR",
+    "drivers": [
+      {
+        "title": "Rising Disposable Incomes",
+        "detail": "Increasing middle-class population drives demand for premium jewellery."
+      },
+      {
+        "title": "Organized Sector Growth",
+        "detail": "Shift from unorganized to organized retail channels boosts brand trust."
+      },
+      {
+        "title": "Diamond Penetration",
+        "detail": "Growing acceptance of diamond-studded gold among younger demographics."
+      }
+    ],
+    "marketPosition": "Top-tier player in diamond-studded gold jewellery segment."
+  },
+  "financials": {
+    "years": [
+      "FY23",
+      "FY24",
+      "FY25"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹11.67 Cr",
+        "₹53.66 Cr",
+        "₹96.85 Cr"
+      ],
+      "rawCr": [
+        11.67,
+        53.66,
+        96.85
+      ],
+      "cagr": "145.2% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹0.50 Cr",
+        "₹6.00 Cr",
+        "₹14.00 Cr"
+      ],
+      "marginsPercent": [
+        "4.3%",
+        "11.2%",
+        "14.5%"
+      ],
+      "rawCr": [
+        0.5,
+        6,
+        14
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹0.25 Cr",
+        "₹4.02 Cr",
+        "₹9.79 Cr"
+      ],
+      "marginsPercent": [
+        "2.1%",
+        "7.5%",
+        "10.1%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "0.45x",
+      "cashFromOperations": "₹12.50 Cr",
+      "ronwFormatted": "18.5%",
+      "roceFormatted": "15.2%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "22.5x",
+    "commentary": "Nityas Gems trades at a premium to industry average due to superior growth trajectory and high-margin diamond segment focus.",
+    "table": [
+      {
+        "name": "Nityas Gems (Target)",
+        "peRatio": "28.4x",
+        "pbRatio": "4.2x",
+        "evEbitda": "18.5x",
+        "revenueFormatted": "₹203.33 Cr",
+        "patFormatted": "₹22.32 Cr",
+        "ronwFormatted": "22.1%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "Tanishq (Tata)",
+        "peRatio": "25.0x",
+        "pbRatio": "3.8x",
+        "evEbitda": "16.2x",
+        "revenueFormatted": "₹15,000.00 Cr",
+        "patFormatted": "₹1,200.00 Cr",
+        "ronwFormatted": "15.5%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Kalyan Jewellers",
+        "peRatio": "20.5x",
+        "pbRatio": "3.1x",
+        "evEbitda": "14.8x",
+        "revenueFormatted": "₹12,500.00 Cr",
+        "patFormatted": "₹950.00 Cr",
+        "ronwFormatted": "14.2%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Commodity Price Volatility",
+        "title": "Gold and Diamond Price Fluctuations",
+        "detail": "Significant swings in gold and diamond prices can impact margins and inventory valuation."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Competition",
+        "title": "Intense Market Competition",
+        "detail": "Highly competitive landscape with established players like Tanishq and Kalyan Jewellers."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Regulatory",
+        "title": "Regulatory Changes",
+        "detail": "Changes in GST rates or import duties on diamonds could affect cost structure."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "Company exhibits strong growth but faces typical industry risks related to commodity prices and competition."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹82 (10%)",
+      "estimatedListingPrice": "₹85",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.5,
+      "financialGrowth": 9,
+      "profitabilityQuality": 8,
+      "valuationFairness": 7.2,
+      "overallRating": "7.9 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Strong GMP and high demand in the jewellery sector suggest potential listing gains.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Consistent revenue and profit growth with a strong D2C presence supports long-term value creation.",
+    "summaryTake": "Nityas Gems offers a compelling growth story in the organized jewellery sector with robust financials and a diversified business model."
+  },
+  "scripts": {
+    "chapter_1": "Nityas Gems is making its debut on the primary market with a 108.35 crore initial public offering, comprising a 108.35 crore fresh issue and a 0.00 crore offer for sale. Priced between 70 to 75, retail investors can participate with an investment of under 15,000. But in an increasingly competitive market, does this IPO offer genuine value or is it overpriced hype? In this in-depth analysis, we break down their business model, 3-year financial health, peer valuations, and our final verdict.",
+    "chapter_2": "To evaluate Nityas Gems, we first need to understand how the company makes money. Operating as a leading manufacturer and distributor of diamond-studded gold jewellery with a dual b2b and d2c model., their core revenue comes from B2B Manufacturing & Distribution, contributing 60 percent of total turnover. The remaining revenue is driven by D2C Retail (Ayaani Diamonds) at 40 percent. Their proprietary platform enables rapid customer acquisition with low operating overheads.",
+    "chapter_3": "The macroeconomic backdrop provides strong tailwinds for this sector. The industry is projected to reach $150 Billion by 2030, growing at an impressive 8.5% Industry CAGR. Key structural drivers include expanding digital penetration, automated credit underwriting, and rising consumer demand across non-metro cities. Nityas Gems is well-positioned to capitalize on this ongoing expansion.",
+    "chapter_4": "Now let's examine the three-year financial trajectory. Between FY23 and FY25, top-line revenue expanded rapidly from 11.67 crore to 96.85 crore, delivering a strong 145.2% CAGR. Operating EBITDA margins improved to 14.5%, with latest net profit reaching 9.79 crore. On the balance sheet, debt-to-equity stands at a healthy 0.45x with positive operating cash flow of ₹12.50 Cr, indicating disciplined capital management.",
+    "chapter_5": "Examining the issue structure, the offer consists of 100% fresh capital and 0% offer for sale. Looking at the objects of the offer, the company plans to utilize fresh proceeds primarily for Funding Working Capital requirements of the Company, followed by technology infrastructure investments and general corporate expenses. The high proportion of fresh growth capital is a positive signal for incoming investors.",
+    "chapter_6": "On the valuation front, at the upper price band, Nityas Gems trades at a price to earnings ratio of 28.4x. Comparing this to listed peers, the industry average P/E stands at 22.5x. With a return on net worth of 18.5%, the IPO is priced at a reasonable valuation compared to established industry peers, offering an attractive margin of safety.",
+    "chapter_7": "However, no investment is without risk. There are three key red flags retail investors should be aware of: first, gold and diamond price fluctuations which could impact margins; second, intense market competition; and third, regulatory changes. Investors should carefully monitor asset quality and regulatory developments going forward.",
+    "chapter_8": "To conclude, in the grey market, the premium is trending at ₹82 (10%), signaling an estimated listing price of ₹85. On our fundamental scorecard, the company scores 7.9 / 10. Our verdict: Apply for Listing Gains for short-term listing gains, and Subscribe for Long Term for long-term investors. If you found this breakdown helpful, remember to subscribe to the channel and leave your comments below!"
+  },
+  "sceneScripts": {
+    "cold_open": "Is India's upcoming Jewellery & Diamonds giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.",
+    "logo_reveal": "Nityas Gems is hitting Dalal Street with a landmark Jewellery & Diamonds IPO on the NSE  and  BSE.",
+    "issue_numbers": "The company is raising ₹108.35 Cr in a price band of ₹70 – ₹75 per share, with a lot size of 200 shares requiring a minimum investment of ₹15,000.",
+    "timeline_stakes": "Bidding opens on Sep 30 – Oct 5, 2026, with allotment finalized on Oct 6, 2026 and listing slated for Oct 8, 2026. Mark your calendar.",
+    "biz_title": "Chapter two: Business Model. How does Nityas Gems actually monetize its platform? Let us break down their core revenue streams.",
+    "biz_story": "Leading manufacturer and distributor of diamond-studded gold jewellery with a dual B2B and D2C model.. Nityas Gems operates through B2B manufacturing and distribution to retailers/wholesalers and direct-to-consumer (D2C) omnichannel retail via its subsidiary Ayaani Diamonds. The company handles the entire value chain from sourcing raw materials and designing to manufacturing, quality checks, and distribution. It supplies major brands like GIVA, Palmonas, ONYA, and Ladia Diamonds while maintaining its own retail presence.",
+    "biz_donut": "Looking at revenue contribution, B2B Manufacturing & Distribution accounts for 60 percent, and D2C Retail (Ayaani Diamonds) accounts for 40 percent.",
+    "biz_metrics": "Operationally, the platform boasts 110% Revenue Growth, ₹22.32 Cr Net Profit, 43.51% Promoter Holding.",
+    "ind_title": "Chapter three: Market Opportunity. How large is India's Indian Jewellery Market space, and what tailwinds are driving this expansion?",
+    "tam_reveal": "The Indian Jewellery Market is projected to expand into a $150 Billion by 2030, compounding at a rapid 8.5% Industry CAGR.",
+    "growth_drivers": "Key structural growth catalysts include Rising Disposable Incomes, alongside Organized Sector Growth, alongside Diamond Penetration.",
+    "market_position": "Nityas Gems holds a commanding market presence, currently Top-tier player in diamond-studded gold jewellery segment..",
+    "fin_title": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength.",
+    "revenue_chart": "Topline revenue surged from ₹11.67 Cr in FY23 to ₹96.85 Cr in FY25, representing an impressive 145.2% CAGR.",
+    "profit_arc": "On the bottom line, ebitda scaled to ₹14.00 Cr, while net profit expanded from ₹0.25 Cr to ₹9.79 Cr with a 10.1% profit margin.",
+    "balance_sheet": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.45x, positive operating cash flow of ₹12.50 Cr, and a return on net worth of 18.5%.",
+    "fin_summary": "Overall, Nityas Gems demonstrates solid operating leverage and durable cash generation heading into the public markets.",
+    "issue_title": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?",
+    "issue_split": "The issue is structured with a fresh capital issue of ₹108.35 Cr, or 100%, and an offer for sale component of ₹0.00 Cr, or 0%.",
+    "objects_issue": "Fresh proceeds are earmarked for 64.6% towards Funding Working Capital requirements of the Company, and 35.4% towards General Corporate Purpose.",
+    "investor_quota": "For subscription quotas, retail investors are allocated 10%, qualified institutional buyers get 75%, and high net-worth individuals receive 15%.",
+    "val_title": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?",
+    "peer_comparison": "At the upper price band, Nityas Gems demands a price-to-earnings multiple of 28.4x, compared to Tanishq (Tata) at 25.0x and Kalyan Jewellers at 20.5x.",
+    "val_summary": "Against an industry average P E of 22.5x, Nityas Gems trades at a premium to industry average due to superior growth trajectory and high-margin diamond segment focus.",
+    "risk_title": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.",
+    "risk_cards": "The foremost risk is Gold and Diamond Price Fluctuations, along with Intense Market Competition and Regulatory Changes.",
+    "risk_summary": "Overall risk is assessed as Moderate. Company exhibits strong growth but faces typical industry risks related to commodity prices and competition.",
+    "verdict_title": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.",
+    "scorecard": "With an active grey market premium of ₹82 (10%) pointing to an estimated listing price of ₹85, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.9 / 10.",
+    "outro": "Nityas Gems offers a compelling growth story in the organized jewellery sector with robust financials and a diversified business model. What is your bidding strategy for Nityas Gems? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.05
+  },
+  "timeline": {
+    "totalFrames": 10151,
+    "fps": 30,
+    "voiceId": "iP95p4xoKVk53GoZ742B",
+    "chapters": [
+      {
+        "index": 0,
+        "id": "chapter_1",
+        "title": "Overview & Issue Highlights",
+        "shortTitle": "Overview",
+        "from": 0,
+        "durationInFrames": 1186,
+        "audioDurationSec": 38.0865306122449
+      },
+      {
+        "index": 1,
+        "id": "chapter_2",
+        "title": "Business Model & Monetization",
+        "shortTitle": "Business",
+        "from": 1186,
+        "durationInFrames": 2013,
+        "audioDurationSec": 65.5934693877551
+      },
+      {
+        "index": 2,
+        "id": "chapter_3",
+        "title": "Industry Backdrop & Market TAM",
+        "shortTitle": "Industry",
+        "from": 3199,
+        "durationInFrames": 1068,
+        "audioDurationSec": 34.142040816326535
+      },
+      {
+        "index": 3,
+        "id": "chapter_4",
+        "title": "3-Year Financial Statements",
+        "shortTitle": "Financials",
+        "from": 4267,
+        "durationInFrames": 1665,
+        "audioDurationSec": 53.68163265306123
+      },
+      {
+        "index": 4,
+        "id": "chapter_5",
+        "title": "Issue Details & Fresh Capital",
+        "shortTitle": "Issue",
+        "from": 5932,
+        "durationInFrames": 1163,
+        "audioDurationSec": 37.27673469387755
+      },
+      {
+        "index": 5,
+        "id": "chapter_6",
+        "title": "Valuation & Peer Benchmarking",
+        "shortTitle": "Valuation",
+        "from": 7095,
+        "durationInFrames": 964,
+        "audioDurationSec": 31.033469387755105
+      },
+      {
+        "index": 6,
+        "id": "chapter_7",
+        "title": "Structural Red Flags & Risks",
+        "shortTitle": "Risks",
+        "from": 8059,
+        "durationInFrames": 734,
+        "audioDurationSec": 20.976326530612248
+      },
+      {
+        "index": 7,
+        "id": "chapter_8",
+        "title": "Final Decision & Analyst Scorecard",
+        "shortTitle": "Verdict",
+        "from": 8793,
+        "durationInFrames": 1358,
+        "audioDurationSec": 44.17306122448979
+      }
+    ],
+    "scenes": [
+      {
+        "id": "cold_open",
+        "chapterIndex": 0,
+        "title": "Cold Open Hook",
+        "from": 0,
+        "durationInFrames": 267,
+        "audioDurationSec": 8.54204081632653,
+        "audioFile": "audio/nityas-gems/scenes/scene_cold_open.mp3",
+        "scriptText": "Is India's upcoming Jewellery & Diamonds giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply."
+      },
+      {
+        "id": "logo_reveal",
+        "chapterIndex": 0,
+        "title": "Dalal Street Entrance",
+        "from": 267,
+        "durationInFrames": 190,
+        "audioDurationSec": 5.98204081632653,
+        "audioFile": "audio/nityas-gems/scenes/scene_logo_reveal.mp3",
+        "scriptText": "Nityas Gems is hitting Dalal Street with a landmark Jewellery & Diamonds IPO on the N S E and B S E."
+      },
+      {
+        "id": "issue_numbers",
+        "chapterIndex": 0,
+        "title": "Key Issue Numbers",
+        "from": 457,
+        "durationInFrames": 366,
+        "audioDurationSec": 11.833469387755102,
+        "audioFile": "audio/nityas-gems/scenes/scene_issue_numbers.mp3",
+        "scriptText": "The company is raising 108.35 crore in a price band of 70 to 75 per share, with a lot size of 200 shares requiring a minimum investment of 15,000."
+      },
+      {
+        "id": "timeline_stakes",
+        "chapterIndex": 0,
+        "title": "IPO Roadmap & Dates",
+        "from": 823,
+        "durationInFrames": 363,
+        "audioDurationSec": 11.728979591836735,
+        "audioFile": "audio/nityas-gems/scenes/scene_timeline_stakes.mp3",
+        "scriptText": "Bidding opens on September 30 – October 5, 2026, with allotment finalized on October 6, 2026 and listing slated for October 8, 2026. Mark your calendar."
+      },
+      {
+        "id": "biz_title",
+        "chapterIndex": 1,
+        "title": "Business Model Intro",
+        "from": 1186,
+        "durationInFrames": 227,
+        "audioDurationSec": 7.183673469387755,
+        "audioFile": "audio/nityas-gems/scenes/scene_biz_title.mp3",
+        "scriptText": "Chapter two: Business Model. How does Nityas Gems actually monetize its platform? Let us break down their core revenue streams."
+      },
+      {
+        "id": "biz_story",
+        "chapterIndex": 1,
+        "title": "Platform Value Proposition",
+        "from": 1413,
+        "durationInFrames": 1201,
+        "audioDurationSec": 39.65387755102041,
+        "audioFile": "audio/nityas-gems/scenes/scene_biz_story.mp3",
+        "scriptText": "Leading manufacturer and distributor of diamond-studded gold jewellery with a dual B2B and D2C model.. Nityas Gems operates through B2B manufacturing and distribution to retailers/wholesalers and direct-to-consumer (D2C) omnichannel retail via its subsidiary Ayaani Diamonds. The company handles the entire value chain from sourcing raw materials and designing to manufacturing, quality checks, and distribution. It supplies major brands like GIVA, Palmonas, ONYA, and Ladia Diamonds while maintaining its own retail presence."
+      },
+      {
+        "id": "biz_donut",
+        "chapterIndex": 1,
+        "title": "Revenue Segment Breakdown",
+        "from": 2614,
+        "durationInFrames": 298,
+        "audioDurationSec": 9.560816326530611,
+        "audioFile": "audio/nityas-gems/scenes/scene_biz_donut.mp3",
+        "scriptText": "Looking at revenue contribution, B2B Manufacturing & Distribution accounts for 60 percent, and D2C Retail (Ayaani Diamonds) accounts for 40 percent."
+      },
+      {
+        "id": "biz_metrics",
+        "chapterIndex": 1,
+        "title": "Operational Scale & AUM",
+        "from": 2912,
+        "durationInFrames": 287,
+        "audioDurationSec": 9.195102040816327,
+        "audioFile": "audio/nityas-gems/scenes/scene_biz_metrics.mp3",
+        "scriptText": "Operationally, the platform boasts 110 percent Revenue Growth, 22.32 crore Net Profit, 43.51 percent Promoter Holding."
+      },
+      {
+        "id": "ind_title",
+        "chapterIndex": 2,
+        "title": "Market Opportunity Intro",
+        "from": 3199,
+        "durationInFrames": 296,
+        "audioDurationSec": 9.508571428571429,
+        "audioFile": "audio/nityas-gems/scenes/scene_ind_title.mp3",
+        "scriptText": "Chapter three: Market Opportunity. How large is India's Indian Jewellery Market space, and what tailwinds are driving this expansion?"
+      },
+      {
+        "id": "tam_reveal",
+        "chapterIndex": 2,
+        "title": "Addressable Market TAM",
+        "from": 3495,
+        "durationInFrames": 314,
+        "audioDurationSec": 10.109387755102041,
+        "audioFile": "audio/nityas-gems/scenes/scene_tam_reveal.mp3",
+        "scriptText": "The Indian Jewellery Market is projected to expand into a 150 billion dollars by 2030, compounding at a rapid 8.5 percent Industry compound annual growth rate."
+      },
+      {
+        "id": "growth_drivers",
+        "chapterIndex": 2,
+        "title": "Structural Growth Drivers",
+        "from": 3809,
+        "durationInFrames": 253,
+        "audioDurationSec": 8.071836734693878,
+        "audioFile": "audio/nityas-gems/scenes/scene_growth_drivers.mp3",
+        "scriptText": "Key structural growth catalysts include Rising Disposable Incomes, alongside Organized Sector Growth, alongside Diamond Penetration."
+      },
+      {
+        "id": "market_position",
+        "chapterIndex": 2,
+        "title": "Competitive Positioning",
+        "from": 4062,
+        "durationInFrames": 205,
+        "audioDurationSec": 6.452244897959184,
+        "audioFile": "audio/nityas-gems/scenes/scene_market_position.mp3",
+        "scriptText": "Nityas Gems holds a commanding market presence, currently Top-tier player in diamond-studded gold jewellery segment.."
+      },
+      {
+        "id": "fin_title",
+        "chapterIndex": 3,
+        "title": "Financials Deep Dive Intro",
+        "from": 4267,
+        "durationInFrames": 280,
+        "audioDurationSec": 8.96,
+        "audioFile": "audio/nityas-gems/scenes/scene_fin_title.mp3",
+        "scriptText": "Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength."
+      },
+      {
+        "id": "revenue_chart",
+        "chapterIndex": 3,
+        "title": "3-Year Revenue Growth",
+        "from": 4547,
+        "durationInFrames": 438,
+        "audioDurationSec": 14.236734693877551,
+        "audioFile": "audio/nityas-gems/scenes/scene_revenue_chart.mp3",
+        "scriptText": "Topline revenue surged from 11.67 crore in financial year 23 to 96.85 crore in financial year 25, representing an impressive 145.2 percent compound annual growth rate."
+      },
+      {
+        "id": "profit_arc",
+        "chapterIndex": 3,
+        "title": "Profitability Turnaround & EBITDA",
+        "from": 4985,
+        "durationInFrames": 328,
+        "audioDurationSec": 10.579591836734695,
+        "audioFile": "audio/nityas-gems/scenes/scene_profit_arc.mp3",
+        "scriptText": "On the bottom line, ebitda scaled to 14.00 crore, while net profit expanded from 0.25 crore to 9.79 crore with a 10.1 percent profit margin."
+      },
+      {
+        "id": "balance_sheet",
+        "chapterIndex": 3,
+        "title": "Balance Sheet & Cash Flows",
+        "from": 5313,
+        "durationInFrames": 423,
+        "audioDurationSec": 13.740408163265306,
+        "audioFile": "audio/nityas-gems/scenes/scene_balance_sheet.mp3",
+        "scriptText": "Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of 0.45 times, positive operating cash flow of 12.50 crore, and a return on net worth of 18.5 percent."
+      },
+      {
+        "id": "fin_summary",
+        "chapterIndex": 3,
+        "title": "Financial Health Takeaway",
+        "from": 5736,
+        "durationInFrames": 196,
+        "audioDurationSec": 6.164897959183674,
+        "audioFile": "audio/nityas-gems/scenes/scene_fin_summary.mp3",
+        "scriptText": "Overall, Nityas Gems demonstrates solid operating leverage and durable cash generation heading into the public markets."
+      },
+      {
+        "id": "issue_title",
+        "chapterIndex": 4,
+        "title": "Issue Details Intro",
+        "from": 5932,
+        "durationInFrames": 212,
+        "audioDurationSec": 6.6873469387755105,
+        "audioFile": "audio/nityas-gems/scenes/scene_issue_title.mp3",
+        "scriptText": "Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?"
+      },
+      {
+        "id": "issue_split",
+        "chapterIndex": 4,
+        "title": "Fresh Issue vs OFS Split",
+        "from": 6144,
+        "durationInFrames": 337,
+        "audioDurationSec": 10.866938775510205,
+        "audioFile": "audio/nityas-gems/scenes/scene_issue_split.mp3",
+        "scriptText": "The issue is structured with a fresh capital issue of 108.35 crore, or 100 percent, and an offer for sale component of 0.00 crore, or 0 percent."
+      },
+      {
+        "id": "objects_issue",
+        "chapterIndex": 4,
+        "title": "Objects of the Offer",
+        "from": 6481,
+        "durationInFrames": 316,
+        "audioDurationSec": 10.161632653061224,
+        "audioFile": "audio/nityas-gems/scenes/scene_objects_issue.mp3",
+        "scriptText": "Fresh proceeds are earmarked for 64.6 percent towards Funding Working Capital requirements of the Company, and 35.4 percent towards General Corporate Purpose."
+      },
+      {
+        "id": "investor_quota",
+        "chapterIndex": 4,
+        "title": "Reservation Quotas",
+        "from": 6797,
+        "durationInFrames": 298,
+        "audioDurationSec": 9.560816326530611,
+        "audioFile": "audio/nityas-gems/scenes/scene_investor_quota.mp3",
+        "scriptText": "For subscription quotas, retail investors are allocated 10 percent, qualified institutional buyers get 75 percent, and high net-worth individuals receive 15 percent."
+      },
+      {
+        "id": "val_title",
+        "chapterIndex": 5,
+        "title": "Valuation & Peers Intro",
+        "from": 7095,
+        "durationInFrames": 227,
+        "audioDurationSec": 7.183673469387755,
+        "audioFile": "audio/nityas-gems/scenes/scene_val_title.mp3",
+        "scriptText": "Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?"
+      },
+      {
+        "id": "peer_comparison",
+        "chapterIndex": 5,
+        "title": "Peer Benchmarking Matrix",
+        "from": 7322,
+        "durationInFrames": 382,
+        "audioDurationSec": 12.38204081632653,
+        "audioFile": "audio/nityas-gems/scenes/scene_peer_comparison.mp3",
+        "scriptText": "At the upper price band, Nityas Gems demands a price-to-earnings multiple of 28.4 times, compared to Tanishq (Tata) at 25.0 times and Kalyan Jewellers at 20.5 times."
+      },
+      {
+        "id": "val_summary",
+        "chapterIndex": 5,
+        "title": "Valuation Assessment",
+        "from": 7704,
+        "durationInFrames": 355,
+        "audioDurationSec": 11.467755102040817,
+        "audioFile": "audio/nityas-gems/scenes/scene_val_summary.mp3",
+        "scriptText": "Against an industry average P E of 22.5 times, Nityas Gems trades at a premium to industry average due to superior growth trajectory and high-margin diamond segment focus."
+      },
+      {
+        "id": "risk_title",
+        "chapterIndex": 6,
+        "title": "Key Risks Intro",
+        "from": 8059,
+        "durationInFrames": 208,
+        "audioDurationSec": 6.582857142857143,
+        "audioFile": "audio/nityas-gems/scenes/scene_risk_title.mp3",
+        "scriptText": "Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh."
+      },
+      {
+        "id": "risk_cards",
+        "chapterIndex": 6,
+        "title": "Primary Structural Risks",
+        "from": 8267,
+        "durationInFrames": 270,
+        "audioDurationSec": 6.217142857142857,
+        "audioFile": "audio/nityas-gems/scenes/scene_risk_cards.mp3",
+        "scriptText": "The foremost risk is Gold and Diamond Price Fluctuations, along with Intense Market Competition and Regulatory Changes."
+      },
+      {
+        "id": "risk_summary",
+        "chapterIndex": 6,
+        "title": "Asset Quality & Risk Rating",
+        "from": 8537,
+        "durationInFrames": 256,
+        "audioDurationSec": 8.176326530612245,
+        "audioFile": "audio/nityas-gems/scenes/scene_risk_summary.mp3",
+        "scriptText": "Overall risk is assessed as Moderate. Company exhibits strong growth but faces typical industry risks related to commodity prices and competition."
+      },
+      {
+        "id": "verdict_title",
+        "chapterIndex": 7,
+        "title": "Verdict & Scorecard Intro",
+        "from": 8793,
+        "durationInFrames": 187,
+        "audioDurationSec": 5.877551020408164,
+        "audioFile": "audio/nityas-gems/scenes/scene_verdict_title.mp3",
+        "scriptText": "Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard."
+      },
+      {
+        "id": "scorecard",
+        "chapterIndex": 7,
+        "title": "GMP & Analyst Scorecard",
+        "from": 8980,
+        "durationInFrames": 595,
+        "audioDurationSec": 19.461224489795917,
+        "audioFile": "audio/nityas-gems/scenes/scene_scorecard.mp3",
+        "scriptText": "With an active grey market premium of 82 (10 percent) pointing to an estimated listing price of 85, our verdict is Apply for Listing Gains for short-term gains, and Subscribe for Long Term for long-term compounding, achieving an overall rating of 7.9 / 10."
+      },
+      {
+        "id": "outro",
+        "chapterIndex": 7,
+        "title": "Summary Take & Outro",
+        "from": 9575,
+        "durationInFrames": 576,
+        "audioDurationSec": 18.834285714285713,
+        "audioFile": "audio/nityas-gems/scenes/scene_outro.mp3",
+        "scriptText": "Nityas Gems offers a compelling growth story in the organized jewellery sector with robust financials and a diversified business model. What is your bidding strategy for Nityas Gems? Let us know in the comments below, like this breakdown, and subscribe for more in-depth IPO analysis."
+      }
+    ]
+  }
+}
