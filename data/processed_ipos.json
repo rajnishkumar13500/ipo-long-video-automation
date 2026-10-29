@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-10-04T15:44:51.323Z",
+  "history": [
+    {
+      "id": "vishal-nirmiti",
+      "companyName": "Vishal Nirmiti",
+      "listingDate": "2026-10-08",
+      "status": "completed",
+      "processedAt": "2026-10-04T15:44:51.322Z",
+      "dataPath": "src/data/vishal-nirmiti.json",
+      "videoPath": "out/vishal-nirmiti.mp4",
+      "driveFolderId": "1CHyYSzsMERzp8GAQvMDm9P0l6voJeDW_",
+      "driveFolderUrl": "https://drive.google.com/drive/folders/1CHyYSzsMERzp8GAQvMDm9P0l6voJeDW_"
+    },
+    {
+      "id": "jio-platforms",
+      "companyName": "Jio Platforms",
+      "listingDate": "2026-10-26",
+      "status": "completed",
+      "processedAt": "2026-10-04T15:28:58.137Z",
+      "dataPath": "src/data/jio-platforms.json",
+      "videoPath": "out/jio-platforms.mp4",
+      "driveFolderId": "1mm66ZPOtOcNSp1bV3NhS5IuQT1CoFo1O",
+      "driveFolderUrl": "https://drive.google.com/drive/folders/1mm66ZPOtOcNSp1bV3NhS5IuQT1CoFo1O"
+    }
+  ]
+}
