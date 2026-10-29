@@ -1,7 +1,16 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-04T15:44:51.323Z",
+  "lastUpdated": "2026-10-29T19:15:00.000Z",
   "history": [
+    {
+      "id": "antala-industries",
+      "companyName": "ANTALA INDUSTRIES",
+      "listingDate": "2026-10-29",
+      "status": "completed",
+      "processedAt": "2026-10-29T19:15:00.000Z",
+      "dataPath": "src/data/antala-industries.json",
+      "videoPath": "out/antala-industries.mp4"
+    },
     {
       "id": "vishal-nirmiti",
       "companyName": "Vishal Nirmiti",
