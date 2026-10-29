@@ -19,3 +19,7 @@ public/audio/*/
 !public/audio/samples/
 !public/audio/sfx/
 !public/audio/voice_samples/
+
+# Experiments
+experiments/
+experiment/
