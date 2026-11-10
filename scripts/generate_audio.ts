@@ -5,9 +5,9 @@ import { spawnSync } from "child_process";
 import * as mm from "music-metadata";
 import { EdgeTTS } from "@andresaya/edge-tts";
 import { IPOData, VideoTimeline, ChapterTiming, SceneTiming } from "../src/types/ipo";
-import { getElevenLabsKeys, markKeyExhausted } from "./key_manager";
+import { getCartesiaKeys, markKeyExhausted, maskKey } from "./key_manager";
 
-export { getElevenLabsKeys } from "./key_manager";
+export { getCartesiaKeys } from "./key_manager";
 
 export const CHAPTER_METADATA = [
   { id: "chapter_1", title: "Overview & Issue Highlights", shortTitle: "Overview" },
@@ -72,13 +72,15 @@ export const SUB_SCENE_DEFINITIONS: SubSceneMeta[] = [
   // Chapter 8: Decision & Scorecard (3 scenes)
   { id: "verdict_title", chapterIndex: 7, title: "Verdict & Scorecard Intro", minFrames: 90 },
   { id: "scorecard", chapterIndex: 7, title: "GMP & Analyst Scorecard", minFrames: 240 },
-  { id: "outro", chapterIndex: 7, title: "Summary Take & Outro", minFrames: 240 },
+  { id: "outro", chapterIndex: 7, title: "Bidding Strategy & Outro", minFrames: 200 },
 ];
 
 export interface AudioGenerationOptions {
   force?: boolean;
   voiceId?: string;
   modelId?: string;
+  speed?: number;
+  volume?: number;
 }
 
 export interface AudioGenerationResult {
@@ -177,12 +179,12 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
     : "National and Bombay Stock Exchanges";
 
   // Financial calculations
-  const rawPatFirst = data.financials.pat.valuesFormatted[0] || "0";
+  const rawPatFirst = data.financials?.pat?.valuesFormatted?.[0] || "0";
   const isFirstYearLoss = rawPatFirst.includes("-") || rawPatFirst.toLowerCase().includes("loss");
   const patLossCleaned = rawPatFirst.replace(/[-–—]/g, "");
 
   // Peers dynamic extraction
-  const peers = data.peers.table || [];
+  const peers = data.peers?.table || [];
   const targetPeer = peers.find((p) => p.isTargetCompany) || peers[0];
   const listedPeers = peers.filter((p) => p !== targetPeer);
 
@@ -190,119 +192,123 @@ export function buildSceneScripts(data: IPOData): Record<string, string> {
   if (listedPeers.length >= 2) {
     const p1 = listedPeers[0];
     const p2 = listedPeers[1];
-    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "with unlisted multiples";
-    const p2Ratio = p2.peRatio && p2.peRatio !== "N/A" ? `at ${p2.peRatio}` : "with unlisted multiples";
-    peerSnippet = `compared to ${p1.name} ${p1Ratio} and ${p2.name} ${p2Ratio}.`;
+    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "unlisted multiples par";
+    const p2Ratio = p2.peRatio && p2.peRatio !== "N/A" ? `at ${p2.peRatio}` : "unlisted multiples par";
+    peerSnippet = `jabki listed peers me ${p1.name} ${p1Ratio} aur ${p2.name} ${p2Ratio} par trade kar rahe hain.`;
   } else if (listedPeers.length === 1) {
     const p1 = listedPeers[0];
-    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "with unlisted multiples";
-    peerSnippet = `compared to listed peer ${p1.name} ${p1Ratio}.`;
+    const p1Ratio = p1.peRatio && p1.peRatio !== "N/A" ? `at ${p1.peRatio}` : "unlisted multiples par";
+    peerSnippet = `jabki listed peer ${p1.name} ${p1Ratio} par trade kar raha hai.`;
   } else {
-    peerSnippet = `against broader sector multiples.`;
+    peerSnippet = `broader sector multiples ke mukable.`;
   }
 
   // Dates
-  const allotmentPart = data.issue.allotmentDate ? `, with allotment finalized on ${data.issue.allotmentDate}` : "";
-  const listingPart = data.issue.listingDate ? ` and listing slated for ${data.issue.listingDate}` : "";
+  const allotmentPart = data.issue?.allotmentDate ? `, allotment finalize hoga on ${data.issue.allotmentDate}` : "";
+  const listingPart = data.issue?.listingDate ? `, aur listing hogi on ${data.issue.listingDate}` : "";
 
   // Sector / Industry
-  const sectorName = data.industryContext.sectorName || data.industry || "industry";
+  const sectorName = data.industryContext?.sectorName || data.industry || "industry";
 
   // Profit arc
+  const patLast = data.financials?.pat?.valuesFormatted?.[2] || "strong net profit";
+  const patMarginLast = data.financials?.pat?.marginsPercent?.[2] || "healthy";
+  const ebitdaLast = data.financials?.ebitda?.valuesFormatted?.[2] || "strong operating profit";
+
   const profitArcText = isFirstYearLoss
-    ? `On the bottom line, ebitda scaled to ${data.financials.ebitda.valuesFormatted[2]}, while net profit made a sharp turnaround from a loss of ${patLossCleaned} to positive ${data.financials.pat.valuesFormatted[2]} with ${data.financials.pat.marginsPercent[2]} profit margin.`
-    : `On the bottom line, ebitda scaled to ${data.financials.ebitda.valuesFormatted[2]}, while net profit expanded from ${data.financials.pat.valuesFormatted[0]} to ${data.financials.pat.valuesFormatted[2]} with a ${data.financials.pat.marginsPercent[2]} profit margin.`;
+    ? `Bottom line par ebitda scale hua hai to ${ebitdaLast}, jabki net profit ne loss of ${patLossCleaned} se sharp turnaround karke positive ${patLast} deliver kiya hai with ${patMarginLast} profit margin.`
+    : `Bottom line par ebitda scale hua hai to ${ebitdaLast}, aur net profit expand hokar ${rawPatFirst} se ${patLast} tak pahunch gaya hai with a ${patMarginLast} profit margin.`;
 
   const scripts: Record<string, string> = {
     // 01: Cold Open
-    cold_open: `Is India's upcoming ${data.industry || "market"} giant worth your money, or is it an overhyped trap? Here is the complete breakdown before you apply.`,
+    cold_open: `Kya India ki yeh upcoming company aapke paise ke liye ek solid opportunity hai, ya phir ek overhyped trap? Apply karne se pehle chaliye poora analysis detail me samajhte hain.`,
 
     // 02: Dalal Street Entrance
-    logo_reveal: `${data.companyName} is hitting Dalal Street with a landmark ${data.industry || "mainboard"} IPO on the ${exchangeText}.`,
+    logo_reveal: `${data.companyName} Dalal Street par enter kar rahi hai apne landmark IPO ke sath on the ${exchangeText}.`,
 
     // 03: Key Issue Numbers
-    issue_numbers: `The company is raising ${data.issue.totalFormatted} in a price band of ${data.issue.priceBand} per share, with a lot size of ${data.issue.lotSize} requiring a minimum investment of ${data.issue.minInvestment}.`,
+    issue_numbers: `Company raise kar rahi hai ${data.issue?.totalFormatted || "capital"}, jiska price band hai ${data.issue?.priceBand || "band"} per share. Lot size ${data.issue?.lotSize || "lot"} ka hai, jisme minimum investment lagbhag ${data.issue?.minInvestment || "fifteen thousand"} ki hogi.`,
 
     // 04: IPO Roadmap & Dates
-    timeline_stakes: `Bidding opens on ${data.issue.biddingDates || "the announced dates"}${allotmentPart}${listingPart}. Mark your calendar.`,
+    timeline_stakes: `Bidding open ho rahi hai on ${data.issue?.biddingDates || "announced dates"}${allotmentPart}${listingPart}. Apne calendar me yeh dates zaroor note kar lijiye.`,
 
     // 05: Business Model Intro
-    biz_title: `Chapter two: Business Model. How does ${data.companyName} actually monetize its platform? Let us break down their core revenue streams.`,
+    biz_title: `Chapter two: Business Model. Aakhir ${data.companyName} paise kaise kamati hai? Chaliye inke core revenue streams ko break down karte hain.`,
 
     // 06: Platform Value Proposition
-    biz_story: `${data.businessModel.headline}. ${data.businessModel.description}`,
+    biz_story: `${data.businessModel?.headline || "Scaled commercial platform"}. ${data.businessModel?.description || ""}`,
 
     // 07: Revenue Segment Breakdown
-    biz_donut: `Looking at revenue contribution, ${data.businessModel.segments.map((s) => `${s.name} accounts for ${s.sharePercent} percent`).join(", and ")}.`,
+    biz_donut: `Revenue contribution ki baat karein toh, ${data.businessModel?.segments ? data.businessModel.segments.map((s) => `${s.name} contribute karta hai ${s.sharePercent} percent`).join(", aur ") : "core business lines drive karte hain majority revenues"}.`,
 
     // 08: Operational Scale & AUM
-    biz_metrics: `Operationally, the platform boasts ${data.businessModel.keyHighlights.map((k) => `${k.value} ${k.label}`).join(", ")}.`,
+    biz_metrics: `Operational scale par platform ke paas hai ${data.businessModel?.keyHighlights ? data.businessModel.keyHighlights.map((k) => `${k.value} ${k.label}`).join(", ") : "established operating footprint"}.`,
 
     // 09: Market Opportunity Intro
-    ind_title: `Chapter three: Market Opportunity. How large is India's ${sectorName} space, and what tailwinds are driving this expansion?`,
+    ind_title: `Chapter three: Market Opportunity. India ka ${sectorName} space kitna bada hai, aur is growth ko kaunse structural tailwinds drive kar rahe hain?`,
 
     // 10: Addressable Market TAM
-    tam_reveal: `The ${data.industryContext.sectorName} is projected to expand into a ${data.industryContext.marketSizeFormatted}, compounding at a rapid ${data.industryContext.cagrText}.`,
+    tam_reveal: `${data.industryContext?.sectorName || "Yeh sector"} expand hokar reach kar sakta hai ${data.industryContext?.marketSizeFormatted || "multi-billion market"}, compounding at a rapid ${data.industryContext?.cagrText || "healthy CAGR"}.`,
 
     // 11: Structural Growth Drivers
-    growth_drivers: `Key structural growth catalysts include ${data.industryContext.drivers.map((d) => d.title).join(", alongside ")}.`,
+    growth_drivers: `Key structural growth catalysts me shamil hain ${data.industryContext?.drivers ? data.industryContext.drivers.map((d) => d.title).join(", sath hi ") : "rising domestic demand aur supply chain localization"}.`,
 
     // 12: Competitive Positioning
-    market_position: `${data.companyName} holds a commanding market presence, currently ${data.industryContext.marketPosition}.`,
+    market_position: `${data.companyName} hold karti hai ek strong market presence, currently ${data.industryContext?.marketPosition || "positioned among leading suppliers"}.`,
 
     // 13: Financials Deep Dive Intro
-    fin_title: `Chapter four: Financial Deep Dive. Let us evaluate their revenue trajectory, profitability turnaround, and balance sheet strength.`,
+    fin_title: `Chapter four: Financial Deep Dive. Chaliye ab inke revenue growth, profitability turnaround aur balance sheet strength ko evaluate karte hain.`,
 
     // 14: 3-Year Revenue Growth
-    revenue_chart: `Topline revenue surged from ${data.financials.revenue.valuesFormatted[0]} in ${data.financials.years[0]} to ${data.financials.revenue.valuesFormatted[2]} in ${data.financials.years[2]}, representing an impressive ${data.financials.revenue.cagr}.`,
+    revenue_chart: `Topline revenue surge hua hai from ${data.financials?.revenue?.valuesFormatted?.[0] || "initial levels"} in ${data.financials?.years?.[0] || "early periods"} to ${data.financials?.revenue?.valuesFormatted?.[2] || "expanded levels"} in ${data.financials?.years?.[2] || "latest year"}, representing an impressive ${data.financials?.revenue?.cagr || "compound growth"}.`,
 
     // 15: Profitability Turnaround & EBITDA
     profit_arc: profitArcText,
 
     // 16: Balance Sheet & Cash Flows
-    balance_sheet: `Balance sheet quality remains disciplined, carrying a conservative debt-to-equity of ${data.financials.balanceSheet.debtToEquity}, positive operating cash flow of ${data.financials.balanceSheet.cashFromOperations}, and a return on net worth of ${data.financials.balanceSheet.ronwFormatted}.`,
+    balance_sheet: `Balance sheet quality disciplined nazar aati hai: debt-to-equity ratio hai ${data.financials?.balanceSheet?.debtToEquity || "under one"}, operating cash flow ${data.financials?.balanceSheet?.cashFromOperations || "positive cash"} hai, aur return on net worth khada hai at ${data.financials?.balanceSheet?.ronwFormatted || "healthy returns"}.`,
 
     // 17: Financial Health Takeaway
-    fin_summary: `Overall, ${data.companyName} demonstrates solid operating leverage and durable cash generation heading into the public markets.`,
+    fin_summary: `Overall, ${data.companyName} demonstrate karti hai solid operating leverage aur reliable cash generation heading into the public markets.`,
 
     // 18: Issue Details Intro
-    issue_title: `Chapter five: Issue Details and Capital Allocation. Where will your invested money be deployed?`,
+    issue_title: `Chapter five: Issue Details aur Capital Allocation. Aakhir aapka invest kiya hua paisa kahan deploy kiya jayega?`,
 
     // 19: Fresh Issue vs OFS Split
-    issue_split: `The issue is structured with a fresh capital issue of ${data.issue.freshFormatted}, or ${data.issue.freshPercent}, and an offer for sale component of ${data.issue.ofsFormatted}, or ${data.issue.ofsPercent}.`,
+    issue_split: `Issue structure me shamil hai ${data.issue?.freshFormatted || "fresh capital"} ka fresh capital issue, yaani ${data.issue?.freshPercent || "major portion"}, aur ${data.issue?.ofsFormatted || "offer for sale"} ka offer for sale component, yaani ${data.issue?.ofsPercent || "secondary component"}.`,
 
     // 20: Objects of the Offer
-    objects_issue: `Fresh proceeds are earmarked for ${data.issue.objectsOfIssue && data.issue.objectsOfIssue.length > 0 ? data.issue.objectsOfIssue.map((o) => `${o.percentage} towards ${o.purpose}`).join(", and ") : "business expansion and corporate infrastructure"}.`,
+    objects_issue: `Fresh proceeds deploy kiye jayenge ${data.issue?.objectsOfIssue && data.issue.objectsOfIssue.length > 0 ? data.issue.objectsOfIssue.map((o) => `${o.percentage} towards ${o.purpose}`).join(", aur ") : "debt repayment aur growth expansion me"}.`,
 
     // 21: Reservation Quotas
-    investor_quota: `For subscription quotas, retail investors are allocated ${data.issue.retailQuota || "35 percent"}, qualified institutional buyers get ${data.issue.qibQuota || "50 percent"}, and high net-worth individuals receive ${data.issue.niiQuota || "15 percent"}.`,
+    investor_quota: `Reservation quotas me retail investors ke liye allocated hai ${data.issue?.retailQuota || "35 percent"}, Q I B ke liye ${data.issue?.qibQuota || "50 percent"}, aur N I I ke liye ${data.issue?.niiQuota || "15 percent"}.`,
 
     // 22: Valuation & Peers Intro
-    val_title: `Chapter six: Valuation and Peer Benchmarking. Is the issue reasonably priced against listed market competitors?`,
+    val_title: `Chapter six: Valuation aur Peer Benchmarking. Kya yeh issue listed competitors ke mukable attractively priced hai?`,
 
     // 23: Peer Benchmarking Matrix
-    peer_comparison: `At the upper price band, ${data.companyName} demands a price-to-earnings multiple of ${targetPeer?.peRatio || "the upper valuation"}, ${peerSnippet}`,
+    peer_comparison: `Upper price band par ${data.companyName} trade kar rahi hai at a price-to-earnings multiple of ${targetPeer?.peRatio || "attractive valuation"}, ${peerSnippet}`,
 
     // 24: Valuation Assessment
-    val_summary: `Against an industry average P E of ${data.peers.industryAveragePe}, ${data.peers.commentary || "the issue pricing provides a key benchmark against listed peers."}`,
+    val_summary: `Against an industry average P E of ${data.peers?.industryAveragePe || "twenty-five times"}, ${data.peers?.commentary || "issue pricing provides a reasonable margin of safety compared to peers."}`,
 
     // 25: Key Risks Intro
-    risk_title: `Chapter seven: Critical Risks and Structural Red Flags. Here are the key vulnerabilities every investor should weigh.`,
+    risk_title: `Chapter seven: Critical Risks aur Red Flags. Har smart investor ko in key vulnerabilities par zaroor dhyan dena chahiye.`,
 
     // 26: Primary Structural Risks
-    risk_cards: `The foremost risk is ${data.risks.items[0]?.title || "market concentration"}${data.risks.items[0]?.detail ? `, primarily driven by ${data.risks.items[0].detail}` : ""}. In addition, investors should monitor ${data.risks.items[1]?.title || "regulatory guidelines"} and ${data.risks.items[2]?.title || "operating dependencies"}.`,
+    risk_cards: `Pehla bada risk hai ${data.risks?.items?.[0]?.title || "market concentration"}${data.risks?.items?.[0]?.detail ? `, primarily driven by ${data.risks.items[0].detail}` : ""}. Iske alawa investors ko monitor karna hoga ${data.risks?.items?.[1]?.title || "raw material costs"} aur ${data.risks?.items?.[2]?.title || "working capital requirements"}.`,
 
     // 27: Asset Quality & Risk Rating
-    risk_summary: `Overall risk is assessed as ${data.risks.overallRiskLevel}. ${data.risks.bottomNote || "Investors should carefully evaluate these risk factors before committing capital."}`,
+    risk_summary: `Overall risk profile moderate assessed hai. ${data.risks?.bottomNote || "Investors ko in risk factors ko carefully evaluate karna chahiye before bidding."}`,
 
     // 28: Verdict & Scorecard Intro
-    verdict_title: `Chapter eight: The Final Decision. Let us check the grey market premium and our comprehensive analyst scorecard.`,
+    verdict_title: `Chapter eight: Final Decision aur Scorecard. Chaliye dekhte hain latest grey market premium aur humara comprehensive analyst scorecard.`,
 
     // 29: GMP & Analyst Scorecard
-    scorecard: `With an active grey market premium of ${data.verdict.gmp.currentGmpFormatted} pointing to an estimated listing price of ${data.verdict.gmp.estimatedListingPrice}, our verdict is ${data.verdict.shortTermVerdict} for short-term gains, and ${data.verdict.longTermVerdict} for long-term compounding, achieving an overall rating of ${data.verdict.scorecard.overallRating}.`,
+    scorecard: `Active grey market premium trend kar raha hai at ${data.verdict?.gmp?.currentGmpFormatted || "positive trend"}, signaling an estimated listing price of ${data.verdict?.gmp?.estimatedListingPrice || "premium listing"}. Humara verdict: short term gains ke liye ${data.verdict?.shortTermVerdict || "Apply for listing gains"}, aur long term compounding ke liye ${data.verdict?.longTermVerdict || "Subscribe"}, achieving an overall scorecard rating of ${data.verdict?.scorecard?.overallRating || "7.8 out of 10"}.`,
 
-    // 30: Summary Take & Outro
-    outro: `${data.verdict.summaryTake} What is your bidding strategy for ${data.companyName}? Share your thoughts in the comments below! If you enjoyed this video, hit the like button and subscribe for daily in-depth IPO analysis.`,
+    // 30: Bidding Strategy & Outro
+    outro: `Aapki bidding strategy kya hai ${data.companyName} ke liye? Apne thoughts comments me zaroor share karein! Video pasand aaya ho toh like karein aur daily IPO analysis ke liye channel ko subscribe karein.`,
   };
 
   return scripts;
@@ -396,20 +402,32 @@ function generateOfflineTTS(text: string, outWavPath: string): boolean {
 /**
  * Synthesizes audio using Edge-TTS with multi-voice retry
  */
-async function synthesizeWithEdgeTTS(text: string, voiceName: string, outMp3Path: string): Promise<boolean> {
+async function synthesizeWithEdgeTTS(
+  text: string,
+  voiceName: string,
+  outMp3Path: string,
+  speed: number = 1.25,
+  volume: number = 1.6
+): Promise<boolean> {
   const candidateVoices = [
     voiceName,
+    "hi-IN-MadhurNeural",
+    "hi-IN-SwaraNeural",
     "en-IN-PrabhatNeural",
     "en-IN-NeerjaNeural",
     "en-US-ChristopherNeural",
     "en-US-GuyNeural",
   ];
   const uniqueVoices = Array.from(new Set(candidateVoices));
+  const ratePercent = Math.round((speed - 1) * 100);
+  const rateStr = ratePercent >= 0 ? `+${ratePercent}%` : `${ratePercent}%`;
+  const volPercent = Math.round((volume - 1) * 100);
+  const volStr = volPercent >= 0 ? `+${volPercent}%` : `${volPercent}%`;
 
   for (const v of uniqueVoices) {
     try {
       const tts = new EdgeTTS();
-      await tts.synthesize(text, v, { rate: "+3%", pitch: "+0Hz" });
+      await tts.synthesize(text, v, { rate: rateStr, pitch: "+0Hz", volume: volStr });
       await tts.toFile(outMp3Path);
 
       if (fs.existsSync(outMp3Path) && fs.statSync(outMp3Path).size > 1000) {
@@ -423,8 +441,64 @@ async function synthesizeWithEdgeTTS(text: string, voiceName: string, outMp3Path
 }
 
 /**
+ * Synthesizes audio using Cartesia Sonic API (/tts/bytes endpoint)
+ * Directly returns MP3 binary stream
+ */
+async function synthesizeWithCartesia(
+  text: string,
+  outMp3Path: string,
+  apiKey: string,
+  voiceId: string,
+  modelId: string,
+  language: string = "hi",
+  speed: number = 1.25,
+  volume: number = 1.6
+): Promise<{ success: boolean; status: number; error?: string }> {
+  try {
+    const res = await fetch("https://api.cartesia.ai/tts/bytes", {
+      method: "POST",
+      headers: {
+        "X-API-Key": apiKey,
+        "Authorization": `Bearer ${apiKey}`,
+        "Cartesia-Version": "2024-06-10",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model_id: modelId,
+        transcript: text,
+        voice: {
+          mode: "id",
+          id: voiceId,
+        },
+        output_format: {
+          container: "mp3",
+          sample_rate: 44100,
+          bit_rate: 128000,
+        },
+        language,
+        generation_config: {
+          speed: Math.max(0.6, Math.min(1.5, speed)),
+          volume: Math.max(0.5, Math.min(2.0, volume)),
+        },
+      }),
+    });
+
+    if (res.ok) {
+      const arrayBuffer = await res.arrayBuffer();
+      fs.writeFileSync(outMp3Path, Buffer.from(arrayBuffer));
+      return { success: true, status: res.status };
+    }
+
+    const errText = await res.text();
+    return { success: false, status: res.status, error: errText };
+  } catch (err: any) {
+    return { success: false, status: 0, error: err?.message || String(err) };
+  }
+}
+
+/**
  * Cascade voice synthesizer for an audio track:
- * 1. ElevenLabs multi-key pool (rotates and tracks exhausted keys)
+ * 1. Cartesia Sonic Multi-Key Failover Pool (rotates keys & auto-skips exhausted/rate-limited keys)
  * 2. Microsoft Neural Indian English (Edge-TTS)
  * 3. Cross-platform Web Speech (Google TTS)
  * 4. Local offline speech synthesis (Windows SAPI)
@@ -436,66 +510,46 @@ async function synthesizeSpeech(
   keys: string[],
   voiceId: string,
   modelId: string,
-  startKeyIndex: number = 0
+  startKeyIndex: number = 0,
+  language: string = "hi",
+  speed: number = 1.25,
+  volume: number = 1.6
 ): Promise<{ filePath: string; isFallback: boolean; usedKeyIndex: number }> {
-  // Option 1: ElevenLabs Multi-Key Failover Pool
+  // Option 1: Cartesia Multi-Key Failover Pool
   if (keys.length > 0) {
     for (let offset = 0; offset < keys.length; offset++) {
       const kIdx = (startKeyIndex + offset) % keys.length;
       const key = keys[kIdx];
-      const keyLabel = `Key #${kIdx + 1} (...${key.slice(-4)})`;
+      const keyLabel = `Key #${kIdx + 1} (${maskKey(key)})`;
 
-      try {
-        const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
-          method: "POST",
-          headers: {
-            "xi-api-key": key,
-            "Content-Type": "application/json",
-            Accept: "audio/mpeg",
-          },
-          body: JSON.stringify({
-            text,
-            model_id: modelId,
-            voice_settings: {
-              stability: 0.45,
-              similarity_boost: 0.85,
-              style: 0.20,
-              use_speaker_boost: true,
-            },
-          }),
-        });
+      const cartesiaRes = await synthesizeWithCartesia(text, outMp3Path, key, voiceId, modelId, language, speed, volume);
+      if (cartesiaRes.success) {
+        console.log(`   ✅ Synthesized with Cartesia ${keyLabel} (${speed}x speed, ${volume}x vol)`);
+        return { filePath: outMp3Path, isFallback: false, usedKeyIndex: kIdx };
+      }
 
-        if (res.ok) {
-          const arrayBuffer = await res.arrayBuffer();
-          fs.writeFileSync(outMp3Path, Buffer.from(arrayBuffer));
-          console.log(`   ✅ Synthesized with ElevenLabs ${keyLabel}`);
-          return { filePath: outMp3Path, isFallback: false, usedKeyIndex: kIdx };
-        }
+      console.warn(`   ⚠️ Cartesia ${keyLabel} returned HTTP ${cartesiaRes.status}: ${(cartesiaRes.error || "").slice(0, 90)}`);
 
-        const errText = await res.text();
-        console.warn(`   ⚠️ ElevenLabs ${keyLabel} returned HTTP ${res.status}: ${errText.slice(0, 90)}`);
+      const isQuotaOrAuth =
+        cartesiaRes.status === 401 ||
+        cartesiaRes.status === 402 ||
+        cartesiaRes.status === 429 ||
+        cartesiaRes.error?.toLowerCase().includes("quota") ||
+        cartesiaRes.error?.toLowerCase().includes("credit") ||
+        cartesiaRes.error?.toLowerCase().includes("limit") ||
+        cartesiaRes.error?.toLowerCase().includes("rate");
 
-        if (
-          res.status === 401 ||
-          res.status === 429 ||
-          errText.toLowerCase().includes("quota") ||
-          errText.toLowerCase().includes("limit") ||
-          errText.toLowerCase().includes("credit") ||
-          errText.toLowerCase().includes("unusual_activity")
-        ) {
-          console.warn(`   ⚠️ [ElevenLabs Pool] ${keyLabel} quota/credits exhausted. Moving to next key in pool...`);
-          markKeyExhausted(key, `HTTP ${res.status}`);
-        }
-      } catch (netErr) {
-        console.warn(`   ⚠️ ElevenLabs ${keyLabel} error:`, netErr instanceof Error ? netErr.message : netErr);
+      if (isQuotaOrAuth) {
+        console.warn(`   ⚠️ [Cartesia Pool] ${keyLabel} quota/credits exhausted. Moving to next key in pool...`);
+        markKeyExhausted(key, `HTTP ${cartesiaRes.status}`);
       }
     }
   }
 
   // Option 2: Microsoft Neural Indian English Voice (Edge-TTS)
   console.log(`   🎙️ Falling back to Microsoft Neural Voice (Edge-TTS)...`);
-  const defaultIndianVoice = process.env.EDGE_TTS_VOICE || "en-IN-PrabhatNeural";
-  const edgeOk = await synthesizeWithEdgeTTS(text, defaultIndianVoice, outMp3Path);
+  const defaultIndianVoice = process.env.EDGE_TTS_VOICE || "hi-IN-MadhurNeural";
+  const edgeOk = await synthesizeWithEdgeTTS(text, defaultIndianVoice, outMp3Path, speed);
   if (edgeOk) {
     return { filePath: outMp3Path, isFallback: true, usedKeyIndex: -1 };
   }
@@ -540,14 +594,18 @@ export async function generateAudioAndTimeline(
   const sceneScripts = buildSceneScripts(ipoData);
   ipoData.sceneScripts = sceneScripts;
 
-  const keys = getElevenLabsKeys();
-  const voiceId = options.voiceId || process.env.ELEVENLABS_VOICE_ID || "pNInz6obpgDQGcFmaJgB";
-  const modelId = options.modelId || process.env.ELEVENLABS_MODEL_ID || "eleven_multilingual_v2";
+  const keys = getCartesiaKeys();
+  const voiceId = options.voiceId || process.env.CARTESIA_VOICE_ID || "fd2ada67-c2d9-4afe-b474-6386b87d8fc3";
+  const modelId = options.modelId || process.env.CARTESIA_MODEL_ID || "sonic-3.6";
+  const language = process.env.CARTESIA_LANGUAGE || "hi";
+  const speed = options.speed || parseFloat(process.env.CARTESIA_SPEED || process.env.VIDEO_SPEED || "1.25");
+  const volume = options.volume ?? parseFloat(process.env.CARTESIA_VOLUME || process.env.VOICE_VOLUME || "1.6");
 
   console.log(`\n🎧 ======================================================`);
   console.log(`🎧 GENERATING SCENE-BY-SCENE AUDIO & TIMELINE: ${ipoData.companyName}`);
   console.log(`🎧 Slug: ${slug} | 30 Granular Sub-Scenes across 8 Chapters`);
-  console.log(`🎧 ElevenLabs Failover Pool: ${keys.length} API key(s) detected`);
+  console.log(`🎧 Cartesia Failover Pool: ${keys.length} API key(s) detected`);
+  console.log(`🎧 Voice ID: ${voiceId} | Model: ${modelId} | Speed: ${speed}x | Volume: ${volume}x`);
   console.log(`🎧 ======================================================`);
 
   const generatedAudioFiles: string[] = [];
@@ -575,7 +633,7 @@ export async function generateAudioAndTimeline(
       activeFilePath = hasValidMp3 ? mp3File : wavFile;
       console.log(`   ⚡ [Cache Hit] Reusing: ${path.basename(activeFilePath)}`);
     } else {
-      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId, activeKeyIndex);
+      const res = await synthesizeSpeech(scriptText, mp3File, wavFile, keys, voiceId, modelId, activeKeyIndex, language, speed, volume);
       if (res.usedKeyIndex >= 0) {
         activeKeyIndex = res.usedKeyIndex;
       }
@@ -587,10 +645,11 @@ export async function generateAudioAndTimeline(
     const metadata = await mm.parseFile(activeFilePath);
     const durationSec = metadata.format.duration || 5.0;
 
-    // Add 0.35s (approx 10-11 frames) breath buffer for clean transition
-    const breathBufferSec = 0.35;
+    // Scale minimum frames and buffer by speed for tight, high-energy pacing
+    const scaledMinFrames = Math.round(sceneDef.minFrames / speed);
+    const breathBufferSec = 0.28 / Math.max(1, speed * 0.9);
     const neededFrames = Math.ceil((durationSec + breathBufferSec) * 30);
-    const durationInFrames = Math.max(sceneDef.minFrames, neededFrames);
+    const durationInFrames = Math.max(scaledMinFrames, neededFrames);
 
     const relativeRemotionPath = `audio/${slug}/scenes/${path.basename(activeFilePath)}`;
     generatedAudioFiles.push(activeFilePath);

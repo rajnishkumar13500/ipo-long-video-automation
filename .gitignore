@@ -6,10 +6,14 @@ dist
 # Ignore the output video from Git but not videos you import into src/.
 out
 
-# Secret service account keys
+# Secret service account keys & API keys
 service_account.json
 *service_account*.json
 credentials.json
+cartesia_keys.txt
+*cartesia_keys*.txt
+elevenlabs_keys.txt
+*elevenlabs_keys*.txt
 # Remotion build and bundle cache
 build/
 .remotion/

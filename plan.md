@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary & Architecture Overview
 
-This plan establishes a **100% autonomous, headless video generation and cloud distribution pipeline** running on **GitHub Actions**. Every morning, the system checks for newly listed/announced Indian IPOs, automatically extracts their financial and subscription metrics, generates punchy narration scripts, synthesizes studio-grade voiceover audio using ElevenLabs (voice `iP95p4xoKVk53GoZ742B` / Chris), renders high-definition vertical MP4 videos with Remotion, and archives all outputs directly to **Google Drive** in an organized hierarchy.
+This plan establishes a **100% autonomous, headless video generation and cloud distribution pipeline** running on **GitHub Actions**. Every morning, the system checks for newly listed/announced Indian IPOs, automatically extracts their financial and subscription metrics, generates punchy narration scripts, synthesizes studio-grade voiceover audio using Cartesia Sonic (voice `47c38ca4-5f35-497b-b1a3-415245fb35e1` / Daniel), renders high-definition widescreen MP4 videos with Remotion, and archives all outputs directly to **Google Drive** in an organized hierarchy.
 
 ```mermaid
 flowchart TD
@@ -11,7 +11,7 @@ flowchart TD
     C -- Yes (Already in Last 50) --> D[Skip & Exit Workflow]
     C -- No (New IPO Found) --> E[scripts/extract_ipo_data.ts\nScrape Article & AI-Parse to IPOData]
     E --> F[scripts/generate_script.ts\nGroq Qwen / Gemini Fallback\nClean Numbers, No Rupee Artifacts]
-    F --> G[scripts/generate_audio.ts\nElevenLabs Chris iP95p4xoKVk53GoZ742B\nProbe Durations & Recalculate Timeline]
+    F --> G[scripts/generate_audio.ts\nCartesia Sonic 47c38ca4-5f35-497b-b1a3-415245fb35e1\nProbe Durations & Recalculate Timeline]
     G --> H[scripts/render.ts\nHeadless Remotion Render 1080x1920 MP4]
     H --> I[scripts/upload_drive.ts\nGoogle Drive API Integration]
     
@@ -191,9 +191,9 @@ on:
         type: boolean
         default: false
       voice_id:
-        description: 'ElevenLabs Voice ID (default: Chris iP95p4xoKVk53GoZ742B)'
+        description: 'Cartesia Voice ID (default: 47c38ca4-5f35-497b-b1a3-415245fb35e1)'
         required: false
-        default: 'iP95p4xoKVk53GoZ742B'
+        default: '47c38ca4-5f35-497b-b1a3-415245fb35e1'
 
 jobs:
   run-pipeline:
@@ -225,11 +225,12 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          ELEVENLABS_API_KEY_1: ${{ secrets.ELEVENLABS_API_KEY_1 }}
-          ELEVENLABS_API_KEY_2: ${{ secrets.ELEVENLABS_API_KEY_2 }}
-          ELEVENLABS_API_KEY_3: ${{ secrets.ELEVENLABS_API_KEY_3 }}
-          ELEVENLABS_API_KEY_4: ${{ secrets.ELEVENLABS_API_KEY_4 }}
-          ELEVENLABS_VOICE_ID: ${{ github.event.inputs.voice_id || 'iP95p4xoKVk53GoZ742B' }}
+          CARTESIA_API_KEY_1: ${{ secrets.CARTESIA_API_KEY_1 }}
+          CARTESIA_API_KEY_2: ${{ secrets.CARTESIA_API_KEY_2 }}
+          CARTESIA_API_KEY_3: ${{ secrets.CARTESIA_API_KEY_3 }}
+          CARTESIA_API_KEY_4: ${{ secrets.CARTESIA_API_KEY_4 }}
+          CARTESIA_VOICE_ID: ${{ github.event.inputs.voice_id || '47c38ca4-5f35-497b-b1a3-415245fb35e1' }}
+          CARTESIA_MODEL_ID: 'sonic-3.6'
           BG_MUSIC_VOLUME: '0.05'
           GDRIVE_SERVICE_ACCOUNT_KEY: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_KEY }}
           GDRIVE_PARENT_FOLDER_ID: ${{ secrets.GDRIVE_PARENT_FOLDER_ID }}
@@ -267,10 +268,10 @@ Configure the following secrets in your GitHub repository (**Settings > Secrets 
 | :--- | :--- | :--- |
 | `GROQ_API_KEY` | Groq Cloud API Key for Qwen scripting | `gsk_...` |
 | `GEMINI_API_KEY` | Google Gemini API Key fallback | `AIzaSy...` |
-| `ELEVENLABS_API_KEY_1` | Primary ElevenLabs Key | `sk_...` |
-| `ELEVENLABS_API_KEY_2` | Secondary ElevenLabs Key | `sk_...` |
-| `ELEVENLABS_API_KEY_3` | Third ElevenLabs Key | `sk_...` |
-| `ELEVENLABS_API_KEY_4` | Fourth ElevenLabs Key | `sk_...` |
-| `ELEVENLABS_VOICE_ID` | Voice ID (Chris) | `iP95p4xoKVk53GoZ742B` |
+| `CARTESIA_API_KEY_1` | Primary Cartesia API Key (https://play.cartesia.ai/keys) | `sk_car_...` |
+| `CARTESIA_API_KEY_2` | Secondary Cartesia Key | `sk_car_...` |
+| `CARTESIA_API_KEY_3` | Third Cartesia Key | `sk_car_...` |
+| `CARTESIA_API_KEY_4` | Fourth Cartesia Key | `sk_car_...` |
+| `CARTESIA_VOICE_ID` | Voice ID (Daniel) | `47c38ca4-5f35-497b-b1a3-415245fb35e1` |
 | `GDRIVE_SERVICE_ACCOUNT_KEY` | Full JSON credentials of GCP Service Account | `{"type": "service_account", ...}` |
 | `GDRIVE_PARENT_FOLDER_ID` | Google Drive folder ID of "IPO Automation" | `1a2b3c4d5e6f7g8h9i0j...` |

@@ -1,55 +1,50 @@
-import { getElevenLabsKeys, checkKeyQuota } from "./key_manager";
+import { getCartesiaKeys, checkCartesiaKey } from "./key_manager";
 
 async function main() {
   console.log("\n==================================================================");
-  console.log("🔑 ELEVENLABS MULTI-KEY QUOTA & HEALTH CHECKER (FULL-LENGTH)");
+  console.log("🔑 CARTESIA MULTI-KEY HEALTH & STATUS CHECKER (SONIC ENGINE)");
   console.log("==================================================================");
 
-  const keys = getElevenLabsKeys();
+  const keys = getCartesiaKeys();
   if (keys.length === 0) {
-    console.log("❌ No ElevenLabs keys found in .env or elevenlabs_keys.txt!");
+    console.log("❌ No Cartesia keys found in .env or cartesia_keys.txt!");
+    console.log("👉 Get your API key(s) from: https://play.cartesia.ai/keys");
+    console.log("   Then add them to .env or cartesia_keys.txt.");
     process.exit(1);
   }
 
-  console.log(`📡 Discovered ${keys.length} key(s) across .env, text files & pool. Checking live quotas...\n`);
+  console.log(`📡 Discovered ${keys.length} key(s) across .env and cartesia_keys.txt. Validating against Cartesia API...\n`);
 
   let activeCount = 0;
-  let totalRemainingChars = 0;
 
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
-    const info = await checkKeyQuota(key);
+    const info = await checkCartesiaKey(key);
 
     const padIdx = String(i + 1).padStart(2, " ");
     const keyLabel = `[${info.masked}]`;
 
     if (info.status === "active") {
       activeCount++;
-      totalRemainingChars += info.remaining;
-      const remStr = info.remaining.toLocaleString().padStart(6, " ");
-      const usedStr = `${info.characterCount.toLocaleString()}/${info.characterLimit.toLocaleString()}`;
-      console.log(`   ${padIdx}. ${keyLabel}  ✅ ACTIVE   ${remStr} chars left (${usedStr} used)`);
+      const voiceInfo = info.voiceCount !== undefined ? `(${info.voiceCount} voices accessible)` : "";
+      console.log(`   ${padIdx}. ${keyLabel}  ✅ ACTIVE ${voiceInfo}`);
     } else if (info.status === "exhausted") {
-      const remStr = info.remaining.toLocaleString().padStart(6, " ");
-      const usedStr = `${info.characterCount.toLocaleString()}/${info.characterLimit.toLocaleString()}`;
-      console.log(`   ${padIdx}. ${keyLabel}  ❌ EXHAUSTED   ${remStr} chars left (${usedStr} used)`);
+      console.log(`   ${padIdx}. ${keyLabel}  ❌ EXHAUSTED / RATE LIMITED (${info.error || "quota limit"})`);
+    } else if (info.status === "invalid") {
+      console.log(`   ${padIdx}. ${keyLabel}  ⚠️ INVALID (${info.error || "unauthorized"})`);
     } else {
       console.log(`   ${padIdx}. ${keyLabel}  ⚠️ ${info.status.toUpperCase()} (${info.error || "failed"})`);
     }
   }
 
-  const estimatedVideos = Math.floor(totalRemainingChars / 3500);
-
   console.log("\n------------------------------------------------------------------");
   console.log("📊 Summary:");
-  console.log(`   • Active Keys with Credits: ${activeCount} / ${keys.length}`);
-  console.log(`   • Total Available Capacity: ${totalRemainingChars.toLocaleString()} characters`);
-  console.log(`   • Estimated Full-Length Capacity: ~${estimatedVideos} full videos (at ~3,500 chars/video)`);
+  console.log(`   • Verified Active Keys: ${activeCount} / ${keys.length}`);
   console.log("------------------------------------------------------------------");
-  console.log("💡 How to add more keys:");
-  console.log("   1. In .env: Add ELEVENLABS_API_KEY_9, ELEVENLABS_API_KEY_10, etc.");
-  console.log("   2. In elevenlabs_keys.txt: Simply paste new keys one per line.");
-  console.log("   3. In .env: ELEVENLABS_API_KEYS=key1,key2,key3");
+  console.log("💡 How to add more keys (from https://play.cartesia.ai/keys):");
+  console.log("   1. In cartesia_keys.txt: Simply paste new keys one per line.");
+  console.log("   2. In .env: CARTESIA_API_KEY_1=..., CARTESIA_API_KEY_2=...");
+  console.log("   3. In .env: CARTESIA_API_KEYS=key1,key2,key3");
   console.log("==================================================================\n");
 }
 

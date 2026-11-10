@@ -1,0 +1,680 @@
+{
+  "id": "bombay-coated-and-special-steels",
+  "companyName": "Bombay Coated & Special Steels",
+  "ticker": "BOMBAYCOATEDANDSPECIALSTEELS",
+  "industry": "Manufacturing & Commercial Solutions",
+  "domain": "bombaycoatedandspecialsteels.com",
+  "logoUrl": "logos/bombay-coated-and-special-steels.png",
+  "logoInitials": "BC",
+  "exchange": "BSE • NSE",
+  "badgeSubtitle": "IPO Deep-Dive Analysis",
+  "listingDate": "Thu, Nov 5, 2026",
+  "issue": {
+    "totalFormatted": "₹183.06 Cr",
+    "freshFormatted": "₹183.06 Cr",
+    "freshPercent": "100%",
+    "ofsFormatted": "₹0 Cr",
+    "ofsPercent": "0%",
+    "priceBand": "₹78 to ₹82",
+    "lotSize": "182 Shares",
+    "minInvestment": "₹14,924",
+    "retailQuota": "35.00%",
+    "qibQuota": "50.00%",
+    "niiQuota": "15.00%",
+    "biddingDates": "29 Oct to 2 Nov, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Repayment/pre-payment, in full or in part, of certain borrowings availed by Company",
+        "amountFormatted": "₹125.00 Cr",
+        "percentage": "125.0 Cr"
+      },
+      {
+        "purpose": "Financing the cost towards acquisition of capital equipment under existing lease arrangements with Siemens Financial Services Pvt.Ltd.",
+        "amountFormatted": "₹15.77 Cr",
+        "percentage": "15.8 Cr"
+      },
+      {
+        "purpose": "General Corporate Purposes",
+        "amountFormatted": "₹17.04 Cr",
+        "percentage": "17.0 Cr"
+      },
+      {
+        "purpose": "Issue Expenses",
+        "amountFormatted": "₹25.25 Cr",
+        "percentage": "25.3 Cr"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Scalable diversified operating platform with pan-India distribution",
+    "description": "Bombay Coated & Special Steels delivers high-demand products and services across major commercial hubs with a focus on margin-accretive expansion.",
+    "segments": [
+      {
+        "name": "Core Operations",
+        "sharePercent": 65,
+        "description": "Core manufacturing and enterprise delivery",
+        "amountFormatted": "₹450 Cr"
+      },
+      {
+        "name": "Direct Distribution",
+        "sharePercent": 25,
+        "description": "Direct supply and OEM integration",
+        "amountFormatted": "₹170 Cr"
+      },
+      {
+        "name": "Value-Added Services",
+        "sharePercent": 10,
+        "description": "After-market engineering & logistics support",
+        "amountFormatted": "₹70 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Client Base",
+        "value": "160+ OEMs",
+        "subtext": "Long-term relationships"
+      },
+      {
+        "label": "Operating Plants",
+        "value": "4 Facilities",
+        "subtext": "Strategic national footprint"
+      },
+      {
+        "label": "Capacity Utilization",
+        "value": "78%",
+        "subtext": "High operating leverage"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Indian Industrial & Commercial Manufacturing",
+    "marketSizeFormatted": "$40 Billion by 2030",
+    "cagrText": "14.5% Sector CAGR",
+    "drivers": [
+      {
+        "title": "Infrastructure & Capex Expansion",
+        "detail": "Rising domestic industrial activity driving demand for specialized manufacturing."
+      },
+      {
+        "title": "Supply Chain Localization",
+        "detail": "Make-in-India tailwinds prompting OEMs to onshore Tier-1 supplier components."
+      },
+      {
+        "title": "Operating Efficiencies",
+        "detail": "Adoption of automated fabrication and logistics to sustain margin expansion."
+      }
+    ],
+    "marketPosition": "Recognized among the top 10 specialized suppliers in its category"
+  },
+  "financials": {
+    "years": [
+      "FY24",
+      "FY25",
+      "FY26"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹765 Cr",
+        "₹1,059 Cr",
+        "₹1,270 Cr"
+      ],
+      "rawCr": [
+        765.41,
+        1058.65,
+        1269.83
+      ],
+      "cagr": "28.8% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹49 Cr",
+        "₹74 Cr",
+        "₹86 Cr"
+      ],
+      "marginsPercent": [
+        "6.4%",
+        "7.0%",
+        "6.8%"
+      ],
+      "rawCr": [
+        49.17,
+        74.09,
+        86.09
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹21 Cr",
+        "₹29 Cr",
+        "₹31 Cr"
+      ],
+      "marginsPercent": [
+        "2.8%",
+        "2.7%",
+        "2.4%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "2.78x",
+      "cashFromOperations": "₹65 Cr",
+      "ronwFormatted": "25.1%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "24.5x",
+    "commentary": "Priced competitively with sector multiples and sustainable return ratios.",
+    "table": [
+      {
+        "name": "Bombay Coated & Special Steels (Target)",
+        "peRatio": "21.4x",
+        "pbRatio": "3.2x",
+        "evEbitda": "12.8x",
+        "revenueFormatted": "₹1,270 Cr",
+        "patFormatted": "₹31 Cr",
+        "ronwFormatted": "25.1%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "German Green Steel & Power",
+        "peRatio": "9.48x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹303.90 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "A-One Steels India",
+        "peRatio": "21.76x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹405.00 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Jindal Supreme (India)",
+        "peRatio": "16.64x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹124.88 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Customer Concentration",
+        "title": "Top Client Dependency",
+        "detail": "The top 10 customers contribute a significant portion of aggregate annual revenue."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Input Price Volatility",
+        "title": "Raw Material Costs",
+        "detail": "Fluctuations in raw material prices could exert transient pressure on gross margins."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Working Capital Cycle",
+        "title": "Receivables & Credit Period",
+        "detail": "Working capital requirements may increase during phases of accelerated capacity expansion."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "A conservative debt-to-equity ratio and positive operating cash flows provide adequate shock absorption."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹22 (24.0%)",
+      "estimatedListingPrice": "₹114",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.4,
+      "financialGrowth": 8.2,
+      "profitabilityQuality": 7.8,
+      "valuationFairness": 7.6,
+      "overallRating": "7.8 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Favorable subscription momentum, strong anchor interest, and reasonable valuation buffer.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Durable earnings trajectory backed by steady capacity expansion and disciplined debt management.",
+    "summaryTake": "A fundamentally grounded issue with an attractive risk-reward profile for disciplined retail investors."
+  },
+  "scripts": {
+    "chapter_1": "Welcome back, investors. Today, we are dissecting the Bombay Coated and Special Steels IPO. This is not just another steel play; it is a diversified manufacturing platform targeting a massive market. The total issue size is 183.06 crore, entirely a fresh issue with no OFS. The price band is set between 78 and 82, with a lot size of 182 shares. That means your minimum investment is roughly 14,924. Bidding opens on October 29, 2026. The core question today is simple: Is this company worth your hard-earned capital, or is it a trap? Let us dive into the numbers.",
+    "chapter_2": "So, what exactly does Bombay Coated and Special Steels do? They operate as a scalable, diversified operating platform with pan-India distribution. Their core strength lies in delivering high-demand products across major commercial hubs. The revenue mix is interesting. Core operations drive 65 percent of the top line. Direct distribution accounts for 25 percent, while value-added services contribute the remaining 10 percent. This diversification is key. It suggests they are not just selling raw material but are moving up the value chain. Their focus on margin-accretive expansion indicates a strategic shift towards higher profitability rather than just volume growth. This model provides stability against sector-specific shocks.",
+    "chapter_3": "Let us look at the industry landscape. The Total Addressable Market for this sector is projected to reach 40 billion dollars by 2030. That is a massive opportunity. The sector is growing at a CAGR of 14.5 percent. This structural tailwind is driven by industrialization and infrastructure development in India. Companies that can scale efficiently in this environment will capture significant market share. Bombay Coated and Special Steels is positioned to benefit from this growth. The demand for coated and special steels is rising due to automotive and appliance manufacturing. This is a long-term structural story, not a cyclical blip. Understanding this context is crucial for evaluating the IPO.",
+    "chapter_4": "Now, let us analyze the financials. Revenue has grown from 765 crore in financial year 24 to 1,270 crore in financial year 26. That is a 28.8 percent CAGR, which is impressive. However, EBITDA margins have been volatile. They stood at 6.4 percent in financial year 24, improved to 7.0 percent in financial year 25, and dipped to 6.8 percent in financial year 26. Net profit has grown steadily from 21 crore to 31 crore. But here is the red flag: Debt to Equity is high at 2.78 times. Cash from operations is 65 crore. Return on Net Worth is 25.1 percent. While growth is strong, the leverage is a concern. Investors must monitor how they manage debt servicing as they expand.",
+    "chapter_5": "Let us break down the issue details. The entire 183.06 crore is a fresh issue. There is no OFS, meaning all money goes to the company. Where will this capital be deployed? 125 crore will go towards repayment of borrowings. This is a positive sign, as it reduces debt burden. 15.8 crore is for acquiring capital equipment under lease agreements with Siemens Financial Services. 17 crore is for general corporate purposes. Finally, 25.3 crore covers issue expenses. The heavy allocation to debt repayment suggests the management is focused on strengthening the balance sheet. This is a prudent use of funds, especially given the high debt-to-equity ratio we discussed earlier.",
+    "chapter_6": "Valuation is critical. The company is priced at a P/E of 21.4 times. Let us compare this to peers. German Green Steel trades at 9.48 times P/E. A-One Steels India is at 21.76 times. Jindal Supreme is at 16.64 times. The industry average is 24.5 times. Bombay Coated and Special Steels is trading at a premium to most peers, except A-One. However, their Return on Net Worth of 25.1 percent is significantly higher than the peers, which are around 18.4 percent. This higher return justifies a premium valuation. The margin of safety is moderate. You are paying for quality and higher returns, but you are not getting a deep discount.",
+    "chapter_7": "We must address the risks. The biggest red flag is top client dependency. The top 10 customers contribute a significant portion of revenue. If one major client leaves, the impact will be severe. Second, raw material costs are volatile. Fluctuations in steel prices can pressure gross margins. Third, working capital requirements may increase during capacity expansion. Receivables and credit periods could tighten cash flow. Regulatory scrutiny is also a factor in the steel sector. These risks are not negligible. Investors must be aware that while the growth story is strong, the execution risk is high. Diversifying the customer base is essential for long-term stability.",
+    "chapter_8": "So, what is the verdict? The Grey Market Premium is 22, implying a listing price of 114. That is a 24 percent premium to the price band. Our scorecard gives this IPO a 7.8 out of 10. For short-term traders, this is a strong candidate for listing gains. The GMP suggests strong demand. For long-term investors, the high debt and client dependency are concerns. However, the high RoNW and growth potential are attractive. If you believe in the structural growth of the sector, this could be a good long-term hold. But proceed with caution. Subscribe only if you can tolerate volatility. Do you think this IPO is a buy? Let us know in the comments. Subscribe for more deep dives."
+  },
+  "sceneScripts": {
+    "cold_open": "Kya India ki yeh upcoming company aapke paise ke liye ek solid opportunity hai, ya phir ek overhyped trap? Apply karne se pehle chaliye poora analysis detail me samajhte hain.",
+    "logo_reveal": "Bombay Coated & Special Steels Dalal Street par enter kar rahi hai apne landmark IPO ke sath on the BSE  and  NSE.",
+    "issue_numbers": "Company raise kar rahi hai ₹183.06 Cr, jiska price band hai ₹78 to ₹82 per share. Lot size 182 Shares ka hai, jisme minimum investment lagbhag ₹14,924 ki hogi.",
+    "timeline_stakes": "Bidding open ho rahi hai on 29 Oct to 2 Nov, 2026. Apne calendar me yeh dates zaroor note kar lijiye.",
+    "biz_title": "Chapter two: Business Model. Aakhir Bombay Coated & Special Steels paise kaise kamati hai? Chaliye inke core revenue streams ko break down karte hain.",
+    "biz_story": "Scalable diversified operating platform with pan-India distribution. Bombay Coated & Special Steels delivers high-demand products and services across major commercial hubs with a focus on margin-accretive expansion.",
+    "biz_donut": "Revenue contribution ki baat karein toh, Core Operations contribute karta hai 65 percent, aur Direct Distribution contribute karta hai 25 percent, aur Value-Added Services contribute karta hai 10 percent.",
+    "biz_metrics": "Operational scale par platform ke paas hai 160+ OEMs Client Base, 4 Facilities Operating Plants, 78% Capacity Utilization.",
+    "ind_title": "Chapter three: Market Opportunity. India ka Indian Industrial & Commercial Manufacturing space kitna bada hai, aur is growth ko kaunse structural tailwinds drive kar rahe hain?",
+    "tam_reveal": "Indian Industrial & Commercial Manufacturing expand hokar reach kar sakta hai $40 Billion by 2030, compounding at a rapid 14.5% Sector CAGR.",
+    "growth_drivers": "Key structural growth catalysts me shamil hain Infrastructure & Capex Expansion, sath hi Supply Chain Localization, sath hi Operating Efficiencies.",
+    "market_position": "Bombay Coated & Special Steels hold karti hai ek strong market presence, currently Recognized among the top 10 specialized suppliers in its category.",
+    "fin_title": "Chapter four: Financial Deep Dive. Chaliye ab inke revenue growth, profitability turnaround aur balance sheet strength ko evaluate karte hain.",
+    "revenue_chart": "Topline revenue surge hua hai from ₹765 Cr in FY24 to ₹1,270 Cr in FY26, representing an impressive 28.8% CAGR.",
+    "profit_arc": "Bottom line par ebitda scale hua hai to ₹86 Cr, aur net profit expand hokar ₹21 Cr se ₹31 Cr tak pahunch gaya hai with a 2.4% profit margin.",
+    "balance_sheet": "Balance sheet quality disciplined nazar aati hai: debt-to-equity ratio hai 2.78x, operating cash flow ₹65 Cr hai, aur return on net worth khada hai at 25.1%.",
+    "fin_summary": "Overall, Bombay Coated & Special Steels demonstrate karti hai solid operating leverage aur reliable cash generation heading into the public markets.",
+    "issue_title": "Chapter five: Issue Details aur Capital Allocation. Aakhir aapka invest kiya hua paisa kahan deploy kiya jayega?",
+    "issue_split": "Issue structure me shamil hai ₹183.06 Cr ka fresh capital issue, yaani 100%, aur ₹0 Cr ka offer for sale component, yaani 0%.",
+    "objects_issue": "Fresh proceeds deploy kiye jayenge 125.0 Cr towards Repayment/pre-payment, in full or in part, of certain borrowings availed by Company, aur 15.8 Cr towards Financing the cost towards acquisition of capital equipment under existing lease arrangements with Siemens Financial Services Pvt.Ltd., aur 17.0 Cr towards General Corporate Purposes, aur 25.3 Cr towards Issue Expenses.",
+    "investor_quota": "Reservation quotas me retail investors ke liye allocated hai 35.00%, Q I B ke liye 50.00%, aur N I I ke liye 15.00%.",
+    "val_title": "Chapter six: Valuation aur Peer Benchmarking. Kya yeh issue listed competitors ke mukable attractively priced hai?",
+    "peer_comparison": "Upper price band par Bombay Coated & Special Steels trade kar rahi hai at a price-to-earnings multiple of 21.4x, jabki listed peers me German Green Steel & Power at 9.48x aur A-One Steels India at 21.76x par trade kar rahe hain.",
+    "val_summary": "Against an industry average P E of 24.5x, Priced competitively with sector multiples and sustainable return ratios.",
+    "risk_title": "Chapter seven: Critical Risks aur Red Flags. Har smart investor ko in key vulnerabilities par zaroor dhyan dena chahiye.",
+    "risk_cards": "Pehla bada risk hai Top Client Dependency, primarily driven by The top 10 customers contribute a significant portion of aggregate annual revenue.. Iske alawa investors ko monitor karna hoga Raw Material Costs aur Receivables & Credit Period.",
+    "risk_summary": "Overall risk profile moderate assessed hai. A conservative debt-to-equity ratio and positive operating cash flows provide adequate shock absorption.",
+    "verdict_title": "Chapter eight: Final Decision aur Scorecard. Chaliye dekhte hain latest grey market premium aur humara comprehensive analyst scorecard.",
+    "scorecard": "Active grey market premium trend kar raha hai at ₹22 (24.0%), signaling an estimated listing price of ₹114. Humara verdict: short term gains ke liye Apply for Listing Gains, aur long term compounding ke liye Subscribe for Long Term, achieving an overall scorecard rating of 7.8 / 10.",
+    "outro": "Aapki bidding strategy kya hai Bombay Coated & Special Steels ke liye? Apne thoughts comments me zaroor share karein! Video pasand aaya ho toh like karein aur daily IPO analysis ke liye channel ko subscribe karein."
+  },
+  "bgMusic": {
+    "file": "audio/background.mp3",
+    "volume": 0.03
+  },
+  "timeline": {
+    "totalFrames": 9999,
+    "fps": 30,
+    "voiceId": "fd2ada67-c2d9-4afe-b474-6386b87d8fc3",
+    "chapters": [
+      {
+        "index": 0,
+        "id": "chapter_1",
+        "title": "Overview & Issue Highlights",
+        "shortTitle": "Overview",
+        "from": 0,
+        "durationInFrames": 1157,
+        "audioDurationSec": 37.51183673469388
+      },
+      {
+        "index": 1,
+        "id": "chapter_2",
+        "title": "Business Model & Monetization",
+        "shortTitle": "Business",
+        "from": 1157,
+        "durationInFrames": 1298,
+        "audioDurationSec": 42.239999999999995
+      },
+      {
+        "index": 2,
+        "id": "chapter_3",
+        "title": "Industry Backdrop & Market TAM",
+        "shortTitle": "Industry",
+        "from": 2455,
+        "durationInFrames": 1211,
+        "audioDurationSec": 39.288163265306125
+      },
+      {
+        "index": 3,
+        "id": "chapter_4",
+        "title": "3-Year Financial Statements",
+        "shortTitle": "Financials",
+        "from": 3666,
+        "durationInFrames": 1630,
+        "audioDurationSec": 52.97632653061225
+      },
+      {
+        "index": 4,
+        "id": "chapter_5",
+        "title": "Issue Details & Fresh Capital",
+        "shortTitle": "Issue",
+        "from": 5296,
+        "durationInFrames": 1654,
+        "audioDurationSec": 54.07346938775511
+      },
+      {
+        "index": 5,
+        "id": "chapter_6",
+        "title": "Valuation & Peer Benchmarking",
+        "shortTitle": "Valuation",
+        "from": 6950,
+        "durationInFrames": 1002,
+        "audioDurationSec": 32.60081632653062
+      },
+      {
+        "index": 6,
+        "id": "chapter_7",
+        "title": "Structural Red Flags & Risks",
+        "shortTitle": "Risks",
+        "from": 7952,
+        "durationInFrames": 926,
+        "audioDurationSec": 30.093061224489794
+      },
+      {
+        "index": 7,
+        "id": "chapter_8",
+        "title": "Final Decision & Analyst Scorecard",
+        "shortTitle": "Verdict",
+        "from": 8878,
+        "durationInFrames": 1121,
+        "audioDurationSec": 36.59755102040817
+      }
+    ],
+    "scenes": [
+      {
+        "id": "cold_open",
+        "chapterIndex": 0,
+        "title": "Cold Open Hook",
+        "from": 0,
+        "durationInFrames": 292,
+        "audioDurationSec": 9.482448979591837,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_cold_open.mp3",
+        "scriptText": "Kya India ki yeh upcoming company aapke paise ke liye ek solid opportunity hai, ya phir ek overhyped trap? Apply karne se pehle chaliye poora analysis detail me samajhte hain."
+      },
+      {
+        "id": "logo_reveal",
+        "chapterIndex": 0,
+        "title": "Dalal Street Entrance",
+        "from": 292,
+        "durationInFrames": 216,
+        "audioDurationSec": 6.922448979591837,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_logo_reveal.mp3",
+        "scriptText": "Bombay Coated & Special Steels Dalal Street par enter kar rahi hai apne landmark IPO ke sath on the B S E and N S E."
+      },
+      {
+        "id": "issue_numbers",
+        "chapterIndex": 0,
+        "title": "Key Issue Numbers",
+        "from": 508,
+        "durationInFrames": 410,
+        "audioDurationSec": 13.400816326530613,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_issue_numbers.mp3",
+        "scriptText": "Company raise kar rahi hai 183.06 crore, jiska price band hai 78 to 82 per share. Lot size 182 Shares ka hai, jisme minimum investment lagbhag 14,924 ki hogi."
+      },
+      {
+        "id": "timeline_stakes",
+        "chapterIndex": 0,
+        "title": "IPO Roadmap & Dates",
+        "from": 918,
+        "durationInFrames": 239,
+        "audioDurationSec": 7.706122448979592,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_timeline_stakes.mp3",
+        "scriptText": "Bidding open ho rahi hai on 29 October to 2 November, 2026. Apne calendar me yeh dates zaroor note kar lijiye."
+      },
+      {
+        "id": "biz_title",
+        "chapterIndex": 1,
+        "title": "Business Model Intro",
+        "from": 1157,
+        "durationInFrames": 263,
+        "audioDurationSec": 8.51591836734694,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_biz_title.mp3",
+        "scriptText": "Chapter two: Business Model. Aakhir Bombay Coated & Special Steels paise kaise kamati hai? Chaliye inke core revenue streams ko break down karte hain."
+      },
+      {
+        "id": "biz_story",
+        "chapterIndex": 1,
+        "title": "Platform Value Proposition",
+        "from": 1420,
+        "durationInFrames": 390,
+        "audioDurationSec": 12.747755102040816,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_biz_story.mp3",
+        "scriptText": "Scalable diversified operating platform with pan-India distribution. Bombay Coated & Special Steels delivers high-demand products and services across major commercial hubs with a focus on margin-accretive expansion."
+      },
+      {
+        "id": "biz_donut",
+        "chapterIndex": 1,
+        "title": "Revenue Segment Breakdown",
+        "from": 1810,
+        "durationInFrames": 362,
+        "audioDurationSec": 11.80734693877551,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_biz_donut.mp3",
+        "scriptText": "Revenue contribution ki baat karein toh, Core Operations contribute karta hai 65 percent, aur Direct Distribution contribute karta hai 25 percent, aur Value-Added Services contribute karta hai 10 percent."
+      },
+      {
+        "id": "biz_metrics",
+        "chapterIndex": 1,
+        "title": "Operational Scale & AUM",
+        "from": 2172,
+        "durationInFrames": 283,
+        "audioDurationSec": 9.168979591836734,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_biz_metrics.mp3",
+        "scriptText": "Operational scale par platform ke paas hai 160+ OEMs Client Base, 4 Facilities Operating Plants, 78 percent Capacity Utilization."
+      },
+      {
+        "id": "ind_title",
+        "chapterIndex": 2,
+        "title": "Market Opportunity Intro",
+        "from": 2455,
+        "durationInFrames": 326,
+        "audioDurationSec": 10.605714285714285,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_ind_title.mp3",
+        "scriptText": "Chapter three: Market Opportunity. India ka Indian Industrial & Commercial Manufacturing space kitna bada hai, aur is growth ko kaunse structural tailwinds drive kar rahe hain?"
+      },
+      {
+        "id": "tam_reveal",
+        "chapterIndex": 2,
+        "title": "Addressable Market TAM",
+        "from": 2781,
+        "durationInFrames": 343,
+        "audioDurationSec": 11.154285714285715,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_tam_reveal.mp3",
+        "scriptText": "Indian Industrial & Commercial Manufacturing expand hokar reach kar sakta hai 40 billion dollars by 2030, compounding at a rapid 14.5 percent Sector compound annual growth rate."
+      },
+      {
+        "id": "growth_drivers",
+        "chapterIndex": 2,
+        "title": "Structural Growth Drivers",
+        "from": 3124,
+        "durationInFrames": 281,
+        "audioDurationSec": 9.09061224489796,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_growth_drivers.mp3",
+        "scriptText": "Key structural growth catalysts me shamil hain Infrastructure & Capex Expansion, sath hi Supply Chain Localization, sath hi Operating Efficiencies."
+      },
+      {
+        "id": "market_position",
+        "chapterIndex": 2,
+        "title": "Competitive Positioning",
+        "from": 3405,
+        "durationInFrames": 261,
+        "audioDurationSec": 8.437551020408163,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_market_position.mp3",
+        "scriptText": "Bombay Coated & Special Steels hold karti hai ek strong market presence, currently Recognized among the top 10 specialized suppliers in its category."
+      },
+      {
+        "id": "fin_title",
+        "chapterIndex": 3,
+        "title": "Financials Deep Dive Intro",
+        "from": 3666,
+        "durationInFrames": 268,
+        "audioDurationSec": 8.672653061224489,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_fin_title.mp3",
+        "scriptText": "Chapter four: Financial Deep Dive. Chaliye ab inke revenue growth, profitability turnaround aur balance sheet strength ko evaluate karte hain."
+      },
+      {
+        "id": "revenue_chart",
+        "chapterIndex": 3,
+        "title": "3-Year Revenue Growth",
+        "from": 3934,
+        "durationInFrames": 405,
+        "audioDurationSec": 13.244081632653062,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_revenue_chart.mp3",
+        "scriptText": "Topline revenue surge hua hai from 765 crore in financial year 24 to 1,270 crore in financial year 26, representing an impressive 28.8 percent compound annual growth rate."
+      },
+      {
+        "id": "profit_arc",
+        "chapterIndex": 3,
+        "title": "Profitability Turnaround & EBITDA",
+        "from": 4339,
+        "durationInFrames": 307,
+        "audioDurationSec": 9.95265306122449,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_profit_arc.mp3",
+        "scriptText": "Bottom line par ebitda scale hua hai to 86 crore, aur net profit expand hokar 21 crore se 31 crore tak pahunch gaya hai with a 2.4 percent profit margin."
+      },
+      {
+        "id": "balance_sheet",
+        "chapterIndex": 3,
+        "title": "Balance Sheet & Cash Flows",
+        "from": 4646,
+        "durationInFrames": 372,
+        "audioDurationSec": 12.120816326530612,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_balance_sheet.mp3",
+        "scriptText": "Balance sheet quality disciplined nazar aati hai: debt-to-equity ratio hai 2.78 times, operating cash flow 65 crore hai, aur return on net worth khada hai at 25.1 percent."
+      },
+      {
+        "id": "fin_summary",
+        "chapterIndex": 3,
+        "title": "Financial Health Takeaway",
+        "from": 5018,
+        "durationInFrames": 278,
+        "audioDurationSec": 8.986122448979591,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_fin_summary.mp3",
+        "scriptText": "Overall, Bombay Coated & Special Steels demonstrate karti hai solid operating leverage aur reliable cash generation heading into the public markets."
+      },
+      {
+        "id": "issue_title",
+        "chapterIndex": 4,
+        "title": "Issue Details Intro",
+        "from": 5296,
+        "durationInFrames": 204,
+        "audioDurationSec": 6.530612244897959,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_issue_title.mp3",
+        "scriptText": "Chapter five: Issue Details aur Capital Allocation. Aakhir aapka invest kiya hua paisa kahan deploy kiya jayega?"
+      },
+      {
+        "id": "issue_split",
+        "chapterIndex": 4,
+        "title": "Fresh Issue vs OFS Split",
+        "from": 5500,
+        "durationInFrames": 350,
+        "audioDurationSec": 11.38938775510204,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_issue_split.mp3",
+        "scriptText": "Issue structure me shamil hai 183.06 crore ka fresh capital issue, yaani 100 percent, aur 0 crore ka offer for sale component, yaani 0 percent."
+      },
+      {
+        "id": "objects_issue",
+        "chapterIndex": 4,
+        "title": "Objects of the Offer",
+        "from": 5850,
+        "durationInFrames": 837,
+        "audioDurationSec": 27.637551020408164,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_objects_issue.mp3",
+        "scriptText": "Fresh proceeds deploy kiye jayenge 125 crore towards Repayment/pre-payment, in full or in part, of certain borrowings availed by Company, aur 15.8 crore towards Financing the cost towards acquisition of capital equipment under existing lease arrangements with Siemens Financial Services Pvt.Ltd., aur 17 crore towards General Corporate Purposes, aur 25.3 crore towards Issue Expenses."
+      },
+      {
+        "id": "investor_quota",
+        "chapterIndex": 4,
+        "title": "Reservation Quotas",
+        "from": 6687,
+        "durationInFrames": 263,
+        "audioDurationSec": 8.51591836734694,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_investor_quota.mp3",
+        "scriptText": "Reservation quotas me retail investors ke liye allocated hai 35 percent, Q I B ke liye 50 percent, aur N I I ke liye 15 percent."
+      },
+      {
+        "id": "val_title",
+        "chapterIndex": 5,
+        "title": "Valuation & Peers Intro",
+        "from": 6950,
+        "durationInFrames": 225,
+        "audioDurationSec": 7.2359183673469385,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_val_title.mp3",
+        "scriptText": "Chapter six: Valuation aur Peer Benchmarking. Kya yeh issue listed competitors ke mukable attractively priced hai?"
+      },
+      {
+        "id": "peer_comparison",
+        "chapterIndex": 5,
+        "title": "Peer Benchmarking Matrix",
+        "from": 7175,
+        "durationInFrames": 528,
+        "audioDurationSec": 17.31918367346939,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_peer_comparison.mp3",
+        "scriptText": "Upper price band par Bombay Coated & Special Steels trade kar rahi hai at a price-to-earnings multiple of 21.4 times, jabki listed peers me German Green Steel & Power at 9.48 times aur A-One Steels India at 21.76 times par trade kar rahe hain."
+      },
+      {
+        "id": "val_summary",
+        "chapterIndex": 5,
+        "title": "Valuation Assessment",
+        "from": 7703,
+        "durationInFrames": 249,
+        "audioDurationSec": 8.045714285714286,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_val_summary.mp3",
+        "scriptText": "Against an industry average P E of 24.5 times, Priced competitively with sector multiples and sustainable return ratios."
+      },
+      {
+        "id": "risk_title",
+        "chapterIndex": 6,
+        "title": "Key Risks Intro",
+        "from": 7952,
+        "durationInFrames": 239,
+        "audioDurationSec": 7.706122448979592,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_risk_title.mp3",
+        "scriptText": "Chapter seven: Critical Risks aur Red Flags. Har smart investor ko in key vulnerabilities par zaroor dhyan dena chahiye."
+      },
+      {
+        "id": "risk_cards",
+        "chapterIndex": 6,
+        "title": "Primary Structural Risks",
+        "from": 8191,
+        "durationInFrames": 426,
+        "audioDurationSec": 13.949387755102041,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_risk_cards.mp3",
+        "scriptText": "Pehla bada risk hai Top Client Dependency, primarily driven by The top 10 customers contribute a significant portion of aggregate annual revenue.. Iske alawa investors ko monitor karna hoga Raw Material Costs aur Receivables & Credit Period."
+      },
+      {
+        "id": "risk_summary",
+        "chapterIndex": 6,
+        "title": "Asset Quality & Risk Rating",
+        "from": 8617,
+        "durationInFrames": 261,
+        "audioDurationSec": 8.437551020408163,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_risk_summary.mp3",
+        "scriptText": "Overall risk profile moderate assessed hai. A conservative debt-to-equity ratio and positive operating cash flows provide adequate shock absorption."
+      },
+      {
+        "id": "verdict_title",
+        "chapterIndex": 7,
+        "title": "Verdict & Scorecard Intro",
+        "from": 8878,
+        "durationInFrames": 234,
+        "audioDurationSec": 7.549387755102041,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_verdict_title.mp3",
+        "scriptText": "Chapter eight: Final Decision aur Scorecard. Chaliye dekhte hain latest grey market premium aur humara comprehensive analyst scorecard."
+      },
+      {
+        "id": "scorecard",
+        "chapterIndex": 7,
+        "title": "GMP & Analyst Scorecard",
+        "from": 9112,
+        "durationInFrames": 554,
+        "audioDurationSec": 18.207346938775512,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_scorecard.mp3",
+        "scriptText": "Active grey market premium trend kar raha hai at 22 (24 percent), signaling an estimated listing price of 114. Humara verdict: short term gains ke liye Apply for Listing Gains, aur long term compounding ke liye Subscribe for Long Term, achieving an overall scorecard rating of 7.8 / 10."
+      },
+      {
+        "id": "outro",
+        "chapterIndex": 7,
+        "title": "Bidding Strategy & Outro",
+        "from": 9666,
+        "durationInFrames": 333,
+        "audioDurationSec": 10.840816326530613,
+        "audioFile": "audio/bombay-coated-and-special-steels/scenes/scene_outro.mp3",
+        "scriptText": "Aapki bidding strategy kya hai Bombay Coated & Special Steels ke liye? Apne thoughts comments me zaroor share karein! Video pasand aaya ho toh like karein aur daily IPO analysis ke liye channel ko subscribe karein."
+      }
+    ]
+  }
+}

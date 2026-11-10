@@ -1,65 +1,54 @@
 import "dotenv/config";
 import fs from "fs";
 import path from "path";
-import { getElevenLabsKeys } from "./generate_audio";
+import { getCartesiaKeys, maskKey } from "./key_manager";
 
 async function main() {
-  const keys = getElevenLabsKeys();
-  const key = keys[0];
-  const res = await fetch("https://api.elevenlabs.io/v1/voices", {
-    headers: { "xi-api-key": key || "" },
-  });
-
-  if (!res.ok) {
-    console.error("Error fetching voices:", res.status, await res.text());
+  const keys = getCartesiaKeys();
+  if (keys.length === 0) {
+    console.log("❌ No Cartesia API keys found in .env or cartesia_keys.txt!");
+    console.log("👉 Please add your Cartesia API key from https://play.cartesia.ai/keys to .env or cartesia_keys.txt.");
     return;
   }
 
-  const data = (await res.json()) as { voices: any[] };
+  const key = keys[0];
+  console.log(`📡 Fetching Cartesia voice library using key [${maskKey(key)}]...\n`);
 
-  // Filter only premade voices (the 100% free API voices)
-  const premadeVoices = data.voices.filter((v: any) => v.category === "premade");
+  const res = await fetch("https://api.cartesia.ai/voices", {
+    headers: {
+      "X-API-Key": key,
+      "Authorization": `Bearer ${key}`,
+      "Cartesia-Version": "2024-06-10",
+    },
+  });
 
-  console.log(`Found ${premadeVoices.length} official free premade voices:\n`);
-
-  const results: any[] = [];
-
-  for (const v of premadeVoices) {
-    // Quick test to verify HTTP 200 via API
-    const testRes = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${v.voice_id}`, {
-      method: "POST",
-      headers: { "xi-api-key": key || "", "Content-Type": "application/json" },
-      body: JSON.stringify({
-        text: "Testing API access.",
-        model_id: "eleven_multilingual_v2",
-      }),
-    });
-
-    const isAvailableOnFreeApi = testRes.ok;
-
-    results.push({
-      id: v.voice_id,
-      name: v.name,
-      gender: v.labels?.gender || "unknown",
-      accent: v.labels?.accent || "standard",
-      description: v.labels?.description || v.description || "",
-      useCase: v.labels?.["use case"] || "",
-      previewUrl: v.preview_url || "",
-      apiStatus: testRes.status,
-      worksOnFreeApi: isAvailableOnFreeApi,
-    });
+  if (!res.ok) {
+    console.error(`❌ Error fetching voices: HTTP ${res.status}`, await res.text());
+    return;
   }
 
-  const outJson = path.resolve(__dirname, "../public/audio/samples/free_voices.json");
-  fs.writeFileSync(outJson, JSON.stringify(results, null, 2));
+  const voices = (await res.json()) as any[];
+  console.log(`Found ${voices.length} voices in Cartesia library.\n`);
 
-  console.log("=== VERIFIED FREE VOICES ON ELEVENLABS API ===");
-  results.forEach((r) => {
-    const statusIcon = r.worksOnFreeApi ? "✅" : "❌";
-    console.log(
-      `${statusIcon} [${r.gender.toUpperCase()}] ${r.name.padEnd(12)} | ID: ${r.id} | Accent: ${r.accent} | Use case: ${r.useCase || r.description}`
-    );
+  const outDir = path.resolve(__dirname, "../public/audio/samples");
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+
+  const outJson = path.join(outDir, "cartesia_voices.json");
+  fs.writeFileSync(outJson, JSON.stringify(voices, null, 2), "utf-8");
+  console.log(`💾 Saved full voice catalog to: public/audio/samples/cartesia_voices.json\n`);
+
+  console.log("=== POPULAR & FEATURED CARTESIA VOICES ===");
+  const popularVoices = voices.slice(0, 25);
+  popularVoices.forEach((v: any, i: number) => {
+    const padIdx = String(i + 1).padStart(2, " ");
+    const name = (v.name || "Unnamed").padEnd(20);
+    const lang = v.language || (v.languages ? v.languages.join(", ") : "multilingual");
+    console.log(`${padIdx}. ${name} | ID: ${v.id} | Lang: ${lang}`);
   });
+
+  console.log("\n💡 Set your preferred voice in .env: CARTESIA_VOICE_ID=<voice_id>");
 }
 
 main().catch(console.error);

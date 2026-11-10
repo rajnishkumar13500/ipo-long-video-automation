@@ -35,6 +35,7 @@
     "discover": "tsx scripts/discover.ts",
     "pipeline": "tsx scripts/pipeline.ts",
     "check-keys": "tsx scripts/check_keys.ts",
+    "voices": "tsx scripts/find_all_free_voices.ts",
     "auth:drive": "tsx scripts/auth_drive.ts"
   },
   "sideEffects": [

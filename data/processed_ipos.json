@@ -1,7 +1,18 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-29T19:15:00.000Z",
+  "lastUpdated": "2026-11-10T18:07:17.422Z",
   "history": [
+    {
+      "id": "bombay-coated-and-special-steels",
+      "companyName": "Bombay Coated & Special Steels",
+      "listingDate": "Thu, Nov 5, 2026",
+      "status": "completed",
+      "processedAt": "2026-11-10T18:07:17.421Z",
+      "dataPath": "src/data/bombay-coated-and-special-steels.json",
+      "videoPath": "out/bombay-coated-and-special-steels.mp4",
+      "driveFolderId": "1fM0eqL4LYH_GnLOkfidRLQDUsYHHr6M2",
+      "driveFolderUrl": "https://drive.google.com/drive/folders/1fM0eqL4LYH_GnLOkfidRLQDUsYHHr6M2"
+    },
     {
       "id": "antala-industries",
       "companyName": "ANTALA INDUSTRIES",

@@ -309,7 +309,7 @@ export async function uploadIPOToDrive(
         `==================================================`,
         `IPO Narration Script: ${ipoData.companyName}`,
         `Listing Date: ${ipoData.listingDate || "N/A"}`,
-        `Voice: ${ipoData.timeline?.voiceId || "ElevenLabs Chris"}`,
+        `Voice: ${ipoData.timeline?.voiceId || "Cartesia Sonic"}`,
         `==================================================\n`,
       ];
       const chapterKeys: (keyof NonNullable<typeof ipoData.scripts>)[] = [
@@ -403,11 +403,14 @@ export async function uploadIPOToDrive(
 
     // 6. Upload Generated Scene Audio to audio/ subfolder
     const audioDir = path.resolve(__dirname, `../public/audio/${ipoData.id}`);
-    if (fs.existsSync(audioDir)) {
-      console.log(`   📤 Uploading audio scenes from ${audioDir}...`);
-      const audioFiles = fs.readdirSync(audioDir).filter((f) => f.endsWith(".mp3") || f.endsWith(".wav"));
+    const scenesDir = path.join(audioDir, "scenes");
+    const targetAudioDir = fs.existsSync(scenesDir) ? scenesDir : audioDir;
+
+    if (fs.existsSync(targetAudioDir)) {
+      console.log(`   📤 Uploading audio scenes from ${targetAudioDir}...`);
+      const audioFiles = fs.readdirSync(targetAudioDir).filter((f) => f.endsWith(".mp3") || f.endsWith(".wav"));
       for (const aFile of audioFiles) {
-        const fullAudioPath = path.join(audioDir, aFile);
+        const fullAudioPath = path.join(targetAudioDir, aFile);
         const mime = aFile.endsWith(".mp3") ? "audio/mpeg" : "audio/wav";
         const aResult = await uploadFileToDrive(drive, audioFolderId, fullAudioPath, aFile, mime);
         uploadedFiles.push({ name: aResult.name, id: aResult.id, subfolder: "audio" });

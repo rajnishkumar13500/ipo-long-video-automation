@@ -1,7 +1,7 @@
 # 🎬 Autonomous Long-Form IPO Video Deep-Dive Engine
 
 [![Render Engine](https://img.shields.io/badge/Remotion-v4.0-blue?logo=react)](https://remotion.dev)
-[![Voice AI](https://img.shields.io/badge/ElevenLabs-Multi--Key_Cascade-purple?logo=elevenlabs)](https://elevenlabs.io)
+[![Voice AI](https://img.shields.io/badge/Cartesia_Sonic-Multi--Key_Cascade-purple?logo=openai)](https://play.cartesia.ai/keys)
 [![Script AI](https://img.shields.io/badge/Groq%20Cloud-Qwen_3.6_%2F_Llama_3.3-orange)](https://groq.com)
 [![Cloud Sync](https://img.shields.io/badge/Google_Drive-API_v3-green?logo=googledrive)](https://developers.google.com/drive)
 [![Video Format](https://img.shields.io/badge/Format-16:9_Landscape_(1920x1080)-red?logo=youtube)](https://youtube.com)
@@ -32,7 +32,7 @@ flowchart TD
     
     subgraph Audio & Dynamic Timeline
         H --> I1["Speech Sanitizer (No ₹ symbol, crore, financial years)"]
-        I1 --> I2["Voice Synthesis Cascade\n1. ElevenLabs Studio Voices\n2. Microsoft Neural Indian English (en-IN-Prabhat)\n3. Local SAPI Fallback"]
+        I1 --> I2["Voice Synthesis Cascade\n1. Cartesia Sonic Voices\n2. Microsoft Neural Indian English (en-IN-Prabhat)\n3. Local SAPI Fallback"]
         I2 --> I3["music-metadata Duration Probing + 0.5s Breath Buffers"]
     end
     
@@ -73,7 +73,7 @@ sequenceDiagram
     participant Tracker as data/processed_ipos.json
     participant Scraper as Scraper / Extractor
     participant Groq as Groq / Gemini AI
-    participant Audio as ElevenLabs / EdgeTTS
+    participant Audio as Cartesia / EdgeTTS
     participant Remotion as Remotion Render Engine
     participant Drive as Google Drive API
 
@@ -143,14 +143,14 @@ GROQ_MODEL=qwen/qwen3.6-27b
 GEMINI_API_KEY=your_gemini_api_key
 GEMINI_MODEL=gemini-2.5-flash
 
-# ─── Voice Synthesis (ElevenLabs Dynamic Multi-Key Failover Pool) ─────────
-# Add as many keys as you want (ELEVENLABS_API_KEY_1 ... ELEVENLABS_API_KEY_N or comma-separated ELEVENLABS_API_KEYS)
-ELEVENLABS_API_KEY_1=your_first_elevenlabs_key
-ELEVENLABS_API_KEY_2=your_second_elevenlabs_key
-ELEVENLABS_API_KEY_3=your_third_elevenlabs_key
-# ELEVENLABS_API_KEYS=key1,key2,key3,key4,key5
-ELEVENLABS_VOICE_ID=pNInz6obpgDQGcFmaJgB
-ELEVENLABS_MODEL_ID=eleven_multilingual_v2
+# ─── Voice Synthesis (Cartesia Sonic Multi-Key Failover Pool) ─────────
+# Add keys from https://play.cartesia.ai/keys (CARTESIA_API_KEY_1 ... CARTESIA_API_KEY_N or comma-separated CARTESIA_API_KEYS)
+CARTESIA_API_KEY_1=your_first_cartesia_key
+CARTESIA_API_KEY_2=your_second_cartesia_key
+CARTESIA_API_KEY_3=your_third_cartesia_key
+# CARTESIA_API_KEYS=key1,key2,key3,key4,key5
+CARTESIA_VOICE_ID=47c38ca4-5f35-497b-b1a3-415245fb35e1
+CARTESIA_MODEL_ID=sonic-3.6
 
 # ─── Google Drive Cloud Sync ─────────────────────────────────────────────
 GDRIVE_CLIENT_ID=your_oauth_client_id.apps.googleusercontent.com

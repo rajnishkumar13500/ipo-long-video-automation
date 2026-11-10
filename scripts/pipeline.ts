@@ -1,6 +1,7 @@
+process.env.DOTENV_QUIET = "true";
 import fs from "fs";
 import path from "path";
-import { getUnprocessedIPOs, DiscoveredIPO } from "./discover";
+import { getUnprocessedIPOs, fetchLatestIPOs, DiscoveredIPO } from "./discover";
 import { extractIPODataFromUrl } from "./extract_ipo";
 import { generateIPOScripts } from "./generate_script";
 import { generateAudioAndTimeline } from "./generate_audio";
@@ -19,6 +20,8 @@ async function runPipeline() {
   const args = process.argv.slice(2);
   let targetSlug = "";
   let targetVoice = "";
+  let targetSpeed = parseFloat(process.env.VIDEO_SPEED || process.env.CARTESIA_SPEED || "1.25") || 1.25;
+  let targetVolume = parseFloat(process.env.VOICE_VOLUME || process.env.CARTESIA_VOLUME || "1.6") || 1.6;
   let forceScripts = false;
   let forceAudio = false;
   let uploadDrive = false;
@@ -29,6 +32,12 @@ async function runPipeline() {
     }
     if (arg.startsWith("--voice=")) {
       targetVoice = arg.replace("--voice=", "").trim();
+    }
+    if (arg.startsWith("--speed=")) {
+      targetSpeed = parseFloat(arg.replace("--speed=", "").trim()) || 1.25;
+    }
+    if (arg.startsWith("--volume=")) {
+      targetVolume = parseFloat(arg.replace("--volume=", "").trim()) || 1.6;
     }
     if (arg === "--force-scripts") {
       forceScripts = true;
@@ -63,6 +72,15 @@ async function runPipeline() {
     console.log(
       `   Previously processed IPOs: ${tracker.history.map((h) => h.companyName).join(", ") || "None"}`
     );
+
+    const allDiscovered = await fetchLatestIPOs();
+    console.log(`   Discovered ${allDiscovered.length} active IPO candidates from market sources.`);
+
+    if (allDiscovered.length === 0) {
+      console.log("\n⚠️ No IPOs could be fetched from market sources (network issue or source unreachable).");
+      console.log("💡 You can run a specific IPO directly with: npm run pipeline -- --ipo=<slug>");
+      return;
+    }
 
     const unprocessed = await getUnprocessedIPOs();
     if (unprocessed.length === 0) {
@@ -113,6 +131,8 @@ async function runPipeline() {
   const audioResult = await generateAudioAndTimeline(ipoData, {
     force: forceAudio,
     voiceId: targetVoice || undefined,
+    speed: targetSpeed,
+    volume: targetVolume,
   });
   ipoData.timeline = audioResult.timeline;
   fs.writeFileSync(jsonPath, JSON.stringify(ipoData, null, 2), "utf-8");

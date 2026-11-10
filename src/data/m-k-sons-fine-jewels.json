@@ -1,0 +1,248 @@
+{
+  "id": "m-k-sons-fine-jewels",
+  "companyName": "M.K.Sons Fine Jewels",
+  "ticker": "MKSONSFINEJEWELS",
+  "industry": "Manufacturing & Commercial Solutions",
+  "domain": "mksonsfinejewels.com",
+  "logoUrl": "logos/m-k-sons-fine-jewels.png",
+  "logoInitials": "MF",
+  "exchange": "BSE • NSE",
+  "badgeSubtitle": "IPO Deep-Dive Analysis",
+  "listingDate": "Wed, Jul 15, 2026",
+  "issue": {
+    "totalFormatted": "₹650.00 Cr",
+    "freshFormatted": "₹650.00 Cr",
+    "freshPercent": "0%",
+    "ofsFormatted": "₹650.00 Cr",
+    "ofsPercent": "100%",
+    "priceBand": "₹398 to ₹419",
+    "lotSize": "35 Shares",
+    "minInvestment": "₹14,665",
+    "retailQuota": "35.00%",
+    "qibQuota": "50.00%",
+    "niiQuota": "15.00%",
+    "biddingDates": "8 to 10 Jul, 2026",
+    "objectsOfIssue": [
+      {
+        "purpose": "Repayment of outstanding debt & borrowings",
+        "amountFormatted": "₹180 Cr",
+        "percentage": "45%"
+      },
+      {
+        "purpose": "Capital expenditure & modern facility expansion",
+        "amountFormatted": "₹140 Cr",
+        "percentage": "35%"
+      },
+      {
+        "purpose": "General corporate purposes & strategic working capital",
+        "amountFormatted": "₹80 Cr",
+        "percentage": "20%"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Scalable diversified operating platform with pan-India distribution",
+    "description": "M.K.Sons Fine Jewels delivers high-demand products and services across major commercial hubs with a focus on margin-accretive expansion.",
+    "segments": [
+      {
+        "name": "Core Operations",
+        "sharePercent": 65,
+        "description": "Core manufacturing and enterprise delivery",
+        "amountFormatted": "₹450 Cr"
+      },
+      {
+        "name": "Direct Distribution",
+        "sharePercent": 25,
+        "description": "Direct supply and OEM integration",
+        "amountFormatted": "₹170 Cr"
+      },
+      {
+        "name": "Value-Added Services",
+        "sharePercent": 10,
+        "description": "After-market engineering & logistics support",
+        "amountFormatted": "₹70 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Client Base",
+        "value": "160+ OEMs",
+        "subtext": "Long-term relationships"
+      },
+      {
+        "label": "Operating Plants",
+        "value": "4 Facilities",
+        "subtext": "Strategic national footprint"
+      },
+      {
+        "label": "Capacity Utilization",
+        "value": "78%",
+        "subtext": "High operating leverage"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Indian Industrial & Commercial Manufacturing",
+    "marketSizeFormatted": "$40 Billion by 2030",
+    "cagrText": "14.5% Sector CAGR",
+    "drivers": [
+      {
+        "title": "Infrastructure & Capex Expansion",
+        "detail": "Rising domestic industrial activity driving demand for specialized manufacturing."
+      },
+      {
+        "title": "Supply Chain Localization",
+        "detail": "Make-in-India tailwinds prompting OEMs to onshore Tier-1 supplier components."
+      },
+      {
+        "title": "Operating Efficiencies",
+        "detail": "Adoption of automated fabrication and logistics to sustain margin expansion."
+      }
+    ],
+    "marketPosition": "Recognized among the top 10 specialized suppliers in its category"
+  },
+  "financials": {
+    "years": [
+      "FY24",
+      "FY25",
+      "FY26"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹475 Cr",
+        "₹790 Cr",
+        "₹712 Cr"
+      ],
+      "rawCr": [
+        474.55,
+        790.21,
+        711.78
+      ],
+      "cagr": "22.5% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹132 Cr",
+        "₹188 Cr",
+        "₹188 Cr"
+      ],
+      "marginsPercent": [
+        "27.8%",
+        "23.8%",
+        "26.4%"
+      ],
+      "rawCr": [
+        131.85,
+        188.39,
+        187.85
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹84 Cr",
+        "₹112 Cr",
+        "₹98 Cr"
+      ],
+      "marginsPercent": [
+        "17.8%",
+        "14.2%",
+        "13.8%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "0.44x",
+      "cashFromOperations": "₹141 Cr",
+      "ronwFormatted": "19.5%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "24.5x",
+    "commentary": "Priced competitively with sector multiples and sustainable return ratios.",
+    "table": [
+      {
+        "name": "M.K.Sons Fine Jewels (Target)",
+        "peRatio": "21.4x",
+        "pbRatio": "3.2x",
+        "evEbitda": "12.8x",
+        "revenueFormatted": "₹712 Cr",
+        "patFormatted": "₹98 Cr",
+        "ronwFormatted": "19.5%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "Aastha Spintex",
+        "peRatio": "18.78x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹170.00 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Shree Ram Twistex",
+        "peRatio": "38.21x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹110.24 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      },
+      {
+        "name": "Shreedhar Spinners",
+        "peRatio": "13.44x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹30.68 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Customer Concentration",
+        "title": "Top Client Dependency",
+        "detail": "The top 10 customers contribute a significant portion of aggregate annual revenue."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Input Price Volatility",
+        "title": "Raw Material Costs",
+        "detail": "Fluctuations in raw material prices could exert transient pressure on gross margins."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Working Capital Cycle",
+        "title": "Receivables & Credit Period",
+        "detail": "Working capital requirements may increase during phases of accelerated capacity expansion."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "A conservative debt-to-equity ratio and positive operating cash flows provide adequate shock absorption."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹22 (24.0%)",
+      "estimatedListingPrice": "₹114",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.4,
+      "financialGrowth": 8.2,
+      "profitabilityQuality": 7.8,
+      "valuationFairness": 7.6,
+      "overallRating": "7.8 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Favorable subscription momentum, strong anchor interest, and reasonable valuation buffer.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Durable earnings trajectory backed by steady capacity expansion and disciplined debt management.",
+    "summaryTake": "A fundamentally grounded issue with an attractive risk-reward profile for disciplined retail investors."
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "id": "bls-polymers",
+  "companyName": "BLS Polymers",
+  "ticker": "BLSPOLYMERS",
+  "industry": "Manufacturing & Commercial Solutions",
+  "domain": "blspolymers.com",
+  "logoUrl": "logos/bls-polymers.png",
+  "logoInitials": "BP",
+  "exchange": "BSE • NSE",
+  "badgeSubtitle": "IPO Deep-Dive Analysis",
+  "listingDate": "[.]",
+  "issue": {
+    "totalFormatted": "₹2,250.00 Cr",
+    "freshFormatted": "₹1,250.00 Cr",
+    "freshPercent": "56%",
+    "ofsFormatted": "₹1,000.00 Cr",
+    "ofsPercent": "44%",
+    "priceBand": "₹85 – ₹92",
+    "lotSize": "160 shares",
+    "minInvestment": "₹14,800",
+    "retailQuota": "35%",
+    "qibQuota": "50%",
+    "niiQuota": "15%",
+    "biddingDates": "[.]",
+    "objectsOfIssue": [
+      {
+        "purpose": "Investment in our Subsidiaries, in the form of debt or equity for repayment/ prepayment, as applicable of borrowings, in full or in part, of all or a portion of certain outstanding borrowings availed by certain of our subsidiaries.",
+        "amountFormatted": "₹545.00 Cr",
+        "percentage": "545.0 Cr"
+      },
+      {
+        "purpose": "Funding of capital expenditure through investment in our subsidiary, Nagpur Waste Water Management Private Limited to build phase-3 of a UF RO Technology-Based Advanced Water Treatment Plant for supply of 300 MLD water. (“Project A”)",
+        "amountFormatted": "₹178.50 Cr",
+        "percentage": "178.5 Cr"
+      },
+      {
+        "purpose": "Funding of capital expenditure through investment in our subsidiary, Bhusawal Waste Water Management Private Limited to Design, Build, Finance, Operate and Transfer (“DBFOT”) framework for execution of a 60 MLD STP and a 80 MLD Tertiary Treatment RO (TTRO) plant. (“Project B”)",
+        "amountFormatted": "₹112.77 Cr",
+        "percentage": "112.8 Cr"
+      },
+      {
+        "purpose": "Funding of capital expenditure to build a 30 MW (AC) aggregate solar photovoltaic power generating solutions under the Mukhyamantri Saur Krushi Vahini Yojana (MSKVY) 2.0, implemented under Component C of the PM-KUSUM scheme. (“Project C”)",
+        "amountFormatted": "₹124.18 Cr",
+        "percentage": "124.2 Cr"
+      }
+    ]
+  },
+  "businessModel": {
+    "headline": "Scalable diversified operating platform with pan-India distribution",
+    "description": "BLS Polymers delivers high-demand products and services across major commercial hubs with a focus on margin-accretive expansion.",
+    "segments": [
+      {
+        "name": "Core Operations",
+        "sharePercent": 65,
+        "description": "Core manufacturing and enterprise delivery",
+        "amountFormatted": "₹450 Cr"
+      },
+      {
+        "name": "Direct Distribution",
+        "sharePercent": 25,
+        "description": "Direct supply and OEM integration",
+        "amountFormatted": "₹170 Cr"
+      },
+      {
+        "name": "Value-Added Services",
+        "sharePercent": 10,
+        "description": "After-market engineering & logistics support",
+        "amountFormatted": "₹70 Cr"
+      }
+    ],
+    "keyHighlights": [
+      {
+        "label": "Client Base",
+        "value": "160+ OEMs",
+        "subtext": "Long-term relationships"
+      },
+      {
+        "label": "Operating Plants",
+        "value": "4 Facilities",
+        "subtext": "Strategic national footprint"
+      },
+      {
+        "label": "Capacity Utilization",
+        "value": "78%",
+        "subtext": "High operating leverage"
+      }
+    ]
+  },
+  "industryContext": {
+    "sectorName": "Indian Industrial & Commercial Manufacturing",
+    "marketSizeFormatted": "$40 Billion by 2030",
+    "cagrText": "14.5% Sector CAGR",
+    "drivers": [
+      {
+        "title": "Infrastructure & Capex Expansion",
+        "detail": "Rising domestic industrial activity driving demand for specialized manufacturing."
+      },
+      {
+        "title": "Supply Chain Localization",
+        "detail": "Make-in-India tailwinds prompting OEMs to onshore Tier-1 supplier components."
+      },
+      {
+        "title": "Operating Efficiencies",
+        "detail": "Adoption of automated fabrication and logistics to sustain margin expansion."
+      }
+    ],
+    "marketPosition": "Recognized among the top 10 specialized suppliers in its category"
+  },
+  "financials": {
+    "years": [
+      "FY23",
+      "FY24",
+      "FY25"
+    ],
+    "revenue": {
+      "valuesFormatted": [
+        "₹693 Cr",
+        "₹1,292 Cr",
+        "₹1,781 Cr"
+      ],
+      "rawCr": [
+        693.15,
+        1291.85,
+        1780.65
+      ],
+      "cagr": "60.3% CAGR"
+    },
+    "ebitda": {
+      "valuesFormatted": [
+        "₹162 Cr",
+        "₹269 Cr",
+        "₹424 Cr"
+      ],
+      "marginsPercent": [
+        "23.3%",
+        "20.8%",
+        "23.8%"
+      ],
+      "rawCr": [
+        161.83,
+        268.61,
+        423.96
+      ]
+    },
+    "pat": {
+      "valuesFormatted": [
+        "₹96 Cr",
+        "₹166 Cr",
+        "₹266 Cr"
+      ],
+      "marginsPercent": [
+        "13.9%",
+        "12.8%",
+        "15.0%"
+      ],
+      "isProfitableNow": true
+    },
+    "balanceSheet": {
+      "debtToEquity": "1.28x",
+      "cashFromOperations": "₹318 Cr",
+      "ronwFormatted": "34.0%"
+    }
+  },
+  "peers": {
+    "industryAveragePe": "24.5x",
+    "commentary": "Priced competitively with sector multiples and sustainable return ratios.",
+    "table": [
+      {
+        "name": "BLS Polymers (Target)",
+        "peRatio": "21.4x",
+        "pbRatio": "3.2x",
+        "evEbitda": "12.8x",
+        "revenueFormatted": "₹1,781 Cr",
+        "patFormatted": "₹266 Cr",
+        "ronwFormatted": "34.0%",
+        "isTargetCompany": true
+      },
+      {
+        "name": "SFC Environmental Technologies",
+        "peRatio": "19.24x",
+        "pbRatio": "3.8x",
+        "evEbitda": "15.2x",
+        "revenueFormatted": "₹667.53 Cr",
+        "patFormatted": "₹120 Cr",
+        "ronwFormatted": "18.4%",
+        "isTargetCompany": false
+      }
+    ]
+  },
+  "risks": {
+    "items": [
+      {
+        "severity": "High",
+        "tag": "Customer Concentration",
+        "title": "Top Client Dependency",
+        "detail": "The top 10 customers contribute a significant portion of aggregate annual revenue."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Input Price Volatility",
+        "title": "Raw Material Costs",
+        "detail": "Fluctuations in raw material prices could exert transient pressure on gross margins."
+      },
+      {
+        "severity": "Medium",
+        "tag": "Working Capital Cycle",
+        "title": "Receivables & Credit Period",
+        "detail": "Working capital requirements may increase during phases of accelerated capacity expansion."
+      }
+    ],
+    "overallRiskLevel": "Moderate",
+    "bottomNote": "A conservative debt-to-equity ratio and positive operating cash flows provide adequate shock absorption."
+  },
+  "verdict": {
+    "gmp": {
+      "currentGmpFormatted": "₹22 (24.0%)",
+      "estimatedListingPrice": "₹114",
+      "trend": "Bullish"
+    },
+    "scorecard": {
+      "businessMoat": 7.4,
+      "financialGrowth": 8.2,
+      "profitabilityQuality": 7.8,
+      "valuationFairness": 7.6,
+      "overallRating": "7.8 / 10"
+    },
+    "shortTermVerdict": "Apply for Listing Gains",
+    "shortTermRationale": "Favorable subscription momentum, strong anchor interest, and reasonable valuation buffer.",
+    "longTermVerdict": "Subscribe for Long Term",
+    "longTermRationale": "Durable earnings trajectory backed by steady capacity expansion and disciplined debt management.",
+    "summaryTake": "A fundamentally grounded issue with an attractive risk-reward profile for disciplined retail investors."
+  }
+}
